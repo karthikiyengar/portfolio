@@ -4,12 +4,11 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production next build && node server.js"
+    "start": "env NODE_ENV=production next build && node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
-    "cross-env": "^5.0.0",
     "express": "^4.15.2",
     "helmet": "^3.6.0",
     "next": "latest",
