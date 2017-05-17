@@ -20,8 +20,8 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Automator is a home automation system which helps you control electrical appliances digitally</P>
+      <Meta role="All" context="Academic & Hobby" date="Mar '12" platforms="Linux, Windows" />
       <ImageContainer>
         <Wrapper><Image src="/static/portfolio/automator/desktop-login.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/automator/desktop-landing.png" /></Wrapper>

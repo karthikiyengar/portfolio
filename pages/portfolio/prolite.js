@@ -20,8 +20,8 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Marketing and outreach applications for multiple firms, as a part of Prolite Entertainment</P>
+      <Meta role="Mobile" context="Freelance" date="Jun '14" platforms="Android, iOS" />
       <ImageContainer>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-guard-yourself-2.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-guard-yourself-1.png" /></Wrapper>
@@ -33,7 +33,7 @@ export default () => (
         <Wrapper><Image src="/static/portfolio/prolite/mobile-kotak-1.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-kotak-3.png" /></Wrapper>
       </ImageContainer>
-      <Tools data={['android', 'ionic', 'mysql', 'nodejs', 'mongodb']} />
+      <Tools data={['android', 'ionic', 'mysql', 'nodejs', 'mongodb', 'laravel']} />
     </Content>
     <Footer />
   </Container>

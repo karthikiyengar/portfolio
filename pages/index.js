@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { injectGlobal } from 'styled-components';
-import { Row, Textarea, Input, Subtitle, Section, Container, Content, Button, P, Error, Message } from '../components/styled';
+import { Row, Textarea, Input, Subtitle, Section, Container, Content, Button, P, Error, Message, media } from '../components/styled';
 import { Portfolio, Services, Companies, Footer, Header } from '../components';
 import ReCAPTCHA from 'react-google-recaptcha';
 import superagent from 'superagent';
@@ -32,6 +32,9 @@ injectGlobal`
   }
   body {
     margin: 0;
+    ${media.handheld`
+      font-size: small;
+    `}
   }
 `;
 
@@ -189,8 +192,6 @@ export default class Home extends React.Component<any, any, State> {
   recaptcha : string;
 
   render() {
-    console.log(this.state);
-    console.log(this.isFormValid());
     return (
       <Container>
         <Header />

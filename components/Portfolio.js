@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { media } from './styled';
 import Link from 'next/link';
 
 type Data = {
@@ -45,6 +46,10 @@ const Item = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   justify-content: center;
+
+  ${ media.handheld`
+    width: 40%;
+  `}
 
   &:before {
     content: "";

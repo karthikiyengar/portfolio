@@ -28,8 +28,8 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Yuva Parivartan is one of the Largest NGOs providing livelihoods to underprivileged youth</P>
+      <Meta role="All" context="Hackathon" date="Mar '17" platforms="Android, Web" />
       <ImageContainerSpaced>
         <Wrapper><Image src="/static/portfolio/yuva-parivartan/mobile-caching_iphone5s_silver_portrait.png" /></Wrapper>
         <Wrapper><ImageSmall src="/static/portfolio/yuva-parivartan/photo-grid-backend_macbookair13_front.png" /></Wrapper>

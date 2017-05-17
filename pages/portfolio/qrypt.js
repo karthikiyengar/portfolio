@@ -19,8 +19,8 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Qrypt provides an alternative approach to authentication using QR Barcodes</P>
+      <Meta role="Frontend" context="Freelance" date="Mar '14" platforms="Android, Web" />
       <ImageContainer>
         <Wrapper><Image src="/static/portfolio/qrypt/mobile-scan.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/qrypt/mobile-landing.png" /></Wrapper>

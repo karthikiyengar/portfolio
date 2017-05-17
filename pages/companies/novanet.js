@@ -20,7 +20,7 @@ export default () => (
     <Header />
     <Content>
       <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Web" />
       <ImageContainer>
         <Wrapper><Image src="/static/portfolio/acquire/mobile-advisor.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/acquire/mobile-catalog.png" /></Wrapper>

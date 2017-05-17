@@ -23,8 +23,8 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Muse is a unique social media influencer marketing platform</P>
+      <Meta role="Backend & Frontend" context="Freelance" date="Mar '17" platforms="Web" />
       <ImageContainerSpaced>
         <Wrapper><Image src="/static/portfolio/muse/mobile-splash.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/muse/mobile-login.png" /></Wrapper>

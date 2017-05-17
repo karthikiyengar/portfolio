@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { media } from './styled';
 import IconCode from 'react-icons/lib/md/phonelink';
 import IconProductConsulting from 'react-icons/lib/md/lightbulb-outline';
 import IconTechConsulting from 'react-icons/lib/fa/code';
@@ -18,11 +19,18 @@ const appear = keyframes`
 
 const Container = styled.section`
   display: flex;
-  margin: 40px 0;
+  margin: 30px 0;
   justify-content: space-between;
+  ${media.handheld`
+    flex-direction: column;
+    align-items: center;
+  `}
   svg {
     font-size: 5em;
     color: darkgray;
+    ${media.handheld`
+      font-size: 3em;
+    `}
   }
 `;
 
@@ -30,6 +38,7 @@ const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
   animation-name: ${appear};
   animation-timing-function: ease-in;
   animation-duration: 0.3s;
@@ -39,6 +48,7 @@ const Item = styled.div`
 const Title = styled.p`
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
+  text-align: center;
   color: darkgray;
   margin: 5px 0;
 `;

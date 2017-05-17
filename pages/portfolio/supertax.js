@@ -36,7 +36,7 @@ export default () => (
     <Header />
     <Content>
       <P>A web platform that gives you complete control over your GST returns</P>
-      <Meta role="Frontend" context="Freelance" date="Jan '17" platforms="Responsive" />
+      <Meta role="Frontend" context="Freelance" date="Jan '17" platforms="Web" />
       <ImageContainerCentered>
         <Wrapper><ImageLarge src="/static/portfolio/supertax/desktop-dashboard.png" /></Wrapper>
         <Wrapper><ImageMedium src="/static/portfolio/supertax/super_macbookair13_front.png" /></Wrapper>

@@ -32,14 +32,14 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Acquire helps you find the right products that match your taste</P>
-      <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
+      <P>Fundpundit serves as your first step to get funds and connects investors and banks to users.</P>
+      <Meta role="Frontend & Backend" context="Freelance" date="Feb '17" platforms="Web" />
       <ImageContainerCentered>
         <Wrapper><Image src="/static/portfolio/fundpundit/mobile-profile.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/fundpundit/tablet-loans.png" /></Wrapper>
         <Wrapper><ImageLarge src="/static/portfolio/fundpundit/desktop-landing.png" /></Wrapper>
       </ImageContainerCentered>
-      <Tools data={['react', 'redux', 'nodejs']} />
+      <Tools data={['react', 'redux', 'nodejs', 'mongodb', 'graphql', 'trello']} />
     </Content>
     <Footer />
   </Container>

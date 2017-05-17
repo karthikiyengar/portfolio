@@ -2,6 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { media } from './styled';
 
 
 type Props = {
@@ -13,6 +14,7 @@ type Props = {
 
 const List = styled.ul`
   text-align: center;
+  padding: 0;
   &:before {
     content: "";
     background: url(/static/utils/separator.png);

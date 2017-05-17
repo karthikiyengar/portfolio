@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from './styled';
 import IconLinkedin from 'react-icons/lib/fa/linkedin';
 import IconGithub from 'react-icons/lib/fa/github';
 import IconTwitter from 'react-icons/lib/fa/twitter';
@@ -13,6 +14,9 @@ const Container = styled.footer`
   justify-content: space-between;
   align-items: center;
   margin: 30px 0;
+  ${media.handheld`
+    flex-direction: column;
+  `}
 `;
 
 const Link = styled.a`
@@ -38,6 +42,9 @@ const LinksContainer = styled.div``;
 const ContactContainer = styled.div`
   display: flex;
   align-items: center;
+  ${media.handheld`
+    margin-bottom: 10px;
+  `}
   svg {
     margin-right: 5px;
     font-size: 1.1em;

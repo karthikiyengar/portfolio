@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+
+export const media = {
+  handheld: (...args) => css`
+    @media (max-width: 420px) {
+      ${css(...args)}
+    }
+  `,
+};
+
 
 export const Subtitle = styled.h2`
   font-size: 2em;
@@ -11,6 +20,9 @@ export const Section = styled.p`
   font-size: 1.5em;
   font-weight: thin;
   margin: 20px 0;
+  ${media.handheld`
+    margin: 10px 0;
+  `}
 `;
 
 export const ImageContainer = styled.div`
@@ -26,6 +38,9 @@ export const Container = styled.div`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  ${ media.handheld`
+    padding: 10px 15px;
+  `}
 `;
 
 export const Content = styled.main`
@@ -99,4 +114,13 @@ export const Error = styled.p`
 
 export const Message = styled(Error)`
   margin: 5px 0;
+`;
+
+export const Image = styled.img`
+  max-width: 480px;
+  height: auto;
+  margin-bottom: 25px;
+  ${media.handheld`
+    max-width: 100%;
+  `}
 `;
