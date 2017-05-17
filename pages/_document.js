@@ -3,8 +3,7 @@ import styleSheet from 'styled-components/lib/models/StyleSheet';
 import ReactGA from 'react-ga';
 
 export default class MyDocument extends Document {
-  constructor() {
-    super();
+  componentDidMount() {
     ReactGA.initialize('UA-99297912-1');
   }
 
