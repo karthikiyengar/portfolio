@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const Recaptcha = require('recaptcha2');
 const next = require('next');
+const helmet = require('helmet');
+const compression = require('compression');
 const validator = require('validator');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -19,6 +21,8 @@ app.prepare()
 .then(() => {
   const server = express();
   server.use(bodyParser.json());
+  server.use(helmet());
+  server.use(compression());
 
   server.post('/api/message', (req, res) => {
     if (!req.body.captcha || !req.body.message || !req.body.email || !req.body.name) {
