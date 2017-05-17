@@ -1,7 +1,13 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import styleSheet from 'styled-components/lib/models/StyleSheet';
+import ReactGA from 'react-ga';
 
 export default class MyDocument extends Document {
+  constructor() {
+    super();
+    ReactGA.initialize('UA-99297912-1');
+  }
+
   static async getInitialProps({ renderPage }) {
     const page = renderPage();
     const styles = (
