@@ -7,8 +7,9 @@ import { Header, Footer, Tools, Meta } from '../../components';
 
 
 const Image = styled.img`
-  max-width: 480px;
-  height: auto;
+  width: auto;
+  max-height: 420px;
+  margin: 0 50px;
   margin-bottom: 25px;
 `;
 
@@ -26,16 +27,17 @@ const ImageContainerCentered = styled(ImageContainer)`
   justify-content: center;
 `;
 
+
 export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Threatbar helps organizations build intellectual properties and customer loyalties by enhancing security</P>
+      <P>Acquire helps you find the right products that match your taste</P>
       <Meta role="Frontend" context="Freelance" date="Mar '17" platforms="Responsive" />
       <ImageContainerCentered>
-        <Wrapper><ImageLarge src="/static/portfolio/threatbar/desktop-dashboard.png" /></Wrapper>        
-        <Wrapper><Image src="/static/portfolio/threatbar/desktop-central.png" /></Wrapper>
-        <Wrapper><Image src="/static/portfolio/threatbar/desktop-public.png" /></Wrapper>
+        <Wrapper><Image src="/static/portfolio/fundpundit/mobile-profile.png" /></Wrapper>
+        <Wrapper><Image src="/static/portfolio/fundpundit/tablet-loans.png" /></Wrapper>
+        <Wrapper><ImageLarge src="/static/portfolio/fundpundit/desktop-landing.png" /></Wrapper>
       </ImageContainerCentered>
       <Tools data={['react', 'redux', 'nodejs']} />
     </Content>

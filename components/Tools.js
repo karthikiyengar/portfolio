@@ -1,22 +1,83 @@
 // @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
+type Technologies = 'react' | 'nodejs' | 'redux' | 'trello' | 'laravel' | 'ionic' | 'mysql' | 'angularjs' | 'jira' | 'mongodb' | 'android' | 'php' | 'python' | 'arduino' | 'c';
+type Props = {
+  data: Array<Technologies>
+}
+
 const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const IconContainer = styled.div`
   display: flex;
   justify-content: center;
 `;
 
 const Image = styled.img`
-  height: 50px;
-  width: 50px;
+  max-height: 40px;
+  max-width: 40px;
   margin: 0 5px;
 `;
 
-export default () => (
+const Text = styled.span`
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8em;
+  margin-bottom: 5px;
+`;
+
+const Link = styled.a`
+  display: flex;
+  align-items:center;
+`;
+
+export default ({ data }: Props) => (
   <Container>
-    <Image src="/static/react.svg" />
-    <Image src="/static/nodejs.svg" />
-    <Image src="/static/redux.png" />
+    <Text>Powered By</Text>
+    <IconContainer>
+      { data.map((item) => {
+        switch (item) {
+          case 'react':
+            return <Link href="https://facebook.github.io/react/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/react.svg" /></Link>;
+          case 'redux':
+            return <Link href="http://redux.js.org/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/redux.png" /></Link>;
+          case 'nodejs':
+            return <Link href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/nodejs.svg" /></Link>;
+          case 'trello':
+            return <Link href="https://trello.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/trello.svg" /></Link>;
+          case 'laravel':
+            return <Link href="https://laravel.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/laravel.svg" /></Link>;
+          case 'ionic':
+            return <Link href="https://ionicframework.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/ionic.png" /></Link>;
+          case 'angularjs':
+            return <Link href="https://angularjs.org/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/angularjs.svg" /></Link>;
+          case 'mysql':
+            return <Link href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/mysql.svg" /></Link>;
+          case 'jira':
+            return <Link href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/jira.svg" /></Link>;
+          case 'mongodb':
+            return <Link href="https://www.mongodb.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/mongodb.png" /></Link>;
+          case 'android':
+            return <Link href="https://developer.android.com/index.html" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/android.svg" /></Link>;
+          case 'php':
+            return <Link href="http://php.net/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/php.svg" /></Link>;
+          case 'python':
+            return <Link href="https://www.python.org/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/python.svg" /></Link>;
+          case 'arduino':
+            return <Link href="https://www.arduino.cc/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/arduino.svg" /></Link>;
+          case 'c':
+            return <Link href="http://www.open-std.org/jtc1/sc22/wg14/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/c.svg" /></Link>;
+          default:
+            return false;
+        }
+      })}
+    </IconContainer>
   </Container>
 );

@@ -37,7 +37,7 @@ const Item = styled.div`
 `;
 
 const Title = styled.p`
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   color: darkgray;
   margin: 5px 0;

@@ -13,6 +13,14 @@ export const Section = styled.p`
   margin: 20px 0;
 `;
 
+export const ImageContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+  width: 100%;
+`;
 
 export const Container = styled.div`
   max-width: 960px;
@@ -37,12 +45,12 @@ export const Input = styled.input`
   border-width: 1px;
   font-size: 1em;
   outline: none;
-  border-color: lightgray;
+  border-color: ${props => props.error ? 'red' : 'lightgray'};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
   }
   &:focus {
-    border-color: darkgray;
+    border-color: ${props => props.error ? 'red' : 'darkgray'};;
   }
   width: 100%;
 `;
@@ -53,12 +61,12 @@ export const Textarea = styled.textarea`
   font-size: 1em;
   outline: none;
   border-width: 1px;
-  border-color: lightgray;
+  border-color: ${props => props.error ? 'red' : 'lightgray'};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
   }
   &:focus {
-    border-color: darkgray;
+    border-color: ${props => props.error ? 'red' : 'darkgray'};;
   }
   width: 100%;
 `;
@@ -70,13 +78,25 @@ export const Row = styled.div`
 
 export const Button = styled.button`
   padding: 12px;
-  max-width: 250px;
+  min-width: 250px;
+  margin: 15px 0;
   font-size: 1em;
   background: lightgray;
   border: 0;
   transition: all 0.2s linear;
-  &:hover {
+  &:disabled {
+    cursor: not-allowed
+  }
+  &:hover:enabled {
     background: darkgray;
     color: white;
   }
+`;
+
+export const Error = styled.p`
+  margin: 5px 0;
+`;
+
+export const Message = styled(Error)`
+  margin: 5px 0;
 `;

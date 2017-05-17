@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
           <meta name='viewport' content='initial-scale=1.0, width=device-width'/>
           <title>Karthik Iyengar</title>
           <link href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:200" rel="stylesheet" />
+          <script src='https://www.google.com/recaptcha/api.js'></script>
         </Head>
         <body>
           <Main />
