@@ -80,9 +80,11 @@ const portfolio = [{
 const companies = [{
   title: 'Indus Valley Partners',
   image: '/static/ivp.png',
+  link: '/companies/ivp',
 }, {
   title: 'Novanet',
   image: '/static/novanet.png',
+  link: '/companies/novanet',
 }];
 
 const initialState = {

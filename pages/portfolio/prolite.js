@@ -33,7 +33,7 @@ export default () => (
         <Wrapper><Image src="/static/portfolio/prolite/mobile-kotak-1.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-kotak-3.png" /></Wrapper>
       </ImageContainer>
-      <Tools data={['android', 'ionic', 'mysql', 'nodejs']} />
+      <Tools data={['android', 'ionic', 'mysql', 'nodejs', 'mongodb']} />
     </Content>
     <Footer />
   </Container>

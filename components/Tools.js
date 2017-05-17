@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Technologies = 'react' | 'nodejs' | 'redux' | 'trello' | 'laravel' | 'ionic' | 'mysql' | 'angularjs' | 'jira' | 'mongodb' | 'android' | 'php' | 'python' | 'arduino' | 'c';
+type Technologies = 'react' | 'nodejs' | 'redux' | 'trello' | 'laravel' | 'ionic' | 'mysql' | 'angularjs' | 'jira' | 'mongodb' | 'android' | 'php' | 'python' | 'arduino' | 'c' | 'c#' | 'mssql' | 'jenkins' | 'jquery';
 type Props = {
   data: Array<Technologies>
 }
@@ -74,6 +74,14 @@ export default ({ data }: Props) => (
             return <Link href="https://www.arduino.cc/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/arduino.svg" /></Link>;
           case 'c':
             return <Link href="http://www.open-std.org/jtc1/sc22/wg14/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/c.svg" /></Link>;
+          case 'mssql':
+            return <Link href="https://www.microsoft.com/en-us/sql-server/sql-server-2016" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/mssql.png" /></Link>;
+          case 'csharp':
+            return <Link href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/csharp.svg" /></Link>;
+          case 'jenkins':
+            return <Link href="https://jenkins.io/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/jenkins.svg" /></Link>;
+          case 'jquery':
+            return <Link href="https://jquery.com/" rel="noopener noreferrer" target="_blank"><Image key={item} src="/static/tools/jquery.svg" /></Link>;
           default:
             return false;
         }

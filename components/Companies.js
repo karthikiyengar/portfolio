@@ -1,10 +1,12 @@
 // @flow
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 type Data = {
   title: string,
-  image: string
+  image: string,
+  link: string
 }
 
 type Props = {
@@ -33,7 +35,9 @@ const Image = styled.img`
 export default ({ data }: Props) => (
   <Container>
     { data.map(company => (
-      <Image src={company.image} key={company.title} />
+      <Link href={company.link} key={company.title} >
+        <Image src={company.image} />
+      </Link>
     ))}
   </Container>
 );
