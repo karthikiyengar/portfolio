@@ -47,8 +47,9 @@ const Item = styled.div`
   animation-fill-mode: forwards;
   justify-content: center;
 
-  ${ media.handheld`
-    width: 40%;
+  ${media.handheld`
+    width: 45%;
+    margin-right: 5%;
   `}
 
   &:before {

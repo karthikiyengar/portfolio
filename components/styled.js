@@ -32,13 +32,23 @@ export const ImageContainer = styled.div`
   align-items: center;
   margin: 40px 0;
   width: 100%;
+  ${media.handheld`
+    justify-content: center;
+  `}
+  img {
+    ${media.handheld`
+      max-width: 90%;
+      max-height: 300px;
+      margin: 15px;
+    `}
+  }
 `;
 
 export const Container = styled.div`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
-  ${ media.handheld`
+  ${media.handheld`
     padding: 10px 15px;
   `}
 `;
@@ -120,7 +130,4 @@ export const Image = styled.img`
   max-width: 480px;
   height: auto;
   margin-bottom: 25px;
-  ${media.handheld`
-    max-width: 100%;
-  `}
 `;
