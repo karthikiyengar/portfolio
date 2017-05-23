@@ -120,9 +120,10 @@ export const Button = styled.button`
 
 export const Error = styled.p`
   margin: 5px 0;
+  color: red
 `;
 
-export const Message = styled(Error)`
+export const Message = styled.p`
   margin: 5px 0;
 `;
 

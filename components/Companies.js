@@ -32,12 +32,13 @@ const Image = styled.img`
   }
 `;
 
+// {/*<Link href={company.link} key={company.title} >*/}
 export default ({ data }: Props) => (
   <Container>
     { data.map(company => (
-      <Link href={company.link} key={company.title} >
+      <a href={company.link} key={company.title} rel="noopener noreferrer" target="_blank">
         <Image src={company.image} />
-      </Link>
+      </a>
     ))}
   </Container>
 );

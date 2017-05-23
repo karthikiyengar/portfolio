@@ -49,7 +49,6 @@ export default class MyDocument extends Document {
                 ga('require', 'outboundLinkTracker');
                 ga('set', 'page', window.location.pathname);
                 ga('send', 'pageview');
-                console.log('pageview');
                 // TODO: How do you log indiviudal pages?
               }
             }

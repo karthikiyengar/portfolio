@@ -83,11 +83,11 @@ const portfolio = [{
 const companies = [{
   title: 'Indus Valley Partners',
   image: '/static/ivp.png',
-  link: '/companies/ivp',
+  link: 'https://www.ivp.in/',
 }, {
   title: 'Novanet',
   image: '/static/novanet.png',
-  link: '/companies/novanet',
+  link: 'http://www.novanet.net/',
 }];
 
 const initialState = {
@@ -183,8 +183,11 @@ export default class Home extends React.Component<any, any, State> {
         if (err) {
           this.setState({ formError: 'Unfortunately, your message cannot be delivered. Please try again later.' });
         } else {
-          this.setState({ formMessage: 'Thank you for your message' });
           this.setState(initialState);
+          this.setState({ formMessage: 'Thank you for your message' });
+          setTimeout(() => {
+            this.setState({ formMessage: '' });
+          }, 3000);
         }
       });
   }
@@ -221,7 +224,7 @@ export default class Home extends React.Component<any, any, State> {
             </Row>
             <ReCAPTCHA ref={(r) => { this.recaptcha = r; }} sitekey="6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L" onChange={this.handleCaptchaChange} />
             { this.state.formError && <Error>{this.state.formError}</Error> }
-            { this.state.formMessage && <Message>{this.state.formError}</Message> }
+            { this.state.formMessage && <Message>{this.state.formMessage}</Message> }
             <Button type="submit" disabled={!this.isFormValid()}>Send</Button>
           </form>
         </Content>

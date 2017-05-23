@@ -5,6 +5,7 @@ const next = require('next');
 const helmet = require('helmet');
 const compression = require('compression');
 const validator = require('validator');
+const mailgun = require('mailgun-js')({ apiKey: 'key-1b1cefdf780514ca200edd4335c92e9f', domain: 'mg.karthikiyengar.in' });
 
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
@@ -39,7 +40,23 @@ app.prepare()
     }
     recaptcha.validate(req.body.captcha)
       .then(() => {
-        res.send('Success');
+        mailgun.messages().send({
+          from: 'info@karthikiyengar.in',
+          to: 'karthikeyan.iyengar@gmail.com',
+          subject: `Message from ${req.body.name}`,
+          html: `
+            <b>Sender Address: ${req.body.email}</b>
+            <br />
+            <b>Sender Name: ${req.body.name}</b>
+            <br /> 
+            <p>${req.body.message}</p>
+          `,
+        }, (err) => {
+          if (err) {
+            res.status(400).send('Could not send email');
+          }
+          res.send('Success');
+        });
       }).catch(() => {
         res.status(400).send('Could not validate reCAPTCHA');
       });
