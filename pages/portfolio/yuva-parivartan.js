@@ -29,12 +29,12 @@ export default () => (
     <Header />
     <Content>
       <P>Yuva Parivartan is one of the Largest NGOs providing livelihoods to underprivileged youth</P>
-      <Meta role="All" context="Hackathon" date="Mar '17" platforms="Android, Web" />
+      <Meta role="All" context="Hackathon" date="Jul '14" platforms="Android, Web" />
       <ImageContainerSpaced>
         <Wrapper><Image src="/static/portfolio/yuva-parivartan/mobile-caching.png" /></Wrapper>
         <Wrapper><ImageSmall src="/static/portfolio/yuva-parivartan/photo-grid-backend.png" /></Wrapper>
       </ImageContainerSpaced>
-      <Tools data={['react', 'redux', 'nodejs']} />
+      <Tools data={['php', 'android', 'trello']} />
     </Content>
     <Footer />
   </Container>
