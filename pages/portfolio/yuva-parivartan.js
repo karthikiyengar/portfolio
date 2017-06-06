@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Content, ImageContainer, P } from '../../components/styled';
-import { Header, Footer, Tools, Meta } from '../../components';
+import { Header, Nav, Footer, Tools, Meta } from '../../components';
 
 
 const Image = styled.img`
@@ -24,7 +24,7 @@ const ImageContainerSpaced = styled(ImageContainer)`
   justify-content: space-around;
 `;
 
-export default () => (
+export default (props) => (
   <Container>
     <Header />
     <Content>
@@ -36,6 +36,7 @@ export default () => (
       </ImageContainerSpaced>
       <Tools data={['php', 'android', 'trello']} />
     </Content>
+    <Nav url={props.url} />
     <Footer />
   </Container>
 );

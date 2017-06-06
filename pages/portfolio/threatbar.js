@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Content, ImageContainer, Image, P, media } from '../../components/styled';
-import { Header, Footer, Tools, Meta } from '../../components';
+import { Header, Footer, Tools, Meta, Nav } from '../../components';
 
 const ImageLarge = styled(Image)`
   max-width: 600px;
@@ -19,7 +19,7 @@ const ImageContainerCentered = styled(ImageContainer)`
   justify-content: center;
 `;
 
-export default () => (
+export default (props) => (
   <Container>
     <Header />
     <Content>
@@ -32,6 +32,7 @@ export default () => (
       </ImageContainerCentered>
       <Tools data={['react', 'redux', 'nodejs', 'trello']} />
     </Content>
+    <Nav url={props.url} />
     <Footer />
   </Container>
 );

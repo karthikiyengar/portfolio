@@ -38,7 +38,7 @@ injectGlobal`
   }
 `;
 
-const portfolio = [{
+export const portfolio = [{
   title: 'Threatbar',
   image: '/static/threatbar.png',
   link: '/portfolio/threatbar',

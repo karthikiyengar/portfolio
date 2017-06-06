@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Content, ImageContainer, P } from '../../components/styled';
-import { Header, Footer, Tools, Meta } from '../../components';
+import { Header, Footer, Tools, Meta, Nav } from '../../components';
 
 
 const Image = styled.img`
@@ -28,7 +28,7 @@ const ImageContainerCentered = styled(ImageContainer)`
 `;
 
 
-export default () => (
+export default (props) => (
   <Container>
     <Header />
     <Content>
@@ -41,6 +41,7 @@ export default () => (
       </ImageContainerCentered>
       <Tools data={['react', 'redux', 'nodejs', 'mongodb', 'graphql', 'trello']} />
     </Content>
+    <Nav url={props.url} />
     <Footer />
   </Container>
 );

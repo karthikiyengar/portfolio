@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Content, Subtitle, ImageContainer, P } from '../../components/styled';
-import { Header, Footer, Tools, Meta } from '../../components';
+import { Header, Nav, Footer, Tools, Meta } from '../../components';
 
 
 const Image = styled.img`
@@ -15,7 +15,7 @@ const Wrapper = styled.div`
   min-width: 0;
 `;
 
-export default () => (
+export default (props) => (
   <Container>
     <Header />
     <Content>
@@ -28,6 +28,7 @@ export default () => (
       </ImageContainer>
       <Tools data={['laravel', 'angularjs', 'ionic', 'mysql', 'trello']} />
     </Content>
+    <Nav url={props.url} />
     <Footer />
   </Container>
 );
