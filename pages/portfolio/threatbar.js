@@ -19,12 +19,25 @@ const ImageContainerCentered = styled(ImageContainer)`
   justify-content: center;
 `;
 
+const Description = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 export default (props) => (
   <Container>
     <Header />
     <Content>
-      <P>Threatbar helps organizations build intellectual properties and customer loyalties by enhancing security</P>
+      <P>Threatbar is a bug-bounty platform that helps organizations build intellectual properties and customer loyalties by enhancing security</P>
       <Meta role="Frontend" context="Freelance" date="May '17" platforms="Web" />
+      <Description>
+        <li>Universal React/Redux Application</li>
+        <li>Multiple roles and permissions with separate interfaces for Clients and End-Users</li>
+        <li>Interactions between end-users,clients and Threatbar by comments, and ticket assignment</li>
+        <li>Comprehensive Dashboard for clients with charts that provide metrics to track usage</li>
+        <li>Extensive sorting and filtering capabilities with pagination</li>
+        <li>Emphasis on security, and safe coding practices to prevent vulnerabilities</li>
+      </Description>
       <ImageContainerCentered>
         <Wrapper><ImageLarge src="/static/portfolio/threatbar/desktop-dashboard.png" /></Wrapper>        
         <Wrapper><Image src="/static/portfolio/threatbar/desktop-central.png" /></Wrapper>
