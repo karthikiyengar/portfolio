@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="google-site-verification" content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI" />
           <title>Karthik Iyengar</title>
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:200"

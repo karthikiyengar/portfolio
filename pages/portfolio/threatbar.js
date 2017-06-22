@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Content, ImageContainer, Image, P, media } from '../../components/styled';
+import { Container, Button, Content, Description, ImageContainer, Image, P, media } from '../../components/styled';
 import { Header, Footer, Tools, Meta, Nav } from '../../components';
 
 const ImageLarge = styled(Image)`
@@ -19,10 +19,6 @@ const ImageContainerCentered = styled(ImageContainer)`
   justify-content: center;
 `;
 
-const Description = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-`;
 
 export default (props) => (
   <Container>
@@ -32,7 +28,7 @@ export default (props) => (
       <Meta role="Frontend" context="Freelance" date="May '17" platforms="Web" />
       <Description>
         <li>Universal React/Redux Application</li>
-        <li>Multiple roles and permissions with separate interfaces for Clients and End-Users</li>
+        <li>Multiple roles and permissions with separate interfaces for clients and end-users</li>
         <li>Interactions between end-users,clients and Threatbar by comments, and ticket assignment</li>
         <li>Comprehensive Dashboard for clients with charts that provide metrics to track usage</li>
         <li>Extensive sorting and filtering capabilities with pagination</li>

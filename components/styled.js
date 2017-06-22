@@ -132,3 +132,8 @@ export const Image = styled.img`
   height: auto;
   margin-bottom: 25px;
 `;
+
+export const Description = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+`;

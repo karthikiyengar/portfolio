@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Content, ImageContainer, P } from '../../components/styled';
+import { Container, Content, ImageContainer, P, Description } from '../../components/styled';
 import { Header, Nav, Footer, Tools, Meta } from '../../components';
 
 
