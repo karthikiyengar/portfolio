@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Content, ImageContainer, P } from '../../components/styled';
+import { Container, Content, ImageContainer, Description, P } from '../../components/styled';
 import { Header, Footer, Tools, Meta, Nav } from '../../components';
 
 
@@ -34,6 +34,14 @@ export default (props) => (
     <Content>
       <P>Fundpundit serves as your first step to get funds and connects investors and banks to users.</P>
       <Meta role="Frontend & Backend" context="Freelance" date="Feb '17" platforms="Web" />
+      <Description>
+        <li>A MongoDB/GraphQL backed responsive React/Redux application</li>
+        <li>Over 5 different roles and permissions with complex interlinked user flows</li>
+        <li>Generates a unique one-page proposal pdf for all applicants</li>
+        <li>Geolocation to identify nearest branches</li>
+        <li>A fully feature administrative panel which allows you configure every facet of the website</li>
+        <li>Track a user's application through multiple steps, until it gets approved by the investors/banks</li>
+      </Description>
       <ImageContainerCentered>
         <Wrapper><Image src="/static/portfolio/fundpundit/mobile-profile.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/fundpundit/tablet-loans.png" /></Wrapper>

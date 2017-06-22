@@ -81,13 +81,17 @@ export const portfolio = [{
 }];
 
 const companies = [{
-  title: 'Indus Valley Partners',
-  image: '/static/ivp.png',
-  link: 'https://www.ivp.in/',
+  title: 'Paper Plane',
+  image: '/static/paperplane.png',
+  link: 'https://www.paperplane.net/',
 }, {
   title: 'Novanet',
   image: '/static/novanet.png',
   link: 'http://www.novanet.net/',
+}, {
+  title: 'Indus Valley Partners',
+  image: '/static/ivp.png',
+  link: 'https://www.ivp.in/',
 }];
 
 const initialState = {
