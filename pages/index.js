@@ -83,7 +83,7 @@ export const portfolio = [{
 const companies = [{
   title: 'Paper Plane',
   image: '/static/paperplane.png',
-  link: 'https://www.paperplane.net/',
+  link: 'http://www.paperplane.net/',
 }, {
   title: 'Novanet',
   image: '/static/novanet.png',
