@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="google-site-verification" content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI" />
           <title>Karthik Iyengar</title>
+          <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300"
             rel="stylesheet"
