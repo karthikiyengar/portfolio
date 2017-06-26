@@ -6,6 +6,11 @@ export const media = {
       ${css(...args)}
     }
   `,
+  tablet: (...args) => css`
+    @media (max-width: 800px) {
+      ${css(...args)}
+    }
+  `,
 };
 
 
@@ -48,6 +53,9 @@ export const Container = styled.div`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
+  ${media.tablet`
+    padding: 10px 20px;
+  `}
   ${media.handheld`
     padding: 10px 15px;
   `}
@@ -118,6 +126,29 @@ export const Button = styled.button`
   }
 `;
 
+export const VisitButton = styled.a`
+  padding: 12px;
+  width: 250px;
+  margin: 25px 0;
+  color: inherit;
+  text-decoration: inherit;
+  display: inline;
+  text-align: center;
+  background: rgb(66, 184, 221)
+  border: 0px solid transparent;
+  font-size: 1em;
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  &:hover {
+    cursor: pointer;
+    background-image: linear-gradient(transparent,rgba(0,0,0,.05) 40%,rgba(0,0,0,.1));
+  }
+`;
+
 export const Error = styled.p`
   margin: 5px 0;
   color: red
@@ -136,4 +167,11 @@ export const Image = styled.img`
 export const Description = styled.div`
   margin-left: auto;
   margin-right: auto;
+  max-width: 75%;
+`;
+
+export const Link = styled.a`
+  color: inherit;
+  text-decoration: inherit;
+  display: inline-block;
 `;

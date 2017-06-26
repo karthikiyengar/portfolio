@@ -30,7 +30,7 @@ export default class MyDocument extends Document {
           <meta name="google-site-verification" content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI" />
           <title>Karthik Iyengar</title>
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat|Raleway:200"
+            href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300"
             rel="stylesheet"
           />
           <script src="https://www.google.com/recaptcha/api.js" />

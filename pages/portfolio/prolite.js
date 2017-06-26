@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Content, ImageContainer, P } from '../../components/styled';
+import { Container, Content, ImageContainer, Description, P } from '../../components/styled';
 import { Header, Footer, Tools, Meta, Nav } from '../../components';
 
 
@@ -22,6 +22,12 @@ export default (props) => (
     <Content>
       <P>Marketing and outreach applications for multiple firms, as a part of Prolite Entertainment</P>
       <Meta role="Mobile" context="Freelance" date="Jun '14" platforms="Android, iOS" />
+      <Description>
+        <li>Designed and developed hybrid and Android native applications</li>
+        <li>Created <strong>marketing and consumer outreach</strong> applications for improving brand visibility</li>
+        <li><strong>Rapid development and iteration</strong> based on client feedback</li>
+        <li>Worked closely with clients to develop an <strong>intuitive user experience</strong></li>
+      </Description>
       <ImageContainer>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-guard-yourself-2.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/prolite/mobile-guard-yourself-1.png" /></Wrapper>

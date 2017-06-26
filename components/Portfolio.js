@@ -46,12 +46,17 @@ const Item = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   justify-content: center;
+  
+  ${media.tablet`
+    width: 28%;
+    margin-right: 5%;
+  `};
 
   ${media.handheld`
     width: 45%;
     margin-right: 5%;
-  `}
-
+  `};
+  
   &:before {
     content: "";
     display: block;

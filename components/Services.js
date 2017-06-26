@@ -19,11 +19,15 @@ const appear = keyframes`
 
 const Container = styled.section`
   display: flex;
-  margin: 30px 0;
-  justify-content: space-between;
+  margin: 30px auto;
+  width: 80%;
+  justify-content: space-around;
+  ${media.tablet`
+    justify-content: center;
+  `};
   ${media.handheld`
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   `}
   svg {
     font-size: 5em;
@@ -63,10 +67,6 @@ export default () => (
     <Item>
       <IconMobileDev />
       <Title>Mobile Development</Title>
-    </Item>
-    <Item>
-      <IconProductConsulting />
-      <Title>Product Consulting</Title>
     </Item>
     <Item>
       <IconTechConsulting />

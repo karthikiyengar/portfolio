@@ -3,7 +3,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-type Technologies = 'react' | 'nodejs' | 'redux' | 'trello' | 'laravel' | 'ionic' | 'mysql' | 'angularjs' | 'jira' | 'mongodb' | 'android' | 'php' | 'python' | 'arduino' | 'c' | 'c#' | 'mssql' | 'jenkins' | 'jquery';
+type Technologies = 'react' | 'nodejs' | 'redux' | 'trello' | 'laravel' | 'ionic' | 'mysql' | 'angularjs' | 'backbone' | 'jira' | 'mongodb' | 'android' | 'php' | 'python' | 'arduino' | 'c' | 'c#' | 'mssql' | 'jenkins' | 'jquery' | 'sketch' | 'scrum';
 type Props = {
   data: Array<Technologies>
 }
@@ -16,8 +16,7 @@ const Container = styled.section`
 `;
 
 const IconContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  display: block;
 `;
 
 const Image = styled.img`
@@ -34,8 +33,7 @@ const Text = styled.span`
 `;
 
 const Link = styled.a`
-  display: flex;
-  align-items:center;
+  display: inline-block;
 `;
 
 export default ({ data }: Props) => (
@@ -50,6 +48,8 @@ export default ({ data }: Props) => (
             return <Link href="http://redux.js.org/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/redux.png" /></Link>;
           case 'nodejs':
             return <Link href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/nodejs.svg" /></Link>;
+          case 'backbone':
+            return <Link href="http://backbonejs.org/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/backbone.svg" /></Link>;
           case 'trello':
             return <Link href="https://trello.com/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/trello.svg" /></Link>;
           case 'laravel':
@@ -66,6 +66,8 @@ export default ({ data }: Props) => (
             return <Link href="https://www.mongodb.com/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/mongodb.png" /></Link>;
           case 'android':
             return <Link href="https://developer.android.com/index.html" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/android.svg" /></Link>;
+          case 'sketch':
+            return <Link href="https://www.sketchapp.com/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/sketch.svg" /></Link>;
           case 'php':
             return <Link href="http://php.net/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/php.svg" /></Link>;
           case 'python':
@@ -84,6 +86,8 @@ export default ({ data }: Props) => (
             return <Link href="https://jquery.com/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/jquery.svg" /></Link>;
           case 'graphql':
             return <Link href="http://graphql.org/learn/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/graphql.svg" /></Link>;
+          case 'scrum':
+            return <Link href="http://scrum.org/" rel="noopener noreferrer" target="_blank" key={item}><Image src="/static/tools/scrum.png" /></Link>;
           default:
             return false;
         }

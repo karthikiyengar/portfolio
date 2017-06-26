@@ -28,7 +28,10 @@ type State = {
 injectGlobal`
   * {
     box-sizing: border-box;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+  }
+  strong {
+    font-family: 'Montserrat'
   }
   body {
     margin: 0;
@@ -83,15 +86,15 @@ export const portfolio = [{
 const companies = [{
   title: 'Paper Plane',
   image: '/static/paperplane.png',
-  link: 'http://www.paperplane.net/',
+  link: '/companies/paperplane',
 }, {
   title: 'Novanet',
   image: '/static/novanet.png',
-  link: 'http://www.novanet.net/',
+  link: '/companies/novanet',
 }, {
   title: 'Indus Valley Partners',
   image: '/static/ivp.png',
-  link: 'https://www.ivp.in/',
+  link: '/companies/ivp',
 }];
 
 const initialState = {
@@ -202,9 +205,9 @@ export default class Home extends React.Component<any, any, State> {
     return (
       <Container>
         <Header />
-        <Subtitle>I’m a full stack developer and consultant and I help convert your ideas into products.</Subtitle>
+        <Subtitle>I’m a full stack developer and technical consultant and I help you convert your ideas into products</Subtitle>
         <Content>
-          <Services />
+          {/* <Services /> */}
           <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} />
           <Section>I’VE WORKED WITH</Section>

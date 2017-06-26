@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { media } from './styled';
 
 type Data = {
   title: string,
@@ -17,6 +18,13 @@ const Container = styled.div`
   display: flex;
   margin: 40px 0;
   flex-wrap: wrap;
+  ${media.tablet`
+    justify-content: center;
+  `};
+  ${media.handheld`
+    justify-content: center;
+    flex-wrap: wrap;
+  `}
 `;
 
 const Image = styled.img`
@@ -24,6 +32,9 @@ const Image = styled.img`
   opacity: 0.7;
   filter: grayscale(100%);
   transition: all 100ms ease-in;
+  ${media.tablet`
+    margin-bottom: 10px;
+  `};
   &:hover {
     opacity: 1;
     cursor: pointer;
@@ -32,13 +43,13 @@ const Image = styled.img`
   }
 `;
 
-// {/*<Link href={company.link} key={company.title} >*/}
+// {/*<a href={company.link} key={company.title} rel="noopener noreferrer" target="_blank">*/}
 export default ({ data }: Props) => (
   <Container>
     { data.map(company => (
-      <a href={company.link} key={company.title} rel="noopener noreferrer" target="_blank">
+      <Link href={company.link} key={company.title} >
         <Image src={company.image} />
-      </a>
+      </Link>
     ))}
   </Container>
 );

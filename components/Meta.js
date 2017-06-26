@@ -18,6 +18,7 @@ const List = styled.ul`
   &:before {
     content: "";
     background: url(/static/utils/separator.png);
+    background-size: contain;
     width: 100%;
     height: 1px;
     display: block;
@@ -25,6 +26,7 @@ const List = styled.ul`
   &:after {
     content: "";
     background: url(/static/utils/separator.png);
+    background-size: contain;
     width: 100%;
     height: 1px;
     display: block;

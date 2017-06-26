@@ -59,7 +59,7 @@ const Footer = () => (
   <Container>
     <ContactContainer>
       <IconEmail /><a href="mailto:karthikeyan.iyengar@gmail.com">karthikeyan.iyengar@gmail.com</a>
-      <IconPhone /><span>(91) 9987314728</span>
+      <IconPhone /><span>(+91) 9987314728</span>
     </ContactContainer>
     <LinksContainer>
       <Link href="https://github.com/karthikiyengar/" target="_blank" rel="noopener noreferrer"><IconGithub /></Link>
