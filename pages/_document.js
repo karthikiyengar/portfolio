@@ -1,3 +1,4 @@
+import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import styleSheet from 'styled-components/lib/models/StyleSheet';
 
@@ -28,9 +29,10 @@ export default class MyDocument extends Document {
         <Head>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <meta name="google-site-verification" content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI" />
-          <meta name="description" content="I’m a full stack developer and technical consultant and I help you convert your ideas into products"/>
+          <meta name="description" content="I’m a full stack developer and technical consultant and I help you convert your ideas into products"  />
           <title>Karthik Iyengar</title>
-          <link rel='shortcut icon' type='image/x-icon' href='/static/favicon.ico' />
+          <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+          <link rel="canonical" href="http://karthikiyengar.in" />
           <link
             href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300"
             rel="stylesheet"
