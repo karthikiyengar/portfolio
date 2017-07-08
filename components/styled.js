@@ -16,14 +16,14 @@ export const media = {
 
 export const Subtitle = styled.h2`
   font-size: 2em;
-  font-weight: thin;
+  font-weight: 300;
   margin: 0 0 25px 0;
 `;
 
 export const Section = styled.p`
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
-  font-weight: thin;
+  font-weight: 400;
   margin: 20px 0;
   ${media.handheld`
     margin: 10px 0;
@@ -69,6 +69,7 @@ export const Content = styled.main`
 
 export const P = styled.p`
   font-size: 1.5em;
+  font-weight: 300;
   margin: 0;
 `;
 

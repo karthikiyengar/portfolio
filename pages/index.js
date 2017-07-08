@@ -32,6 +32,7 @@ injectGlobal`
   }
   strong {
     font-family: 'Montserrat'
+    font-weight: 500;
   }
   body {
     margin: 0;

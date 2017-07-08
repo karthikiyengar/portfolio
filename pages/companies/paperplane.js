@@ -13,6 +13,8 @@ const Image = styled.img`
 
 const Wrapper = styled.div`
   min-width: 0;
+  display: flex;
+  justify-content: center;
   margin: 15px auto;
 `;
 

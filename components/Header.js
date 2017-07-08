@@ -10,6 +10,7 @@ export const Header = styled.header`
 
 export const Title = styled.h1`
   font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
   margin-bottom: 20px;
   &:hover {
     cursor: pointer;
