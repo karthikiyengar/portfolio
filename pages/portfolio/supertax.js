@@ -40,10 +40,10 @@ export default (props) => (
       <Description>
         <li>A fully <strong>responsive</strong> React/Redux Application</li>
         <li>Rapidly brainstormed, prototyped and delivered the platform in <strong>2 calendar weeks</strong></li>
-        <li>Insightful <strong>charts, graphs and custom components</strong> that provide an overview of your finacnes</li>
+        <li>Insightful <strong>charts, graphs and custom components</strong> that provide an overview of your finances</li>
         <li>Extensible <strong>multi-wizard form</strong> with an architecture that enables you to add master/detail forms with ease</li>
         <li>Fully featured tables that let you <strong>drill-down</strong> into data, perform actions for multiple rows, filter and records export to excel</li>
-        <li>Developed <strong>unit tested modules</strong> that mimic Microsoft Excel's formula automcompletion features with extensive validation</li>
+        <li>Developed <strong>unit tested modules</strong> that mimic Microsoft Excel's formula autocompletion features with extensive validation</li>
         <li><strong>Flexible components</strong> to deal with changes mandated by the business</li>
       </Description>
       <ImageContainerCentered>
