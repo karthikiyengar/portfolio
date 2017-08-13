@@ -20,10 +20,11 @@ export default (props) => (
     <Header />
     <Content>
       <P>Brewfer shows you the best offers brewing around you and helps you find the right food for your wallet</P>
-      <Meta role="Mobile & Backend" context="Freelance" date="Dec '15" platforms="Android, iOS, Web" />
+      <Meta role="Mobile, Backend & Web" context="Freelance" date="Dec '15" platforms="Android, iOS, Web" />
       <Description>
         <li>Hybrid mobile application for Android & iOS</li>
-        <li><strong>Push notifications</strong> for infomration on closest offers</li>
+        <li>Developed a data management dashboard with an <strong>ETL process</strong></li>
+        <li><strong>Push notifications</strong> for information on closest offers</li>
         <li>Intuitive <strong>searching and filtering</strong> capabilities</li>
         <li>User reviews and administrator approvals flows</li>
         <li><strong>Proximity based</strong> offers</li>

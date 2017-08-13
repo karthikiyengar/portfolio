@@ -6,7 +6,7 @@ import IconGithub from 'react-icons/lib/fa/github';
 import IconTwitter from 'react-icons/lib/fa/twitter';
 import IconPhone from 'react-icons/lib/fa/phone';
 import IconEmail from 'react-icons/lib/md/email';
-
+import IconMedium from 'react-icons/lib/fa/medium';
 
 
 const Container = styled.footer`
@@ -65,6 +65,7 @@ const Footer = () => (
       <Link href="https://github.com/karthikiyengar/" target="_blank" rel="noopener noreferrer"><IconGithub /></Link>
       <Link href="https://twitter.com/karthik_i" target="_blank" rel="noopener noreferrer"><IconTwitter /></Link>
       <Link href="https://www.linkedin.com/in/karthik-iyengar-22446176/" target="_blank" rel="noopener noreferrer"><IconLinkedin /></Link>
+      <Link href="https://medium.com/@karthikiyengar/" target="_blank" rel="noopener noreferrer"><IconMedium /></Link>
       <LinkWithoutMargin href="https://www.codewars.com/users/karthikiyengar/" target="_blank" rel="noopener noreferrer">
         <Image src="https://www.codewars.com/users/karthikiyengar/badges/micro" alt="Codewars" />
       </LinkWithoutMargin>
