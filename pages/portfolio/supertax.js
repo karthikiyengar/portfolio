@@ -51,7 +51,7 @@ export default (props) => (
         <Wrapper><ImageMedium src="/static/portfolio/supertax/super_macbookair13_front.png" /></Wrapper>
         <Wrapper><Image src="/static/portfolio/supertax/mobile-permissions.png" /></Wrapper>
       </ImageContainerCentered>
-      <VisitButton href="https://supertax.in" target="_blank" rel="noopener noreferrer">Visit Site</VisitButton>
+      <VisitButton href="https://www.supertax.in/" target="_blank" rel="noopener noreferrer">Visit Site</VisitButton>
       <Tools data={['react', 'redux', 'jira']} />
     </Content>
     <Nav url={props.url} />
