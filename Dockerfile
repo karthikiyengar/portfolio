@@ -1,4 +1,4 @@
 FROM node:onbuild
-EXPOSE 3000
+EXPOSE 80
 ENV NODE_ENV="production"
 

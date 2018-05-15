@@ -206,7 +206,7 @@ export default class Home extends React.Component<any, any, State> {
     return (
       <Container>
         <Header />
-        <Subtitle>I’m a full stack developer and technical consultant and I help you convert your ideas into products</Subtitle>
+        <Subtitle>I’m a full stack developer and I help you convert your ideas into products</Subtitle>
         <Content>
           {/* <Services /> */}
           <Section>PORTFOLIO</Section>
