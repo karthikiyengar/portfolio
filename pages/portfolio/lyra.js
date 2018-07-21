@@ -23,8 +23,8 @@ export default (props) => (
   <Container>
     <Header />
     <Content>
-      <P>Muse is a unique social media influencer marketing platform</P>
-      <Meta role="Backend & Frontend" context="Freelance" date="Aug '17" platforms="Web" />
+      <P>Lyra is a unique social media influencer marketing platform</P>
+      <Meta role="Backend & Frontend" context="Freelance" date="Aug '18" platforms="Web" />
       <Description>
         <li>Node.js API Development and React/Redux frontend development for corporate users</li>
         <li>Modeled <strong>complex use cases and state changes</strong> in MongoDB</li>
@@ -34,10 +34,10 @@ export default (props) => (
         <li><strong>Insightful analytics</strong> and user metrics derived from application usage and outreach</li>
       </Description>
       <ImageContainerSpaced>
-        <Wrapper><Image src="/static/portfolio/muse/mobile-splash.png" /></Wrapper>
-        <Wrapper><Image src="/static/portfolio/muse/mobile-login.png" /></Wrapper>
+        <Wrapper><Image src="/static/portfolio/lyra/mobile-splash.png" /></Wrapper>
+        <Wrapper><Image src="/static/portfolio/lyra/mobile-login.png" /></Wrapper>
       </ImageContainerSpaced>
-      <Tools data={['mongodb', 'react', 'redux', 'nodejs', 'trello']} />
+      <Tools data={['mongodb', 'typescript', 'react', 'redux', 'nodejs', 'trello']} />
     </Content>
     <Nav url={props.url} />
     <Footer />

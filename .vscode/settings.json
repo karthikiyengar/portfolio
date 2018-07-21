@@ -8,5 +8,7 @@
     "**/CVS": true,
     "**/.DS_Store": true,
     ".next": true
-  }
+  },
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true
 }

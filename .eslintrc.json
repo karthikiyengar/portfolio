@@ -1,13 +1,11 @@
 {
-    "parser": "babel-eslint",
-    "plugins": [
-        "flowtype"
-    ],
-    "extends": "airbnb",
-    "rules": {
-        "no-unused-expressions":"off",
-        "react/jsx-filename-extension":"off",
-        "max-len": "off",
-        "jsx-a11y/aria-role": "off"
-    }
+  "parser": "babel-eslint",
+  "plugins": ["flowtype"],
+  "extends": ["prettier", "airbnb"],
+  "rules": {
+    "no-unused-expressions": "off",
+    "react/jsx-filename-extension": "off",
+    "max-len": "off",
+    "jsx-a11y/aria-role": "off"
+  }
 }

@@ -1,18 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from "styled-components";
 
 export const media = {
   handheld: (...args) => css`
     @media (max-width: 420px) {
-      ${css(...args)}
+      ${css(...args)};
     }
   `,
   tablet: (...args) => css`
     @media (max-width: 800px) {
-      ${css(...args)}
+      ${css(...args)};
     }
-  `,
+  `
 };
-
 
 export const Subtitle = styled.h2`
   font-size: 2em;
@@ -21,13 +20,13 @@ export const Subtitle = styled.h2`
 `;
 
 export const Section = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
   font-weight: 400;
   margin: 20px 0;
   ${media.handheld`
     margin: 10px 0;
-  `}
+  `};
 `;
 
 export const ImageContainer = styled.div`
@@ -39,13 +38,12 @@ export const ImageContainer = styled.div`
   width: 100%;
   ${media.handheld`
     justify-content: center;
-  `}
-  img {
+  `} img {
     ${media.handheld`
       max-width: 90%;
       max-height: 300px;
       margin: 15px;
-    `}
+    `};
   }
 `;
 
@@ -55,10 +53,9 @@ export const Container = styled.div`
   margin-right: auto;
   ${media.tablet`
     padding: 10px 20px;
-  `}
-  ${media.handheld`
+  `} ${media.handheld`
     padding: 10px 15px;
-  `}
+  `};
 `;
 
 export const Content = styled.main`
@@ -79,12 +76,12 @@ export const Input = styled.input`
   border-width: 1px;
   font-size: 1em;
   outline: none;
-  border-color: ${props => props.error ? 'red' : 'lightgray'};
+  border-color: ${props => (props.error ? "red" : "lightgray")};
   &:hover {
-    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => props.error ? 'red' : 'darkgray'};;
+    border-color: ${props => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -95,12 +92,12 @@ export const Textarea = styled.textarea`
   font-size: 1em;
   outline: none;
   border-width: 1px;
-  border-color: ${props => props.error ? 'red' : 'lightgray'};
+  border-color: ${props => (props.error ? "red" : "lightgray")};
   &:hover {
-    box-shadow: inset 1px 1px 2px rgba(0,0,0,0.1);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => props.error ? 'red' : 'darkgray'};;
+    border-color: ${props => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -119,7 +116,7 @@ export const Button = styled.button`
   border: 0;
   transition: all 0.2s linear;
   &:disabled {
-    cursor: not-allowed
+    cursor: not-allowed;
   }
   &:hover:enabled {
     background: darkgray;
@@ -152,7 +149,7 @@ export const VisitButton = styled.a`
 
 export const Error = styled.p`
   margin: 5px 0;
-  color: red
+  color: red;
 `;
 
 export const Message = styled.p`
@@ -175,4 +172,20 @@ export const Link = styled.a`
   color: inherit;
   text-decoration: inherit;
   display: inline-block;
+`;
+
+export const ZoomableImage = styled.img`
+  margin-right: 40px;
+  opacity: 0.7;
+  filter: grayscale(100%);
+  transition: all 100ms ease-in;
+  ${media.tablet`
+    margin-bottom: 10px;
+  `};
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
 `;

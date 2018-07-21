@@ -1,6 +1,5 @@
 // @flow
 import React from "react";
-import Link from "next/link";
 import styled from "styled-components";
 import { media, ZoomableImage } from "./styled";
 
@@ -13,6 +12,16 @@ type Data = {
 type Props = {
   data: Array<Data>
 };
+
+const Link = styled.a`
+  color: inherit;
+  text-decoration: inherit;
+  display: inline;
+  margin-right: 15px;
+  svg {
+    font-size: 1.5em;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
@@ -29,9 +38,14 @@ const Container = styled.div`
 
 export default ({ data }: Props) => (
   <Container>
-    {data.map(company => (
-      <Link href={company.link} key={company.title}>
-        <ZoomableImage src={company.image} />
+    {data.map(item => (
+      <Link
+        href={item.link}
+        key={item.title}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <ZoomableImage src={item.image} />
       </Link>
     ))}
   </Container>
