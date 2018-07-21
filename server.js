@@ -74,7 +74,7 @@ app.prepare().then(() => {
 
   server.get("*", (req, res) => handle(req, res));
 
-  const port = process.env.NODE_ENV === "producion" ? 80 : 3000;
+  const port = process.env.NODE_ENV === "production" ? 80 : 3000;
 
   server.listen(port, err => {
     if (err) throw err;
