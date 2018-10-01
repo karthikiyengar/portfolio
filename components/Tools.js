@@ -7,6 +7,8 @@ type Technology =
   | "react"
   | "nodejs"
   | "redux"
+  | "redis"
+  | "kubernetes"
   | "trello"
   | "laravel"
   | "ionic"
@@ -17,6 +19,7 @@ type Technology =
   | "mongodb"
   | "android"
   | "php"
+  | "graphql"
   | "python"
   | "arduino"
   | "c"
@@ -26,6 +29,7 @@ type Technology =
   | "jquery"
   | "sketch"
   | "scrum"
+  | "docker"
   | "typescript";
 
 type Props = {
@@ -260,7 +264,7 @@ const getIcon = (item: Technology) => {
           <Image src="/static/tools/mssql.png" />
         </Link>
       );
-    case "csharp":
+    case "c#":
       return (
         <Link
           href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp"
@@ -326,8 +330,42 @@ const getIcon = (item: Technology) => {
           <Image src="/static/tools/typescript.svg" />
         </Link>
       );
+    case "docker":
+      return (
+        <Link
+          href="https://www.docker.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/docker.svg" />
+        </Link>
+      );
+    case "kubernetes":
+      return (
+        <Link
+          href="https://kubernetes.io"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/kubernetes.svg" />
+        </Link>
+      );
+    case "redis":
+      return (
+        <Link
+          href="https://redis.io"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/redis.svg" />
+        </Link>
+      );
     default:
-      return false;
+      (item: empty);
+      throw new Error("Impossible Case");
   }
 };
 

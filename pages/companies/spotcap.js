@@ -41,19 +41,20 @@ export default () => (
         <Image src="/static/spotcap.png" />
       </Wrapper>
       <Description>
-        <li>Leading frontend development for the underwriting platform</li>
-        <li>
-          Authored a heavily <strong>functional codebase</strong> with extensive
-          reusability and testability
-        </li>
-        <li>
-          Architectured a system with{" "}
-          <strong>localized failures, resilient to API downtime</strong>
-        </li>
-        <li>
-          Handled complex <strong>caching requirements</strong> in order to
-          minimize server workload
-        </li>
+        At Spotcap, I'm responsible for building the Frontend of our primary
+        underwriting platform used to review loan applications. I made crucial
+        engineering decisions that simplified and standardised existing code.
+        Some of them included moving from a multi-store Redux architecture to a
+        consolidated store, introducing TypeScript, heavily refactoring to a
+        highly functional style of programming and introducing sagas to handle
+        complex caching requirements.
+        <br />
+        <br />
+        Additionally, I introduced a strong testing culture to the team and set
+        up a framework to rapidly build, document and validate components. These
+        components are now to be used across projects, reducing development time
+        and improving consistency. I am also responsible for interviewing
+        candidates and bringing them up to speed with our style of programming.
       </Description>
       <VisitButton
         href="https://www.spotcap.com/"

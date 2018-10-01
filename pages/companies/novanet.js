@@ -1,10 +1,15 @@
 // @flow
 
-import React from 'react';
-import styled from 'styled-components';
-import { Container, Content, Description, VisitButton,  P } from '../../components/styled';
-import { Header, Footer, Tools, Meta } from '../../components';
-
+import React from "react";
+import styled from "styled-components";
+import {
+  Container,
+  Content,
+  Description,
+  VisitButton,
+  P
+} from "../../components/styled";
+import { Header, Footer, Tools, Meta } from "../../components";
 
 const Image = styled.img`
   width: auto;
@@ -22,24 +27,44 @@ export default () => (
   <Container>
     <Header />
     <Content>
-      <P>Novanet is a design-centric multinational cloud communications company</P>
-      <Meta role="Lead Frontend Engineer" context="Fulltime" date="Feb '16 - Aug '16" platforms="Web" />
+      <P>
+        Novanet is a design-centric multinational cloud communications company
+      </P>
+      <Meta
+        role="Lead Frontend Engineer"
+        context="Fulltime"
+        date="Feb '16 - Aug '16"
+        platforms="Web"
+      />
       <Wrapper>
         <Image src="/static/novanet.png" />
       </Wrapper>
       <Description>
-        <li>Lead Frontend Development at Novanet, responsible for design and development of a <strong>management console, historical reporting dashboard and real-time monitor</strong></li>
-        <li>Offered an immediate boost to team productivity, by making relevant commits and <strong>closing 100+ issues on the AngularJS codebase</strong> starting from day one</li>
-        <li>Completely rewrote the management console and historical reporting dashboard. Performed a <strong>isomorphic integration of two large scale React SPAs</strong> with complex real-time data flows</li>
-        <li>Developed <strong>custom charting and reporting components</strong> using <strong>vector graphics and d3.js</strong></li>
-        <li>Worked closely with designers and technical lead to determine <strong>interaction flows, wireframes, edge cases and user-relevant data points to ensure a smooth user-experience</strong></li>
-        <li><strong>Mentored junior resources</strong> to bring them up to speed with the technology and platform. <strong>Interviewed candidates</strong> to determine technical/cultural fit to the company</li>
-        <li>Offered valuable <strong>insights on architectural and technology stack decisions</strong> on both client and server side</li>
-        <li><strong>Contributed</strong> to and customized <strong>open-source</strong> libraries to suit development requirements</li>
-        <li>Introduced <strong>Kanban</strong> for enhanced project tracking and visibility to meet aggressive deadlines</li>
+        I served as the Lead Frontend Developer for a for a SaaS VoIP platform,
+        in use by 75+ contact centers. I took over a legacy AngularJS codebase
+        and was tasked with re-architecting it. I objectively evaluated
+        available technology choices by factoring performance, maintainability
+        and team learning curve and led the React/Redux rewrite of the platform.
+        Apart from the domain specific technical challenges, I was also tasked
+        with overseeing the design team to help them determine problematic edge
+        cases before development time was invested.
+        <br />
+        <br />
+        As this was a user-facing website, a lot of my time was also spent on
+        performance optimisation and reducing site-load times. I was also
+        responsible for recruiting and mentoring junior resources to the
+        company.
       </Description>
-      <VisitButton href="https://novanet.net" target="_blank" rel="noopener noreferrer">Visit Site</VisitButton>
-      <Tools data={['nodejs', 'angularjs', 'react', 'redux', 'sketch', 'trello']} />
+      <VisitButton
+        href="https://novanet.net"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Visit Site
+      </VisitButton>
+      <Tools
+        data={["nodejs", "angularjs", "react", "redux", "sketch", "trello"]}
+      />
     </Content>
     <Footer />
   </Container>
