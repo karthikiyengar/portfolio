@@ -10,8 +10,8 @@ class MyApp extends App {
       <>
         <Head>
           <title>Karthik Iyengar</title>
-          <Global />
         </Head>
+        <Global />
         <Component {...pageProps} />
       </>
     );

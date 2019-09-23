@@ -49,7 +49,7 @@ export default props => (
           <strong>timer</strong>
         </li>
         <li>
-          Project secured <strong>1st position in graduation thesis</strong>
+          The project secured <strong>1st position in graduation thesis</strong>
           and presentation
         </li>
       </Description>
