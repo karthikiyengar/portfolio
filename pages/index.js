@@ -1,11 +1,9 @@
-/* global SyntheticInputEvent */
 // @flow
 
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import superagent from "superagent";
 import validator from "validator";
-import { injectGlobal } from "styled-components";
 import {
   Row,
   Textarea,
@@ -20,7 +18,7 @@ import {
   Message,
   media
 } from "../components/styled";
-import { OtherWork, Portfolio, Companies, Footer, Header } from "../components";
+import {OtherWork, Portfolio, Companies, Footer, Header} from "../components";
 
 type State = {
   name: string,
@@ -37,70 +35,44 @@ type State = {
   }
 };
 
-injectGlobal`
-  * {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-  }
-  strong {
-    font-family: 'Montserrat'
-    font-weight: 500;
-  }
-  body {
-    margin: 0;
-    ${media.handheld`
-      font-size: small;
-    `}
-  }
-`;
-
 export const portfolio = [
   {
     title: "Threatbar",
     image: "/static/threatbar.png",
     link: "/portfolio/threatbar"
-  },
-  {
+  }, {
     title: "Supertax",
     image: "/static/supertax.png",
     link: "/portfolio/supertax"
-  },
-  {
+  }, {
     title: "Lyra",
     image: "/static/lyra.png",
     link: "/portfolio/lyra"
-  },
-  {
+  }, {
     title: "Acquire",
     image: "/static/acquire.png",
     link: "/portfolio/acquire"
-  },
-  {
+  }, {
     title: "Fundpundit",
     image: "/static/fundpundit.png",
     link: "/portfolio/fundpundit"
-  },
-  {
+  }, {
     title: "Brewfer",
     image: "/static/brewfer.png",
     link: "/portfolio/brewfer"
-  },
-  {
+  }, {
     title: "Prolite",
     image: "/static/prolite.png",
     link: "/portfolio/prolite"
-  },
-  {
+  }, {
     title: "Yuva Parivartan",
     image: "/static/yuva-parivartan.png",
     link: "/portfolio/yuva-parivartan"
-  },
-  {
+  }, {
     title: "Qrypt",
     image: "/static/qrypt.png",
     link: "/portfolio/qrypt"
-  },
-  {
+  }, {
     title: "Automator",
     image: "/static/automator.png",
     link: "/portfolio/automator"
@@ -112,13 +84,11 @@ const otherWork = [
     title: "Github",
     image: "/static/work/github.png",
     link: "https://github.com/karthikiyengar"
-  },
-  {
+  }, {
     title: "Medium",
     image: "/static/work/medium.png",
     link: "https://medium.com/@karthikiyengar"
-  },
-  {
+  }, {
     title: "Codewars",
     image: "/static/work/codewars.png",
     link: "https://www.codewars.com/users/karthikiyengar"
@@ -130,18 +100,15 @@ const companies = [
     title: "Spotcap",
     image: "/static/spotcap.png",
     link: "/companies/spotcap"
-  },
-  {
+  }, {
     title: "Paper Plane",
     image: "/static/paperplane.png",
     link: "/companies/paperplane"
-  },
-  {
+  }, {
     title: "Novanet",
     image: "/static/novanet.png",
     link: "/companies/novanet"
-  },
-  {
+  }, {
     title: "Indus Valley Partners",
     image: "/static/ivp.png",
     link: "/companies/ivp"
@@ -163,10 +130,14 @@ const initialState = {
   formMessage: ""
 };
 
-export default class Home extends React.Component<any, any, State> {
-  state = { ...initialState };
+export default class Home extends React.Component < any,
+any,
+State > {
+  state = {
+    ...initialState
+  };
 
-  setError = (object: any) => {
+  setError = (object : any) => {
     this.setState({
       errors: {
         ...this.state.errors,
@@ -175,114 +146,99 @@ export default class Home extends React.Component<any, any, State> {
     });
   };
 
-  isFormValid = () =>
-    Object.keys(this.state.errors).every(
-      item => this.state.errors[item] === false
-    );
+  isFormValid = () => Object
+    .keys(this.state.errors)
+    .every(item => this.state.errors[item] === false);
 
-  handleNameChange = ({ target }: SyntheticInputEvent) => {
-    const { value } = target;
+  handleNameChange = ({target} : SyntheticInputEvent) => {
+    const {value} = target;
     if (validator.isEmpty(value)) {
-      this.setError({ name: "This field is required" });
-    } else if (!validator.isLength(value, { min: 3, max: 30 })) {
-      this.setError({
-        name: "This field should be between 3 to 30 characters"
-      });
+      this.setError({name: "This field is required"});
+    } else if (!validator.isLength(value, {
+      min: 3,
+      max: 30
+    })) {
+      this.setError({name: "This field should be between 3 to 30 characters"});
     } else {
-      this.setError({ name: false });
+      this.setError({name: false});
     }
-    this.setState({
-      name: value
-    });
+    this.setState({name: value});
   };
 
-  handleMessageChange = ({ target }: SyntheticInputEvent) => {
-    const { value } = target;
+  handleMessageChange = ({target} : SyntheticInputEvent) => {
+    const {value} = target;
     if (validator.isEmpty(value)) {
-      this.setError({ message: "This field is required" });
-    } else if (!validator.isLength(value, { min: 3, max: 300 })) {
-      this.setError({
-        message: "This field should be between 3 to 300 characters"
-      });
+      this.setError({message: "This field is required"});
+    } else if (!validator.isLength(value, {
+      min: 3,
+      max: 300
+    })) {
+      this.setError({message: "This field should be between 3 to 300 characters"});
     } else {
-      this.setError({ message: false });
+      this.setError({message: false});
     }
-    this.setState({
-      message: target.value
-    });
+    this.setState({message: target.value});
   };
 
-  handleEmailChange = ({ target }: SyntheticInputEvent) => {
-    const { value } = target;
+  handleEmailChange = ({target} : SyntheticInputEvent) => {
+    const {value} = target;
     if (validator.isEmpty(value)) {
-      this.setError({ email: "This field is required" });
+      this.setError({email: "This field is required"});
     } else if (!validator.isEmail(value)) {
-      this.setError({ email: "Invalid Email Address" });
+      this.setError({email: "Invalid Email Address"});
     } else {
-      this.setError({ email: false });
+      this.setError({email: false});
     }
-    this.setState({
-      email: value
-    });
+    this.setState({email: value});
   };
 
-  handleCaptchaChange = (value: string) => {
-    this.setError({ captcha: false });
-    this.setState({
-      captcha: value
-    });
+  handleCaptchaChange = (value : string) => {
+    this.setError({captcha: false});
+    this.setState({captcha: value});
   };
 
-  handleSubmit = (e: any) => {
+  handleSubmit = (e : any) => {
     e.preventDefault();
     superagent
       .post("/api/message")
-      .send({
-        name: this.state.name,
-        message: this.state.message,
-        email: this.state.email,
-        captcha: this.state.captcha
-      })
+      .send({name: this.state.name, message: this.state.message, email: this.state.email, captcha: this.state.captcha})
       .end(err => {
-        this.recaptcha.reset();
+        this
+          .recaptcha
+          .reset();
         if (err) {
-          this.setState({
-            formError:
-              "Unfortunately, your message cannot be delivered. Please try again later."
-          });
+          this.setState({formError: "Unfortunately, your message cannot be delivered. Please try again later."});
         } else {
           this.setState(initialState);
-          this.setState({ formMessage: "Thank you for your message" });
+          this.setState({formMessage: "Thank you for your message"});
           setTimeout(() => {
-            this.setState({ formMessage: "" });
+            this.setState({formMessage: ""});
           }, 3000);
         }
       });
   };
 
-  recaptcha: string;
+  recaptcha : string;
 
   render() {
     return (
       <Container>
-        <Header />
+        <Header/>
         <Subtitle>
-          I’m a full-stack developer who likes open source and functional
-          programming
+          I’m a full-stack developer who likes open source and functional programming
         </Subtitle>
         <Content>
           <Section>PORTFOLIO</Section>
-          <Portfolio data={portfolio} />
+          <Portfolio data={portfolio}/>
           <Section>I’VE WORKED WITH</Section>
-          <Companies data={companies} />
+          <Companies data={companies}/>
           <Section>OTHER WORK</Section>
-          <OtherWork data={otherWork} />
+          <OtherWork data={otherWork}/>
           <Section>GET IN TOUCH</Section>
           <Row>
             <P>
-              Hello there! Let’s talk to understand how I can help you. You can
-              leave me a short message and I’ll get back to you as soon as I
-              can.
+              Hello there! Let’s talk to understand how I can help you. You can leave me a
+              short message and I’ll get back to you as soon as I can.
             </P>
           </Row>
           <form onSubmit={this.handleSubmit}>
@@ -293,8 +249,7 @@ export default class Home extends React.Component<any, any, State> {
                 placeholder="Your Name"
                 onChange={this.handleNameChange}
                 value={this.state.name}
-                error={typeof this.state.errors.name === "string"}
-              />
+                error={typeof this.state.errors.name === "string"}/>
               <Error>{this.state.errors.name}</Error>
             </Row>
             <Row>
@@ -304,8 +259,7 @@ export default class Home extends React.Component<any, any, State> {
                 placeholder="Your Email Address"
                 onChange={this.handleEmailChange}
                 value={this.state.email}
-                error={typeof this.state.errors.email === "string"}
-              />
+                error={typeof this.state.errors.email === "string"}/>
               <Error>{this.state.errors.email}</Error>
             </Row>
             <Row>
@@ -316,18 +270,15 @@ export default class Home extends React.Component<any, any, State> {
                 rows={10}
                 onChange={this.handleMessageChange}
                 value={this.state.message}
-                error={typeof this.state.errors.message === "string"}
-              />
+                error={typeof this.state.errors.message === "string"}/>
               <Error>{this.state.errors.message}</Error>
             </Row>
             <ReCAPTCHA
               ref={r => {
-                this.recaptcha = r;
-              }}
+              this.recaptcha = r;
+            }}
               sitekey="6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L"
-              onChange={this.handleCaptchaChange}
-            />
-            {this.state.formError && <Error>{this.state.formError}</Error>}
+              onChange={this.handleCaptchaChange}/> {this.state.formError && <Error>{this.state.formError}</Error>}
             {this.state.formMessage && (
               <Message>{this.state.formMessage}</Message>
             )}
@@ -336,7 +287,7 @@ export default class Home extends React.Component<any, any, State> {
             </Button>
           </form>
         </Content>
-        <Footer />
+        <Footer/>
       </Container>
     );
   }

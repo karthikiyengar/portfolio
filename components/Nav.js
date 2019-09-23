@@ -1,11 +1,11 @@
-import React from 'react';
-import Link from 'next/link';
-import styled from 'styled-components';
-import IconMenu from 'react-icons/lib/md/apps';
-import Back from 'react-icons/lib/md/arrow-back';
-import Forward from 'react-icons/lib/md/arrow-forward';
-import { portfolio } from './../pages/index';
-
+import React from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import IconMenu from "react-icons/lib/md/apps";
+import Back from "react-icons/lib/md/arrow-back";
+import Forward from "react-icons/lib/md/arrow-forward";
+import { withRouter } from "next/router";
+import { portfolio } from "./../pages/index";
 
 const Container = styled.nav`
   text-align: center;
@@ -35,37 +35,51 @@ const IconContainer = styled.div`
 `;
 
 const IconBack = styled(Back)`
-  visibility: ${props => props.visible ? 'initial' : 'hidden'}
+  visibility: ${props => (props.visible ? "initial" : "hidden")};
 `;
 
 const IconForward = styled(Forward)`
-  visibility: ${props => props.visible ? 'initial' : 'hidden'}
+  visibility: ${props => (props.visible ? "initial" : "hidden")};
 `;
 
 type Props = {
-  url: {
+  router: {
     pathname: string
   }
-}
+};
 class Nav extends React.Component {
   constructor(props: Props) {
     super();
-    const currentIndex = portfolio.findIndex(item => item.link === props.url.pathname);
-    this.previous = portfolio[currentIndex - 1] ? portfolio[currentIndex - 1].link : null;
-    this.current = portfolio[currentIndex] ? portfolio[currentIndex].link : null;
-    this.next = portfolio[currentIndex + 1] ? portfolio[currentIndex + 1].link : null;
+    const currentIndex = portfolio.findIndex(
+      item => item.link === props.router.pathname
+    );
+    this.previous = portfolio[currentIndex - 1]
+      ? portfolio[currentIndex - 1].link
+      : null;
+    this.current = portfolio[currentIndex]
+      ? portfolio[currentIndex].link
+      : null;
+    this.next = portfolio[currentIndex + 1]
+      ? portfolio[currentIndex + 1].link
+      : null;
   }
   render() {
     return (
       <Container>
         <IconContainer>
-          <Link href={this.previous}><IconBack visible={this.previous} /></Link>
-          <Link href="/"><IconMenu /></Link>
-          <Link href={this.next}><IconForward visible={this.next} /></Link>
+          <Link href={this.previous}>
+            <IconBack visible={this.previous} />
+          </Link>
+          <Link href="/">
+            <IconMenu />
+          </Link>
+          <Link href={this.next}>
+            <IconForward visible={this.next} />
+          </Link>
         </IconContainer>
       </Container>
     );
   }
 }
 
-export default Nav;
+export default withRouter(Nav);
