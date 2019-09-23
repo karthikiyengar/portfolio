@@ -1,7 +1,6 @@
 import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
-import { createGlobalStyle, ServerStyleSheet } from "styled-components";
-import { media } from "../components/styled";
+import { ServerStyleSheet } from "styled-components";
 
 const Script = ({ children }) => (
   <script
@@ -10,24 +9,6 @@ const Script = ({ children }) => (
     }}
   />
 );
-
-const Global = createGlobalStyle`
-  * {
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-  }
-  strong {
-    font-family: 'Montserrat';
-    font-weight: 400;
-  }
-  body {
-    margin: 0;
-    ${media.handheld`
-      font-size: small;
-    `}
-  }
-`;
-
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -82,7 +63,6 @@ export default class MyDocument extends Document {
           <script src="https://www.google.com/recaptcha/api.js" />
           <script async src="https://www.google-analytics.com/analytics.js" />
           <script async src="/static/js/autotrack.js" />
-          <Global />
         </Head>
         <body>
           <Main />
