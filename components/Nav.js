@@ -67,13 +67,13 @@ class Nav extends React.Component {
     return (
       <Container>
         <IconContainer>
-          <Link href={this.previous}>
+          <Link href={this.previous || "/"}>
             <IconBack visible={this.previous} />
           </Link>
           <Link href="/">
             <IconMenu />
           </Link>
-          <Link href={this.next}>
+          <Link href={this.next || "/"}>
             <IconForward visible={this.next} />
           </Link>
         </IconContainer>

@@ -17,8 +17,8 @@ const Global = createGlobalStyle`
     font-family: 'Open Sans', sans-serif;
   }
   strong {
-    font-family: 'Montserrat'
-    font-weight: 500;
+    font-family: 'Montserrat';
+    font-weight: 400;
   }
   body {
     margin: 0;
@@ -76,7 +76,7 @@ export default class MyDocument extends Document {
           />
           <link rel="canonical" href="http://karthikiyengar.in" />
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans:300"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300"
             rel="stylesheet"
           />
           <script src="https://www.google.com/recaptcha/api.js" />
