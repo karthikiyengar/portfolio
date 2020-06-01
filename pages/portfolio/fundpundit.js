@@ -8,7 +8,7 @@ import {
   ImageContainer,
   VisitButton,
   Description,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Footer, Tools, Meta, Nav } from "../../components";
 
@@ -33,7 +33,7 @@ const ImageContainerCentered = styled(ImageContainer)`
   justify-content: center;
 `;
 
-export default props => (
+export default (props) => (
   <Container>
     <Header />
     <Content>
@@ -84,13 +84,6 @@ export default props => (
           <ImageLarge src="/static/portfolio/fundpundit/desktop-landing.png" />
         </Wrapper>
       </ImageContainerCentered>
-      <VisitButton
-        href="https://fundpundit.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Visit Site
-      </VisitButton>
       <Tools
         data={["react", "redux", "nodejs", "mongodb", "graphql", "trello"]}
       />
