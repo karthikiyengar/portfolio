@@ -52,21 +52,25 @@ const ContactContainer = styled.div`
   }
 `;
 
-const Footer = () => <Container>
-    <ContactContainer>
-      <IconEmail />
-      <a href="mailto:karthikeyan.iyengar@gmail.com">
-        karthikeyan.iyengar@gmail.com
-      </a>
-    </ContactContainer>
+const Footer = () => (
+  <Container>
     <LinksContainer>
-      <Link href="https://twitter.com/karthik_i" target="_blank" rel="noopener noreferrer">
+      <Link
+        href="https://twitter.com/karthik_i"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <IconTwitter />
       </Link>
-      <Link href="https://www.linkedin.com/in/karthik-iyengar-22446176/" target="_blank" rel="noopener noreferrer">
+      <Link
+        href="https://www.linkedin.com/in/karthik-iyengar-22446176/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <IconLinkedin />
       </Link>
     </LinksContainer>
-  </Container>;
+  </Container>
+);
 
 export default Footer;
