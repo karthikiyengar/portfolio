@@ -28,8 +28,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^16.9.55",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "flow-bin": "^0.46.0",
+    "typescript": "^4.0.5",
     "webpack": "^4.20.2"
   }
 }

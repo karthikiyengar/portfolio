@@ -35,23 +35,34 @@ const IconContainer = styled.div`
 `;
 
 const IconBack = styled(Back)`
-  visibility: ${props => (props.visible ? "initial" : "hidden")};
+  cursor: pointer;
+  visibility: ${(props) => (props.visible ? "initial" : "hidden")};
 `;
 
 const IconForward = styled(Forward)`
-  visibility: ${props => (props.visible ? "initial" : "hidden")};
+  cursor: pointer;
+  visibility: ${(props) => (props.visible ? "initial" : "hidden")};
+`;
+
+const IconMenuWithCursor = styled(IconMenu)`
+  cursor: pointer;
 `;
 
 type Props = {
   router: {
-    pathname: string
-  }
+    pathname: string;
+  };
 };
+
 class Nav extends React.Component {
+  previous: string;
+  current: string;
+  next: string;
+
   constructor(props: Props) {
-    super();
+    super(props);
     const currentIndex = portfolio.findIndex(
-      item => item.link === props.router.pathname
+      (item) => item.link === props.router.pathname
     );
     this.previous = portfolio[currentIndex - 1]
       ? portfolio[currentIndex - 1].link
@@ -63,6 +74,7 @@ class Nav extends React.Component {
       ? portfolio[currentIndex + 1].link
       : null;
   }
+
   render() {
     return (
       <Container>
@@ -71,7 +83,7 @@ class Nav extends React.Component {
             <IconBack visible={this.previous} />
           </Link>
           <Link href="/">
-            <IconMenu />
+            <IconMenuWithCursor />
           </Link>
           <Link href={this.next || "/"}>
             <IconForward visible={this.next} />
@@ -82,4 +94,4 @@ class Nav extends React.Component {
   }
 }
 
-export default withRouter(Nav);
+export default withRouter(Nav as any);

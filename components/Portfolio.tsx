@@ -1,18 +1,18 @@
-// @flow
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { media } from './styled';
-import Link from 'next/link';
+
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { media } from "./styled";
+import Link from "next/link";
 
 type Data = {
-  title: string,
-  image: string,
-  link: string
-}
+  title: string;
+  image: string;
+  link: string;
+};
 
 type Props = {
-  data: Array<Data>
-}
+  data: Array<Data>;
+};
 
 const appear = keyframes`
   from {
@@ -76,14 +76,12 @@ const Image = styled.img`
   transition: transform 100ms ease-in;
 `;
 
-export default ({ data }: Props) => (
-  <Container>
-    { data.map((item, index) => (
-      <Link href={item.link} key={item.title}>
+export default (({
+  data
+}: Props) => <Container>
+    {data.map((item, index) => <Link href={item.link} key={item.title}>
         <Item index={index}>
           <Image src={item.image} alt={item.title} />
         </Item>
-      </Link>
-      ))}
-  </Container>
-);
+      </Link>)}
+  </Container>);

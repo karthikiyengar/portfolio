@@ -1,17 +1,17 @@
-// @flow
+
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { media, ZoomableImage } from "./styled";
 
 type Data = {
-  title: string,
-  image: string,
-  link: string
+  title: string;
+  image: string;
+  link: string;
 };
 
 type Props = {
-  data: Array<Data>
+  data: Array<Data>;
 };
 
 const Container = styled.div`
@@ -27,12 +27,10 @@ const Container = styled.div`
   `};
 `;
 
-export default ({ data }: Props) => (
-  <Container>
-    {data.map(company => (
-      <Link href={company.link} key={company.title}>
+export default (({
+  data
+}: Props) => <Container>
+    {data.map(company => <Link href={company.link} key={company.title}>
         <ZoomableImage src={company.image} />
-      </Link>
-    ))}
-  </Container>
-);
+      </Link>)}
+  </Container>);

@@ -2,13 +2,6 @@ import React from "react";
 import Document, { Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
-const Script = ({ children }) => (
-  <script
-    dangerouslySetInnerHTML={{
-      __html: `(${children.toString()})();`
-    }}
-  />
-);
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
@@ -17,7 +10,8 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
         });
       const initialProps = await Document.getInitialProps(ctx);
       return {
@@ -27,7 +21,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       };
     } finally {
       sheet.seal();
@@ -66,24 +60,6 @@ export default class MyDocument extends Document {
         </Head>
         <body>
           <Main />
-          <Script>
-            {() => {
-              window.ga =
-                window.ga ||
-                function() {
-                  (ga.q = ga.q || []).push(arguments);
-                };
-              ga.l = +new Date();
-              ga("create", "UA-99297912-1", "auto");
-              ga("require", "urlChangeTracker");
-              ga("require", "cleanUrlTracker");
-              ga("require", "outboundFormTracker");
-              ga("require", "outboundLinkTracker");
-              ga("set", "page", window.location.pathname);
-              ga("send", "pageview");
-              // TODO: How do you log indiviudal pages?
-            }}
-          </Script>
           <NextScript />
         </body>
       </html>
