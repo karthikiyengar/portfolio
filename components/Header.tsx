@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Link from 'next/link';
+import React from "react";
+import styled from "styled-components";
+import Link from "next/link";
 
 export const Header = styled.header`
   min-height: 100px;
@@ -17,8 +17,6 @@ export const Title = styled.h1`
   }
 `;
 
-export default () => (
-  <Header>
+export default (() => <Header>
     <Link href="/"><Title>KARTHIK IYENGAR</Title></Link>
-  </Header>
-);
+  </Header>);

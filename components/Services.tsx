@@ -1,10 +1,10 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import { media } from './styled';
-import IconCode from 'react-icons/lib/md/phonelink';
-import IconProductConsulting from 'react-icons/lib/md/lightbulb-outline';
-import IconTechConsulting from 'react-icons/lib/fa/code';
-import IconMobileDev from 'react-icons/lib/md/phonelink-setup';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import { media } from "./styled";
+import IconCode from "react-icons/lib/md/phonelink";
+import IconProductConsulting from "react-icons/lib/md/lightbulb-outline";
+import IconTechConsulting from "react-icons/lib/fa/code";
+import IconMobileDev from "react-icons/lib/md/phonelink-setup";
 
 const appear = keyframes`
   0% {
@@ -58,8 +58,7 @@ const Title = styled.p`
 `;
 
 
-export default () => (
-  <Container>
+export default (() => <Container>
     <Item>
       <IconCode />
       <Title>Web Development</Title>
@@ -72,5 +71,4 @@ export default () => (
       <IconTechConsulting />
       <Title>Technical Consulting</Title>
     </Item>
-  </Container>
-);
+  </Container>);

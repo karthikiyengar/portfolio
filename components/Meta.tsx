@@ -1,16 +1,16 @@
-// @flow
 
-import React from 'react';
-import styled from 'styled-components';
-import { media } from './styled';
+
+import React from "react";
+import styled from "styled-components";
+import { media } from "./styled";
 
 
 type Props = {
-  role: String,
-  context: String,
-  date: String,
-  platforms: String
-}
+  role: String;
+  context: String;
+  date: String;
+  platforms: String;
+};
 
 const List = styled.ul`
   text-align: center;
@@ -49,14 +49,13 @@ const Value = styled.span`
   text-transform: uppercase;
 `;
 
-export default (props: Props) => (
-  <List>
+export default ((props: Props) => <List>
     <Item>
       <Title>
         Role
       </Title>
       <Value>
-        { props.role }
+        {props.role}
       </Value>
     </Item>
     <Item>
@@ -64,7 +63,7 @@ export default (props: Props) => (
         Context
       </Title>
       <Value>
-        { props.context }
+        {props.context}
       </Value>
     </Item>
     <Item>
@@ -72,7 +71,7 @@ export default (props: Props) => (
         Date
       </Title>
       <Value>
-        { props.date }
+        {props.date}
       </Value>
     </Item>
     <Item>
@@ -80,9 +79,7 @@ export default (props: Props) => (
         Platforms
       </Title>
       <Value>
-        { props.platforms }
+        {props.platforms}
       </Value>
     </Item>
-  </List>
-);
-
+  </List>);
