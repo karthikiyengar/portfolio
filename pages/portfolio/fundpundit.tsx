@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   Content,
   ImageContainer,
   VisitButton,
@@ -34,7 +34,7 @@ const ImageContainerCentered = styled(ImageContainer)`
 `;
 
 export default (props) => (
-  <Container>
+  <Layout>
     <Header />
     <Content>
       <P>
@@ -90,5 +90,5 @@ export default (props) => (
     </Content>
     <Nav />
     <Footer />
-  </Container>
+  </Layout>
 );

@@ -10,7 +10,7 @@ import {
   Input,
   Subtitle,
   Section,
-  Container,
+  Layout,
   Content,
   Button,
   P,
@@ -249,7 +249,7 @@ export default class Home extends React.Component<any, any, State> {
 
   render() {
     return (
-      <Container>
+      <Layout>
         <Header />
         <Subtitle>
           I’m a full-stack developer who likes open source and functional
@@ -322,7 +322,7 @@ export default class Home extends React.Component<any, any, State> {
           </form>
         </Content>
         <Footer />
-      </Container>
+      </Layout>
     );
   }
 }

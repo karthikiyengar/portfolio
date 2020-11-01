@@ -3,11 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   Content,
   Description,
   VisitButton,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Footer, Tools, Meta } from "../../components";
 
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 `;
 
 export default () => (
-  <Container>
+  <Layout>
     <Header />
     <Content>
       <P>
@@ -70,5 +70,5 @@ export default () => (
       />
     </Content>
     <Footer />
-  </Container>
+  </Layout>
 );

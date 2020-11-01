@@ -51,7 +51,7 @@ export default class MyDocument extends Document {
           />
           <link rel="canonical" href="http://karthikiyengar.in" />
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300|Fira+Code:400"
             rel="stylesheet"
           />
           <script src="https://www.google.com/recaptcha/api.js" />
