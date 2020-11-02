@@ -3,8 +3,7 @@ title: "Functional Programming Patterns: A Cookbook"
 date: "2020-01-07"
 ---
 
-// TODO: Update link
-This article targets an audience that’s graduating from functional libraries like `ramda` to using Algebraic Data Types. We’re using the excellent `crocks` library for our ADTs and helpers, although these concepts may apply to other ones as well. We’ll be focusing on demonstrating practical applications and patterns without delving into a lot of theory.
+This article targets an audience that’s graduating from functional libraries like `ramda` to using Algebraic Data Types. We’re using the excellent <a href="https://crocks.dev" target="_blank">`crocks`</a> library for our ADTs and helpers, although these concepts may apply to other ones as well. We’ll be focusing on demonstrating practical applications and patterns without delving into a lot of theory.
 
 ## Safely Executing Dangerous Functions
 
@@ -271,8 +270,7 @@ liftA2(add)(Maybe(1))(Maybe(2));
 //=> Just 3
 ```
 
-// TODO: Update link
-We shall use this helper extensively in the section `Expressing Parallelism`.
+We shall use this helper extensively in the section [Expressing Parallelism](#expressing-parallelism-in-a-pointfree-manner).
 
 Tip: Since we’ve observed that `ap` uses map to access values, we can do cool things like generating a Cartesian product when given two lists.
 
@@ -292,8 +290,7 @@ List((name) => (hobby) => Pair(name, hobby))
 
 ## Using Async for Predictable Error Handling
 
-// TODO: Update link
-`crocks` provides the `Async` data type that allows us to build lazy asynchronous computations. To know more about it, you can refer to the extensive official documentation here. This section aims to provide examples of how we can use `Async` to improve the quality of our error reporting and make our code resilient.
+`crocks` provides the `Async` data type that allows us to build lazy asynchronous computations. To know more about it, you can refer to the extensive official documentation <a href="https://crocks.dev/docs/crocks/Async.html" target="_blank">here</a>. This section aims to provide examples of how we can use `Async` to improve the quality of our error reporting and make our code resilient.
 
 Often, we run into cases where we want to make API calls that depend on each other. Here, the `getUser` endpoint returns a user entity from GitHub and the response contains a lot of embedded URLs for repositories, stars, favorites and so on. We will see how we can design this use case with using `Async`.
 
@@ -366,19 +363,19 @@ The usage of the `maybeToAsync` transformation allows us to use all of the safet
 
 ## Using Monoids Effectively
 
-We’ve already been using Monoids when we perform operations like String/Array concatenation and number addition in native JavaScript. It’s simply a data type that offers us the following methods.
+We’ve already been using `Monoid`s when we perform operations like `String`/`Array` concatenation and number addition in native JavaScript. It’s simply a data type that offers us the following methods.
 
 ```haskell
 concat :: Monoid m => m a -> m a -> m a
 ```
 
-concat allows us to combine two Monoids of the same type together with a pre-specified operation.
+`concat` allows us to combine two `Monoid`s of the same type together with a pre-specified operation.
 
 ```haskell
 empty :: Monoid m => () => m a
 ```
 
-The empty method provides us with an identity element, that when concat ed with other Monoids of the same type, would return the same element. Here’s what I’m talking about.
+The `empty` method provides us with an identity element, that when concatinated with other Monoids of the same type, would return the same element. Here’s what I’m talking about.
 
 ```javascript
 import { Sum } from "crocks";
@@ -393,7 +390,7 @@ Sum(10).concat(Sum(32));
 //=> Sum 42
 ```
 
-By itself, this doesn’t look very useful, but crocks provides some additional Monoids along with helpers mconcat, mreduce, mconcatMap and mreduceMap.
+By itself, this doesn’t look very useful, but `crocks` provides some additional `Monoid`s along with helpers `mconcat`, `mreduce`, `mconcatMap` and `mreduceMap`.
 
 ```javascript
 import { Sum, mconcat, mreduce, mconcatMap, mreduceMap } from "crocks";
@@ -415,9 +412,9 @@ mreduceMap(Sum, inc, array);
 //=> 30
 ```
 
-The mconcat and mreduce methods take a Monoid and a list of elements to work with, and apply concat to all of their elements. The only difference between them is that mconcat returns an instance of the Monoid while mreduce returns the raw value. The mconcatMap and mreduceMap helpers work in the same way, except that they accept an additional function that is used to map over every element before calling concat.
+The `mconcat` and `mreduce` methods take a monoid and a list of elements to work with, and apply `concat` to all of their elements. The only difference between them is that `mconcat` returns an instance of the monoid while `mreduce` returns the raw value. The `mconcatMap` and `mreduceMap` helpers work in the same way, except that they accept an additional function that is used to map over every element before calling `concat`.
 
-Let’s look at another example of a Monoid from crocks, the First Monoid. When concatenating, First will always return the first, non-empty value.
+Let’s look at another example of a `Monoid` from `crocks` - `First`. When concatenating, `First` will always return the first, non-empty value.
 
 ```javascript
 import { First, Maybe } from "crocks";
@@ -433,7 +430,7 @@ First(Maybe.of(5))
 //=> First (Just 5)
 ```
 
-Using the power of First, let’s try creating a function that attempts to get the first available property on an object.
+Using the power of `First`, let’s try creating a function that attempts to get the first available property on an object.
 
 ```javascript
 import { curry, First, mreduceMap, flip, prop, compose } from "crocks";
@@ -530,56 +527,58 @@ autoFormat(null)
 
 ## Expressing Parallelism in a Pointfree manner
 
-We might run into cases where want to perform multiple operations on a single piece of data and combine the results in some way. crocks provides us with two methods to achieve this. The first pattern leverages Product Types Pair and Tuple. Let’s look at a small example where we have an object that looks like this:
+We might run into cases where want to perform multiple operations on a single piece of data and combine the results in some way. `crocks` provides us with two methods to achieve this. The first pattern leverages Product Types `Pair` and `Tuple`. Let’s look at a small example where we have an object that looks like this:
 
 ```
 { ids: [11233, 12351, 16312], rejections: [11233] }
 ```
 
-We would like to write a function that accepts this object and returns an Array of ids excluding the rejected ones. Our first attempt in native JavaScript would look like this:
+We would like to write a function that accepts this object and returns an array of ids excluding the rejected ones. Our first attempt in native JavaScript would look like this:
 
 ```javascript
 const getIds = (object) =>
   object.ids.filter((x) => object.rejections.includes(x));
 ```
 
-This of course works, but it would explode in case one of the properties is malformed or is not defined. Let’s make getIds return a Maybe instead. We use fanout helper that accepts two functions, runs it on the same input and returns a Pair of the results.
+This of course works, but it would explode in case one of the properties is malformed or is not defined. Let’s make `getIds` return a `Maybe` instead. We use `fanout` helper that accepts two functions, runs it on the same input and returns a `Pair` of the results.
 
 ```javascript
-import { prop, compose, equals, filter, fanout, merge, liftA2 } from "crocks"
+import { prop, compose, equals, filter, fanout, merge, liftA2 } from "crocks";
 
-/\*\*
-
-- object :: Record
-- Record :: {
-- ids: [Number]
-- rejection: [Number]
-- }
-  \*\*/
-  const object = { ids: [11233, 12351, 16312], rejections: [11233] }
+/**
+ * object :: Record
+ * Record :: {
+ *  ids: [Number]
+ *  rejection: [Number]
+ * }
+ **/
+const object = { ids: [11233, 12351, 16312], rejections: [11233] };
 
 // excludes :: [a] -> [b] -> Boolean
-const excludes = x => y => !x.includes(y)
+const excludes = (x) => (y) => !x.includes(y);
 
 // difference :: [a] -> [a] -> [a]
-const difference = compose(filter, excludes)
+const difference = compose(
+  filter,
+  excludes
+);
 
 // getIds :: Record -> Maybe [Number]
 const getIds = compose(
-merge(liftA2(difference)),
-fanout(prop("rejections"), prop("ids"))
-)
+  merge(liftA2(difference)),
+  fanout(prop("rejections"), prop("ids"))
+);
 
-getIds(object)
+getIds(object);
 //=> Just [ 12351, 16312 ]
 
-getIds({ something: [], else: 5 })
+getIds({ something: [], else: 5 });
 //=> Nothing
 ```
 
-One of the main benefits of using the pointfree approach is that it encourages us to break our logic into smaller pieces. We now have the reusable helper difference (with liftA2, as seen previously) that we can use to merge both halves the Pair together.
+One of the main benefits of using the pointfree approach is that it encourages us to break our logic into smaller pieces. We now have the reusable helper difference (with `liftA2`, as seen previously) that we can use to `merge` both halves the `Pair` together.
 
-The second method would be to use the converge combinator to achieve similar results. converge takes three functions and an input value. It then applies the input to the second and third function and pipes the results of both into the first. Let’s use it to create a function that normalizes an Arrayof objects based on their ids. We will use the Assign Monoid that allows us to combine objects together.
+The second method would be to use the `converge` combinator to achieve similar results. `converge` takes three functions and an input value. It then applies the input to the second and third function and pipes the results of both into the first. Let’s use it to create a function that normalizes an array of objects based on their ids. We will use the `Assign` monoid that allows us to combine objects together.
 
 ```javascript
 import {
@@ -624,7 +623,7 @@ normalize([
 
 ## Using Traverse and Sequence to Ensure Data Sanity
 
-We’ve seen how to use Maybe and friends to ensure that we’re always working with the types we expect. But what happens when we’re working with a type that contains other values, like an Array or a List for example? Let’s look at a simple function that gives us the total length of all strings contained within an Array.
+We’ve seen how to use `Maybe` and friends to ensure that we’re always working with the types we expect. But what happens when we’re working with a type that contains other values, like an `Array` or a `List` for example? Let’s look at a simple function that gives us the total length of all strings contained within an array.
 
 ```javascript
 import { compose, safe, isArray, reduce, map } from "crocks";
@@ -651,21 +650,21 @@ totalLength(badInput);
 //=> Nothing
 ```
 
-Great. We’ve made sure our function always returns a Nothing if it doesn’t receive an Array. Is this enough, though?
+Great. We’ve made sure our function always returns a `Nothing` if it doesn’t receive an array. Is this enough, though?
 
 ```javascript
 totalLength(["stairway", "to", undefined]);
 //=> TypeError: x is undefined
 ```
 
-Not really. Our function doesn’t guarantee that the contents of the list won’t hold any surprises. One of the ways we could solve this would be to define a safeLength function that only works with strings:
+Not really. Our function doesn’t guarantee that the contents won’t hold any surprises. One of the ways we could solve this would be to define a `safeLength` function that only works with strings:
 
 ```javascript
 // safeLength :: a -> Maybe Number
 const safeLength = safeLift(isString, length);
 ```
 
-If we use safeLength instead of length as our mapping function, we would receive a [Maybe Number] instead of a [Number] and we cannot use our sumfunction anymore. Here’s where sequence comes in handy.
+If we use `safeLength` instead of length as our mapping function, we would receive a `[Maybe Number]` instead of a `[Number]` and we cannot use our `sum` function anymore. Here’s where `sequence` comes in handy.
 
 ```javascript
 import { sequence, Maybe, Identity } from "crocks";
@@ -683,7 +682,7 @@ sequence(Maybe, [Maybe.of(4), Maybe.zero()]);
 //=> Nothing
 ```
 
-sequence helps swap the inner type with the outer type while performing a certain effect, given that the inner type is an Applicative. The sequence on Identity is pretty dumb — it just maps over the inner type and returns the contents wrapped in an Identity container. For List and Array, sequenceuses reduce on the list to combine its contents using ap and concat. Let’s see this in action in our refactored totalLength implementation.
+`sequence` helps swap the inner type with the outer type while performing a certain effect, given that the inner type is an Applicative. The sequence on `Identity` is pretty dumb — it just maps over the inner type and returns the contents wrapped in an `Identity` container. For `List` and `Array`, `sequence` uses `reduce` on the list to combine its contents using `ap` and `concat`. Let’s see this in action in our refactored `totalLength` implementation.
 
 ```javascript
 // totalLength :: [String] -> Maybe Number
@@ -702,7 +701,7 @@ totalLength(["stairway", "to", undefined]);
 //=> Nothing
 ```
 
-Great! We’ve built a completely bulletproof totalLength. This pattern of mapping over something from a -> m b and then using sequence is so common that we have another helper called traverse which performs both operations together. Let’s see how we can use traverse instead of sequence in the above example.
+Great! We’ve built a completely bulletproof `totalLength`. This pattern of mapping over something from `a -> m b` and then using `sequence` is so common that we have another helper called `traverse` which performs both operations together. Let’s see how we can use `traverse` instead of `sequence` in the above example.
 
 ```javascript
 // totalLengthT :: [String] -> Maybe Number
@@ -713,81 +712,104 @@ const totalLengthT = compose(
 );
 ```
 
-There! It works exactly the same way. If we think about it, our sequenceoperator is basically traverse, with an identity as the mapping function.
+There! It works exactly the same way. If we think about it, our `sequence` operator is basically `traverse`, with an `identity` as the mapping function.
 
-Note: Since we cannot infer inner type using JavaScript, we have to explicitly provide the type constructor as the first argument to traverse and sequence.
+Note: Since we cannot infer inner type using plain JavaScript, we have to explicitly provide the type constructor as the first argument to `traverse` and `sequence`.
 
-It’s easy to see how sequence and traverse are invaluable for validating data. Let’s try to create a generic validator that takes a schema and validates an input object. We’ll use the Result type, which accepts a Semigroup on the left side that allows us to collect errors. A Semigroup is similar to a Monoid and it defines a concat method — but unlike the Monoid, it doesn’t require the presence of the empty method. We’re also introducing the transformation function maybeToResult below, that’ll help us interoperate between Maybe and Result.
+It’s easy to see how `sequence` and `traverse` are invaluable for validating data. Let’s try to create a generic validator that takes a schema and validates an input object. We’ll use the `Result` type, which accepts a Semigroup on the left side that allows us to collect errors. A Semigroup is similar to a Monoid and it defines a `concat` method — but unlike the Monoid, it doesn’t require the presence of the `empty` method. We’re also introducing the transformation function `maybeToResult` below, that’ll help us interoperate between `Maybe` and `Result`.
 
 ```javascript
 import {
-Result, isString, map, merge, constant, bimap, flip, propOr, identity,
-toPairs, safe, maybeToResult, traverse, and, isNumber, compose
-} from "crocks"
+  Result,
+  isString,
+  map,
+  merge,
+  constant,
+  bimap,
+  flip,
+  propOr,
+  identity,
+  toPairs,
+  safe,
+  maybeToResult,
+  traverse,
+  and,
+  isNumber,
+  compose,
+} from "crocks";
 
 // length :: [a] -> Int
-const length = x => x.length
+const length = (x) => x.length;
 
 // gte :: Number -> a -> Result String a
-const gte = x => y => y >= x
+const gte = (x) => (y) => y >= x;
 
 // lte :: Number -> a -> Result String a
-const lte = x => y => y <= x
+const lte = (x) => (y) => y <= x;
 
 // isValidName :: a -> Result String a
 const isValidName = compose(
-maybeToResult("expected a string less than 20 characters"),
-safe(and(compose(lte(20), length), isString))
-)
+  maybeToResult("expected a string less than 20 characters"),
+  safe(
+    and(
+      compose(
+        lte(20),
+        length
+      ),
+      isString
+    )
+  )
+);
 
 // isAdult :: a -> Result String a
 const isAdult = compose(
-maybeToResult("expected a value greater than 18"),
-safe(and(isNumber, gte(18)))
-)
+  maybeToResult("expected a value greater than 18"),
+  safe(and(isNumber, gte(18)))
+);
 
-/\*\*
-
-- schema :: Schema
-- Schema :: {
-- [string]: a -> Result String a
-- }
-- \*/
-  const schema = {
+/**
+ *  schema :: Schema
+ *  Schema :: {
+ *    [string]: a -> Result String a
+ *  }
+ * */
+const schema = {
   name: isValidName,
   age: isAdult,
-  }
+};
 
 // makeValidator :: Schema -> Object -> Result [String] Object
-const makeValidator = flip(object =>
-compose(
-map(constant(object)),
-traverse(Result, merge((key, validator) =>
-compose(
-bimap(error => [`${key}: ${error}`], identity),
-validator,
-propOr(undefined, key)
-)(object)
-)
-),
-toPairs
-)
-)
+const makeValidator = flip((object) =>
+  compose(
+    map(constant(object)),
+    traverse(
+      Result,
+      merge((key, validator) =>
+        compose(
+          bimap((error) => [`${key}: ${error}`], identity),
+          validator,
+          propOr(undefined, key)
+        )(object)
+      )
+    ),
+    toPairs
+  )
+);
 
 // validate :: Object -> Result [String] Object
-const validate = makeValidator(schema)
+const validate = makeValidator(schema);
 
-validate(({
-name: "Car",
-age: 21,
-}))
+validate({
+  name: "Car",
+  age: 21,
+});
 //=> Ok { name: "Car", age: 21 }
 
-validate(({
-name: 7,
-age: "Old",
-}))
-//=> Err [ "name: expected a string less than 20 characters", "age: expected a value greater than 18" ]
+validate({
+  name: 7,
+  age: "Old",
+});
+//=>  Err [ "name: expected a string less than 20 characters", "age: expected a value greater than 18" ]
 ```
 
-Since we’ve flipped the makeValidator function to make more suitable for currying, our compose chain receives the schema that we need to validate against first. We first break the schema into key-value Pairs, and pass the value of each property to it’s corresponding validation function. In case the function fails, we use bimap to map on the error, add some more information to it, and return it as a singleton Array. traverse will then concat all the errors if they exist, or return the original object if it’s valid. We could have also returned a String instead of an Array, but an Arrayfeels much nicer.
+Since we’ve flipped the `makeValidator` function to make more suitable for currying, our `compose` chain receives the schema that we need to validate against first. We first break the schema into key-value `Pair`s, and pass the value of each property to it’s corresponding validation function. In case the function fails, we use `bimap` to map on the error, add some more information to it, and return it as a singleton Array. `traverse` will then `concat` all the errors if they exist, or return the original object if it’s valid. We could have also returned a `String` instead of an `Array`, but an `Array` feels much nicer.
