@@ -20,7 +20,7 @@ export const Subtitle = styled.h2`
 `;
 
 export const Section = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
   font-size: 1.5em;
   font-weight: 400;
   margin: 20px 0;

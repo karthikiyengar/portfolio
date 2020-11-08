@@ -18,7 +18,14 @@ import {
   Message,
   media,
 } from "../components/styled";
-import { OtherWork, Portfolio, Companies, Footer, Header } from "../components";
+import {
+  OtherWork,
+  Blog,
+  Portfolio,
+  Companies,
+  Footer,
+  Header,
+} from "../components";
 
 type State = {
   name: string;
@@ -34,6 +41,18 @@ type State = {
     captcha: boolean | string;
   };
 };
+
+export async function getStaticProps(context) {
+  const blogs = await fetch("http://localhost:3000/api/blog").then((res) =>
+    res.json()
+  );
+  console.log(blogs);
+  return {
+    props: {
+      blogs,
+    }, // will be passed to the page component as props
+  };
+}
 
 export const portfolio = [
   {
@@ -256,6 +275,8 @@ export default class Home extends React.Component<any, any, State> {
           programming
         </Subtitle>
         <Content>
+          <Section>BLOG</Section>
+          <Blog data={this.props.blogs} />
           <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} />
           <Section>I’VE WORKED WITH</Section>

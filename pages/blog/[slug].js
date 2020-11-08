@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Layout } from "../../components/styled";
 import { HeadingRenderer } from "./HeadingRenderer";
+import Header from "../../components/Header";
 
 const renderers = {
   heading: HeadingRenderer,
@@ -17,6 +18,7 @@ export default function PostTemplate({ content, data }) {
 
   return (
     <Layout>
+      <Header />
       <h1>{frontmatter.title}</h1>
       <ReactMarkdown
         renderers={renderers}

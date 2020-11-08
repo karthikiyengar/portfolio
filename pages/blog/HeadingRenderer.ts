@@ -1,4 +1,5 @@
 import React from "react";
+import getSlug from "../../utils/getSlug";
 
 const flatten = (text: string, child) => {
   return typeof child === "string"
@@ -13,7 +14,7 @@ const flatten = (text: string, child) => {
 const HeadingRenderer = (props) => {
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, "");
-  const slug = text.toLowerCase().replace(/\W/g, "-");
+  const slug = getSlug(text);
   return React.createElement("h" + props.level, { id: slug }, props.children);
 };
 
