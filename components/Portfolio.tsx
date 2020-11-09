@@ -1,4 +1,3 @@
-
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { media } from "./styled";
@@ -23,7 +22,6 @@ const appear = keyframes`
   }
 `;
 
-
 const Container = styled.div`
   display: flex;
   margin: 40px 0;
@@ -34,19 +32,19 @@ const Item = styled.div`
   height: auto;
   width: 17.3%;
   border: 1px solid lightgray;
+  border-radius: 5px;
   margin-bottom: 15px;
   margin-right: 25px;
-  border-radius: 5px;
   opacity: 0;
   display: flex;
   align-items: center;
   animation-name: ${appear};
   animation-duration: 250ms;
-  animation-delay: ${props => props.index * 50}ms;
+  animation-delay: ${(props) => props.index * 50}ms;
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   justify-content: center;
-  
+
   ${media.tablet`
     width: 28%;
     margin-right: 5%;
@@ -56,16 +54,16 @@ const Item = styled.div`
     width: 45%;
     margin-right: 5%;
   `};
-  
+
   &:before {
     content: "";
     display: block;
-    padding-top: 100%; 
+    padding-top: 100%;
   }
   &:hover {
     cursor: pointer;
     img {
-      transform: scale(1.2);;
+      transform: scale(1.2);
     }
   }
 `;
@@ -76,12 +74,14 @@ const Image = styled.img`
   transition: transform 100ms ease-in;
 `;
 
-export default (({
-  data
-}: Props) => <Container>
-    {data.map((item, index) => <Link href={item.link} key={item.title}>
+export default ({ data }: Props) => (
+  <Container>
+    {data.map((item, index) => (
+      <Link href={item.link} key={item.title}>
         <Item index={index}>
           <Image src={item.image} alt={item.title} />
         </Item>
-      </Link>)}
-  </Container>);
+      </Link>
+    ))}
+  </Container>
+);

@@ -23,8 +23,5 @@ export default () => (
     <Link href="/">
       <Title>Karthik Iyengar</Title>
     </Link>
-    <Link href="/blog">
-      <h2>Blog</h2>
-    </Link>
   </Header>
 );

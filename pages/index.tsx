@@ -46,7 +46,6 @@ export async function getStaticProps(context) {
   const blogs = await fetch("http://localhost:3000/api/blog").then((res) =>
     res.json()
   );
-  console.log(blogs);
   return {
     props: {
       blogs,

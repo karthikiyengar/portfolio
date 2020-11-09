@@ -1,6 +1,7 @@
 ---
 title: "Functional Programming Patterns: A Cookbook"
-date: "2020-01-07"
+date: "2019-01-24T10:00:47.571Z"
+description: A practical exploration into ADTs and functional programming patterns in JavaScript, aimed at users graduating from ramda and similar libraries
 ---
 
 This article targets an audience that’s graduating from functional libraries like `ramda` to using Algebraic Data Types. We’re using the excellent <a href="https://crocks.dev" target="_blank">`crocks`</a> library for our ADTs and helpers, although these concepts may apply to other ones as well. We’ll be focusing on demonstrating practical applications and patterns without delving into a lot of theory.
