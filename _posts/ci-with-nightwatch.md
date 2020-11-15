@@ -1,6 +1,6 @@
 ---
 title: Rock solid end-to-end continuous integration with Nightwatch.js
-description: Fill here
+description: Make your end-to-end tests more stable on CI
 date: "2017-08-13T19:17:39.988Z"
 categories: []
 keywords: []

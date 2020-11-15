@@ -11,8 +11,8 @@ export const Header = styled.header`
 
 export const Title = styled.h1`
   font-family: sans-serif;
-  font-weight: 400;
   margin-bottom: 20px;
+  font-weight: normal;
   &:hover {
     cursor: pointer;
   }

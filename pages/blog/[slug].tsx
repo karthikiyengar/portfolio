@@ -10,7 +10,7 @@ const renderers = {
   heading: HeadingRenderer,
   code: ({ language, value }) => {
     return <SyntaxHighlighter language={language} children={value} />;
-  },
+  }
 };
 
 export default function PostTemplate({ content, data }) {
@@ -29,7 +29,7 @@ export default function PostTemplate({ content, data }) {
   );
 }
 
-PostTemplate.getInitialProps = async (context) => {
+PostTemplate.getInitialProps = async context => {
   const { slug } = context.query;
 
   const content = await import(`../../_posts/${slug}`);

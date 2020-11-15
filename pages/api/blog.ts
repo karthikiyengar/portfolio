@@ -12,11 +12,11 @@ export interface Blog {
   readingTime: ReturnType<typeof readingTime>;
 }
 
-export default (req, res) => {
+export default (_req, res) => {
   const postsDir = path.join(process.cwd(), "_posts");
   const slugs = fs.readdirSync(postsDir);
   const meta = slugs
-    .map((slug) => {
+    .map(slug => {
       const meta = matter(fs.readFileSync(path.join(postsDir, slug)));
 
       return {
@@ -24,7 +24,7 @@ export default (req, res) => {
         title: meta.data.title,
         description: meta.data.description,
         slug: slug,
-        readingTime: readingTime(meta.content),
+        readingTime: readingTime(meta.content)
       };
     })
     .sort((fst, snd) => compareDesc(fst.date, snd.date));

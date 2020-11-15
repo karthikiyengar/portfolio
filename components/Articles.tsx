@@ -3,11 +3,16 @@ import styled from "styled-components";
 import { Blog } from "../pages/api/blog";
 import Link from "next/link";
 import format from "date-fns/format";
+import { media } from "./styled";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  ${media.handheld`
+    grid-template-columns: 1fr;
+  `}
   grid-gap: 20px;
+  margin: 20px 0;
   cursor: pointer;
 `;
 
@@ -21,6 +26,7 @@ const Card = styled.div`
 
 const Meta = styled.span`
   font-size: 15px;
+  font-weight: bold;
 `;
 
 const Middot = styled.span`
@@ -44,10 +50,10 @@ const DescriptionContainer = styled.div`
 interface Props {
   data: Blog[];
 }
-const Component: React.FC<Props> = (props) => {
+const Component: React.FC<Props> = props => {
   return (
     <Container>
-      {props.data.map((blog) => {
+      {props.data.map(blog => {
         return (
           <Link key={blog.slug} href={`blog/${blog.slug}`}>
             <Card>

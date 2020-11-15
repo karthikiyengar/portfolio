@@ -16,15 +16,15 @@ import {
   P,
   Error,
   Message,
-  media,
+  media
 } from "../components/styled";
 import {
   OtherWork,
-  Blog,
+  Articles,
   Portfolio,
   Companies,
   Footer,
-  Header,
+  Header
 } from "../components";
 
 type State = {
@@ -43,13 +43,13 @@ type State = {
 };
 
 export async function getStaticProps(context) {
-  const blogs = await fetch("http://localhost:3000/api/blog").then((res) =>
+  const blogs = await fetch("http://localhost:3000/api/blog").then(res =>
     res.json()
   );
   return {
     props: {
-      blogs,
-    }, // will be passed to the page component as props
+      blogs
+    } // will be passed to the page component as props
   };
 }
 
@@ -57,94 +57,94 @@ export const portfolio = [
   {
     title: "Threatbar",
     image: "/static/threatbar.png",
-    link: "/portfolio/threatbar",
+    link: "/portfolio/threatbar"
   },
   {
     title: "Supertax",
     image: "/static/supertax.png",
-    link: "/portfolio/supertax",
+    link: "/portfolio/supertax"
   },
   {
     title: "Lyra",
     image: "/static/lyra.png",
-    link: "/portfolio/lyra",
+    link: "/portfolio/lyra"
   },
   {
     title: "Acquire",
     image: "/static/acquire.png",
-    link: "/portfolio/acquire",
+    link: "/portfolio/acquire"
   },
   {
     title: "Fundpundit",
     image: "/static/fundpundit.png",
-    link: "/portfolio/fundpundit",
+    link: "/portfolio/fundpundit"
   },
   {
     title: "Brewfer",
     image: "/static/brewfer.png",
-    link: "/portfolio/brewfer",
+    link: "/portfolio/brewfer"
   },
   {
     title: "Prolite",
     image: "/static/prolite.png",
-    link: "/portfolio/prolite",
+    link: "/portfolio/prolite"
   },
   {
     title: "Yuva Parivartan",
     image: "/static/yuva-parivartan.png",
-    link: "/portfolio/yuva-parivartan",
+    link: "/portfolio/yuva-parivartan"
   },
   {
     title: "Qrypt",
     image: "/static/qrypt.png",
-    link: "/portfolio/qrypt",
+    link: "/portfolio/qrypt"
   },
   {
     title: "Automator",
     image: "/static/automator.png",
-    link: "/portfolio/automator",
-  },
+    link: "/portfolio/automator"
+  }
 ];
 
 const otherWork = [
   {
     title: "Github",
     image: "/static/work/github.png",
-    link: "https://github.com/karthikiyengar",
+    link: "https://github.com/karthikiyengar"
   },
   {
     title: "Medium",
     image: "/static/work/medium.png",
-    link: "https://medium.com/@karthikiyengar",
+    link: "https://medium.com/@karthikiyengar"
   },
   {
     title: "Codewars",
     image: "/static/work/codewars.png",
-    link: "https://www.codewars.com/users/karthikiyengar",
-  },
+    link: "https://www.codewars.com/users/karthikiyengar"
+  }
 ];
 
 const companies = [
   {
     title: "Spotcap",
     image: "/static/spotcap.png",
-    link: "/companies/spotcap",
+    link: "/companies/spotcap"
   },
   {
     title: "Paper Plane",
     image: "/static/paperplane.png",
-    link: "/companies/paperplane",
+    link: "/companies/paperplane"
   },
   {
     title: "Novanet",
     image: "/static/novanet.png",
-    link: "/companies/novanet",
+    link: "/companies/novanet"
   },
   {
     title: "Indus Valley Partners",
     image: "/static/ivp.png",
-    link: "/companies/ivp",
-  },
+    link: "/companies/ivp"
+  }
 ];
 
 const initialState = {
@@ -156,29 +156,29 @@ const initialState = {
     name: true,
     message: true,
     email: true,
-    captcha: true,
+    captcha: true
   },
   formError: "",
-  formMessage: "",
+  formMessage: ""
 };
 
 export default class Home extends React.Component<any, any, State> {
   state = {
-    ...initialState,
+    ...initialState
   };
 
   setError = (object: any) => {
     this.setState({
       errors: {
         ...this.state.errors,
-        ...object,
-      },
+        ...object
+      }
     });
   };
 
   isFormValid = () =>
     Object.keys(this.state.errors).every(
-      (item) => this.state.errors[item] === false
+      item => this.state.errors[item] === false
     );
 
   handleNameChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
@@ -188,11 +188,11 @@ export default class Home extends React.Component<any, any, State> {
     } else if (
       !validator.isLength(value, {
         min: 3,
-        max: 30,
+        max: 30
       })
     ) {
       this.setError({
-        name: "This field should be between 3 to 30 characters",
+        name: "This field should be between 3 to 30 characters"
       });
     } else {
       this.setError({ name: false });
@@ -207,11 +207,11 @@ export default class Home extends React.Component<any, any, State> {
     } else if (
       !validator.isLength(value, {
         min: 3,
-        max: 300,
+        max: 300
       })
     ) {
       this.setError({
-        message: "This field should be between 3 to 300 characters",
+        message: "This field should be between 3 to 300 characters"
       });
     } else {
       this.setError({ message: false });
@@ -244,14 +244,14 @@ export default class Home extends React.Component<any, any, State> {
         name: this.state.name,
         message: this.state.message,
         email: this.state.email,
-        captcha: this.state.captcha,
+        captcha: this.state.captcha
       })
-      .end((err) => {
+      .end(err => {
         (this.recaptcha as any).reset();
         if (err) {
           this.setState({
             formError:
-              "Unfortunately, your message cannot be delivered. Please try again later.",
+              "Unfortunately, your message cannot be delivered. Please try again later."
           });
         } else {
           this.setState(initialState);
@@ -274,8 +274,8 @@ export default class Home extends React.Component<any, any, State> {
           programming
         </Subtitle>
         <Content>
-          <Section>BLOG</Section>
-          <Blog data={this.props.blogs} />
+          <Section>ARTICLES</Section>
+          <Articles data={this.props.blogs} />
           <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} />
           <Section>I’VE WORKED WITH</Section>
@@ -284,11 +284,11 @@ export default class Home extends React.Component<any, any, State> {
           <OtherWork data={otherWork} />
           <Section>GET IN TOUCH</Section>
           <Row>
-            <P>
+            <Subtitle>
               Hello there! Let’s talk to understand how I can help you. You can
               leave me a short message and I’ll get back to you as soon as I
               can.
-            </P>
+            </Subtitle>
           </Row>
           <form onSubmit={this.handleSubmit}>
             <Row>
@@ -326,7 +326,7 @@ export default class Home extends React.Component<any, any, State> {
               <Error>{this.state.errors.message}</Error>
             </Row>
             <ReCAPTCHA
-              ref={(r) => {
+              ref={r => {
                 this.recaptcha = r;
               }}
               sitekey="6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L"
