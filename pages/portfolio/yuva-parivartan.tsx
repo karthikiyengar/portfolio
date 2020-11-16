@@ -3,11 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   Content,
   ImageContainer,
   Description,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Nav, Footer, Tools, Meta } from "../../components";
 
@@ -29,8 +29,8 @@ const ImageContainerSpaced = styled(ImageContainer)`
   justify-content: space-around;
 `;
 
-export default props => (
-  <Container>
+export default (props) => (
+  <Layout>
     <Header />
     <Content>
       <P>
@@ -72,5 +72,5 @@ export default props => (
     </Content>
     <Nav />
     <Footer />
-  </Container>
+  </Layout>
 );

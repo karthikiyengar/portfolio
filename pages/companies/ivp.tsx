@@ -3,11 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   Content,
   Description,
   VisitButton,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Footer, Tools, Meta } from "../../components";
 
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 `;
 
 export default () => (
-  <Container>
+  <Layout>
     <Header />
     <Content>
       <P>
@@ -49,10 +49,10 @@ export default () => (
         learnt much about designing enterprise systems and developed a keen
         interest in the trade lifecycle.
         <br />
-        <br />
-        I was also awarded the “Best New Recruit”​ award among 20 new joiners to
-        the company. In terms of technology, most of my time was spent writing
-        C# code and dealing with data architecture challenges using T-SQL.
+        <br />I was also awarded the “Best New Recruit”​ award among 20 new
+        joiners to the company. In terms of technology, most of my time was
+        spent writing C# code and dealing with data architecture challenges
+        using T-SQL.
       </Description>
       <VisitButton
         href="https://ivp.in"
@@ -64,5 +64,5 @@ export default () => (
       <Tools data={["c#", "mssql", "angularjs", "jenkins", "scrum", "jira"]} />
     </Content>
     <Footer />
-  </Container>
+  </Layout>
 );

@@ -10,7 +10,7 @@ import {
   Input,
   Subtitle,
   Section,
-  Container,
+  Layout,
   Content,
   Button,
   P,
@@ -18,7 +18,15 @@ import {
   Message,
   media,
 } from "../components/styled";
-import { OtherWork, Portfolio, Companies, Footer, Header } from "../components";
+import {
+  OtherWork,
+  Articles,
+  Portfolio,
+  Companies,
+  Footer,
+  Header,
+} from "../components";
+import { getPosts } from "./api/blog";
 
 type State = {
   name: string;
@@ -34,6 +42,15 @@ type State = {
     captcha: boolean | string;
   };
 };
+
+export async function getStaticProps(context) {
+  const blogs = getPosts();
+  return {
+    props: {
+      blogs,
+    }, // will be passed to the page component as props
+  };
+}
 
 export const portfolio = [
   {
@@ -249,13 +266,15 @@ export default class Home extends React.Component<any, any, State> {
 
   render() {
     return (
-      <Container>
+      <Layout>
         <Header />
         <Subtitle>
           I’m a full-stack developer who likes open source and functional
           programming
         </Subtitle>
         <Content>
+          <Section>ARTICLES</Section>
+          <Articles data={this.props.blogs} />
           <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} />
           <Section>I’VE WORKED WITH</Section>
@@ -264,11 +283,11 @@ export default class Home extends React.Component<any, any, State> {
           <OtherWork data={otherWork} />
           <Section>GET IN TOUCH</Section>
           <Row>
-            <P>
+            <Subtitle>
               Hello there! Let’s talk to understand how I can help you. You can
               leave me a short message and I’ll get back to you as soon as I
               can.
-            </P>
+            </Subtitle>
           </Row>
           <form onSubmit={this.handleSubmit}>
             <Row>
@@ -311,7 +330,7 @@ export default class Home extends React.Component<any, any, State> {
               }}
               sitekey="6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L"
               onChange={this.handleCaptchaChange}
-            />{" "}
+            />
             {this.state.formError && <Error>{this.state.formError}</Error>}
             {this.state.formMessage && (
               <Message>{this.state.formMessage}</Message>
@@ -322,7 +341,7 @@ export default class Home extends React.Component<any, any, State> {
           </form>
         </Content>
         <Footer />
-      </Container>
+      </Layout>
     );
   }
 }

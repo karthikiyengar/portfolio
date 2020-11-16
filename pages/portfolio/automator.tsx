@@ -3,11 +3,11 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   Content,
   ImageContainer,
   Description,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Footer, Tools, Meta, Nav } from "../../components";
 
@@ -21,8 +21,8 @@ const Wrapper = styled.div`
   min-width: 0;
 `;
 
-export default props => (
-  <Container>
+export default (props) => (
+  <Layout>
     <Header />
     <Content>
       <P>
@@ -68,5 +68,5 @@ export default props => (
     </Content>
     <Nav />
     <Footer />
-  </Container>
+  </Layout>
 );

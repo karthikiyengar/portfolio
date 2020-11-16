@@ -1,5 +1,5 @@
 import React from "react";
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -10,8 +10,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
         });
       const initialProps = await Document.getInitialProps(ctx);
       return {
@@ -21,7 +20,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        ),
+        )
       };
     } finally {
       sheet.seal();
@@ -30,7 +29,7 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <html>
+      <Html>
         <Head>
           <meta
             name="viewport"
@@ -51,7 +50,7 @@ export default class MyDocument extends Document {
           />
           <link rel="canonical" href="http://karthikiyengar.in" />
           <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300"
+            href="https://fonts.googleapis.com/css?family=Montserrat:300,400|Open+Sans:300|Fira+Code:400"
             rel="stylesheet"
           />
           <script src="https://www.google.com/recaptcha/api.js" />
@@ -62,7 +61,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -3,12 +3,12 @@
 import React from "react";
 import styled from "styled-components";
 import {
-  Container,
+  Layout,
   VisitButton,
   Content,
   ImageContainer,
   Description,
-  P
+  P,
 } from "../../components/styled";
 import { Header, Footer, Tools, Meta, Nav } from "../../components";
 
@@ -26,7 +26,7 @@ const ImageContainerSpaced = styled(ImageContainer)`
 `;
 
 export default (props: any) => (
-  <Container>
+  <Layout>
     <Header />
     <Content>
       <P>Lyra is a unique social media influencer marketing platform</P>
@@ -87,11 +87,11 @@ export default (props: any) => (
           "docker",
           "kubernetes",
           "redis",
-          "trello"
+          "trello",
         ]}
       />
     </Content>
     <Nav />
     <Footer />
-  </Container>
+  </Layout>
 );

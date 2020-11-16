@@ -14,13 +14,12 @@ export const media = {
 };
 
 export const Subtitle = styled.h2`
-  font-size: 2em;
-  font-weight: 300;
+  font-weight: normal;
   margin: 0 0 25px 0;
 `;
 
 export const Section = styled.p`
-  font-family: "Montserrat", sans-serif;
+  font-family: sans-serif;
   font-size: 1.5em;
   font-weight: 400;
   margin: 20px 0;
@@ -38,7 +37,8 @@ export const ImageContainer = styled.div`
   width: 100%;
   ${media.handheld`
     justify-content: center;
-  `} img {
+  `}
+  img {
     ${media.handheld`
       max-width: 90%;
       max-height: 300px;
@@ -47,7 +47,7 @@ export const ImageContainer = styled.div`
   }
 `;
 
-export const Container = styled.div`
+export const Layout = styled.div`
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -76,12 +76,12 @@ export const Input = styled.input`
   border-width: 1px;
   font-size: 1em;
   outline: none;
-  border-color: ${props => props.error ? "red" : "lightgray"};
+  border-color: ${props => (props.error ? "red" : "lightgray")};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => props.error ? "red" : "darkgray"};
+    border-color: ${props => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -92,12 +92,12 @@ export const Textarea = styled.textarea`
   font-size: 1em;
   outline: none;
   border-width: 1px;
-  border-color: ${props => props.error ? "red" : "lightgray"};
+  border-color: ${props => (props.error ? "red" : "lightgray")};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => props.error ? "red" : "darkgray"};
+    border-color: ${props => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -197,11 +197,20 @@ export const ZoomableImage = styled.img`
 export const Global = createGlobalStyle`
   * {
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+    font-family: sans-serif;
   }
   strong {
-    font-family: 'Montserrat';
+    font-family: serif;
     font-weight: 400;
+  }
+
+  code, code * {
+    font-family: monospace;
+  }
+  code {
+    padding: 3px;
+    background: #f5f2f0;
+    text-shadow: 0 1px white;
   }
   body {
     margin: 0;
