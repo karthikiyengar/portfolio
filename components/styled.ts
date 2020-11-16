@@ -10,7 +10,7 @@ export const media = {
     @media (max-width: 800px) {
       ${css(...args)};
     }
-  `
+  `,
 };
 
 export const Subtitle = styled.h2`
@@ -66,7 +66,7 @@ export const Content = styled.main`
 
 export const P = styled.p`
   font-size: 1.5em;
-  font-weight: 300;
+  font-weight: normal;
   margin: 0;
 `;
 
@@ -76,12 +76,12 @@ export const Input = styled.input`
   border-width: 1px;
   font-size: 1em;
   outline: none;
-  border-color: ${props => (props.error ? "red" : "lightgray")};
+  border-color: ${(props) => (props.error ? "red" : "lightgray")};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => (props.error ? "red" : "darkgray")};
+    border-color: ${(props) => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -92,12 +92,12 @@ export const Textarea = styled.textarea`
   font-size: 1em;
   outline: none;
   border-width: 1px;
-  border-color: ${props => (props.error ? "red" : "lightgray")};
+  border-color: ${(props) => (props.error ? "red" : "lightgray")};
   &:hover {
     box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
   }
   &:focus {
-    border-color: ${props => (props.error ? "red" : "darkgray")};
+    border-color: ${(props) => (props.error ? "red" : "darkgray")};
   }
   width: 100%;
 `;
@@ -200,8 +200,8 @@ export const Global = createGlobalStyle`
     font-family: sans-serif;
   }
   strong {
-    font-family: serif;
-    font-weight: 400;
+    font-family: sans-serif;
+    font-weight: bold;
   }
 
   code, code * {
