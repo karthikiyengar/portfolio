@@ -47,17 +47,21 @@ const DescriptionContainer = styled.div`
   flex: 1;
 `;
 
+const H2 = styled.h2`
+  font-weight: normal;
+`;
+
 interface Props {
   data: Blog[];
 }
-const Component: React.FC<Props> = props => {
+const Component: React.FC<Props> = (props) => {
   return (
     <Container>
-      {props.data.map(blog => {
+      {props.data.map((blog) => {
         return (
           <Link key={blog.slug} href={`blog/${blog.slug}`}>
             <Card>
-              <h2>{blog.title}</h2>
+              <H2>{blog.title}</H2>
               <DescriptionContainer>
                 <p>{blog.description}</p>
               </DescriptionContainer>
