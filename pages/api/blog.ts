@@ -12,21 +12,26 @@ export interface Blog {
   readingTime: ReturnType<typeof readingTime>;
 }
 
-export default (_req, res) => {
+export const getPosts = () => {
   const postsDir = path.join(process.cwd(), "_posts");
   const slugs = fs.readdirSync(postsDir);
   const meta = slugs
-    .map(slug => {
+    .map((slug) => {
       const meta = matter(fs.readFileSync(path.join(postsDir, slug)));
 
       return {
-        date: new Date(meta.data.date),
+        date: meta.data.date,
         title: meta.data.title,
         description: meta.data.description,
         slug: slug,
-        readingTime: readingTime(meta.content)
+        readingTime: readingTime(meta.content),
       };
     })
-    .sort((fst, snd) => compareDesc(fst.date, snd.date));
+    .sort((fst, snd) => compareDesc(new Date(fst.date), new Date(snd.date)));
+  return meta;
+};
+
+export default (_req, res) => {
+  const meta = getPosts();
   res.send(meta);
 };
