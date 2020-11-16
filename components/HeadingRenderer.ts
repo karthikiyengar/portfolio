@@ -1,5 +1,5 @@
 import React from "react";
-import getSlug from "../../utils/getSlug";
+import getSlug from "../utils/getSlug";
 
 const flatten = (text: string, child) => {
   return typeof child === "string"
