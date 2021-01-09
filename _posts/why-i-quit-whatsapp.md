@@ -33,7 +33,8 @@ Facebook has a great track record of being a [generally evil company](https://st
 While it might be true that WhatsApp claims to be using a supposedly secure encryption algorithm (same as Signal), most people back up their chats to Google Drive/iCloud. These backups are unencrypted, and there have been many instances of chats being compromised.
 
 WhatsApp cooperates with major security agencies and has been willing in the past to introduce backdoors. I'm too lazy to find more references.
-But you are in Europe and nothing changes for you because of GDPR
+
+## But you are in Europe and nothing changes for you because of GDPR
 
 Yes, but I do not want to encourage their shitty behaviour in other countries that do not have good data privacy laws.
 
