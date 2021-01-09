@@ -16,6 +16,8 @@ The recent update to the Privacy Policy says that it would use information to:
 
 > improving their (Facebook's) services and your experiences using them, such as making suggestions for you (for example, of friends or group connections, or of interesting content), personalizing features and content, helping you complete purchases and transactions, and showing relevant offers and ads across the Facebook Company Products;
 
+They also removed the line "Respect for your privacy is coded into our DNA". Well, at least they got that one right.
+
 WhatsApp has also been sharing a lot of metadata with Facebook already even before the new policy, which is a bit shady in itself. See [here](https://arstechnica.com/tech-policy/2021/01/whatsapp-users-must-share-their-data-with-facebook-or-stop-using-the-app/) for what exactly. This leads to the following problems from the top of my head:
 
 - Facebook knowing who you interact with and when, leading to magical friend suggestions for people you've been in proximity to.
