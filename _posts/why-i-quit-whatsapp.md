@@ -44,7 +44,7 @@ While there might be a certain amount of truth to this, I also want to cut down 
 
 Also, I'm pretty sure that I'm not going to lose the people I care about just because I'm not on some stupid app.
 
-## Hah! Then why are you on Facebook
+## Hah! Then why are you on Facebook?
 
 Privacy is not binary. It's hard for all of us to quit platforms because they're so integrated into our lives now, but we have choices. We can start by being more aware and taking small steps to not encourage companies to behave in this way. Having worked on the inside for multiple companies as a software engineer, I've personally experienced how bad things could be when it comes to misusing personal information.
 
@@ -55,6 +55,8 @@ Trading your privacy for convenience and "free" services is not a good deal. Rem
 Signal is not for profit and the ideal alternative. It runs on donations and cannot be bought by a company.
 
 Telegram is a good middle ground because people are more willing to switch to it, and it has a decent track record. I will allow the guy who funds it to defend himself, [here you go](https://t.me/s/durov).
+
+They're also both open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
 
 Also, just take a look at [this](https://twitter.com/RKRadhakrishn/status/1347780251963703300/photo/1).
 
