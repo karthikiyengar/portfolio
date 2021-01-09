@@ -43,7 +43,7 @@ Also, I'm pretty sure that I'm not going to lose the people I care about just be
 
 ## Hah! Then why are you on Facebook
 
-Privacy is not binary. It's hard for all of us to quit platforms because they're so integrated into our lives now, but we have choices. We can start by being more aware and taking small steps to not encourage companies to behave in this way. Having worked on the inside for many companies as a software engineer, I've personally experienced how bad things could be when it comes to misusing personal information.
+Privacy is not binary. It's hard for all of us to quit platforms because they're so integrated into our lives now, but we have choices. We can start by being more aware and taking small steps to not encourage companies to behave in this way. Having worked on the inside for multiple companies as a software engineer, I've personally experienced how bad things could be when it comes to misusing personal information.
 
 Trading your privacy for convenience and "free" services is not a good deal. Remember the cliché "If it's free you are the product". I'm working on quitting Facebook as well, because it this point it's basically full of random people that I haven't spoken to in years, and have no connection with.
 
