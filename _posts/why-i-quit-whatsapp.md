@@ -57,6 +57,6 @@ Also, just take a look at [this](https://twitter.com/RKRadhakrishn/status/134778
 
 ## Other links to follow to be more aware of data privacy
 
-- https://privacytools.io/
-- https://old.reddit.com/r/privacy/
-- https://old.reddit.com/r/degoogle/
+- [privacytools.io](https://privacytools.io/)
+- [Privacy subreddit](https://old.reddit.com/r/privacy/)
+- [Degoogle subreddit](https://old.reddit.com/r/degoogle/)
