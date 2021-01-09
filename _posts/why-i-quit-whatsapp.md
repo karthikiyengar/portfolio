@@ -34,12 +34,14 @@ WhatsApp cooperates with major security agencies and has been willing in the pas
 But you are in Europe and nothing changes for you because of GDPR
 
 Yes, but I do not want to encourage their shitty behaviour in other countries that do not have good data privacy laws.
-You just want to be a hipster
+
+## You just want to be a hipster
 
 While there might be a certain amount of truth to this, I also want to cut down my screen time. Social Media apps are built in a way that tricks your brain into being on them all the time. See "The Social Dilemma" on Netflix if you're into learning more about this.
 
 Also, I'm pretty sure that I'm not going to lose the people I care about just because I'm not on some stupid app.
-Hah! Then why are you on Facebook
+
+## Hah! Then why are you on Facebook
 
 Privacy is not binary. It's hard for all of us to quit platforms because they're so integrated into our lives now, but we have choices. We can start by being more aware and taking small steps to not encourage companies to behave in this way.
 
