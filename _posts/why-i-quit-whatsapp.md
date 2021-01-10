@@ -18,7 +18,7 @@ The recent update to the Privacy Policy says that it would use information to:
 
 They also removed the line "Respect for your privacy is coded into our DNA". Well, at least they got that one right.
 
-WhatsApp has also been sharing a lot of metadata with Facebook already even before the new policy, which is a bit shady in itself. See [here](https://arstechnica.com/tech-policy/2021/01/whatsapp-users-must-share-their-data-with-facebook-or-stop-using-the-app/) for what exactly. This leads to the following problems from the top of my head:
+WhatsApp has also been sharing a lot of metadata with Facebook [already](https://www.wired.com/story/whatsapp-facebook-data-share-notification/) even before the new policy, which is a bit shady in itself. This leads to the following problems from the top of my head:
 
 - Facebook knowing who you interact with and when, leading to magical friend suggestions for people you've been in proximity to.
 - Facebook being able to classify you into [groups](https://www.washingtonpost.com/news/the-intersect/wp/2016/08/19/98-personal-data-points-that-facebook-uses-to-target-ads-to-you/) to target you for marketing.
@@ -58,7 +58,7 @@ Telegram is a good middle ground because people are more willing to switch to it
 
 They're also both open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
 
-Also, just take a look at [this](https://9to5mac.com/2021/01/04/app-privacy-labels-messaging-apps/) - the image in the header of this article gives you a quick summary.
+Also, just take a look at [this](https://9to5mac.com/2021/01/04/app-privacy-labels-messaging-apps/).
 
 ## Other links to follow to be more aware of data privacy
 
