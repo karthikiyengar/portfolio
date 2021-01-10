@@ -1,5 +1,5 @@
 ---
-title: Informal FAQ around why I quit WhatsApp
+title: FAQ around why I quit WhatsApp
 description: Many of my friends have been asking me these questions, I decided to quickly write them down in one place
 date: "2021-01-09T15:05:39.988Z"
 categories: []
@@ -21,20 +21,20 @@ They also removed the line "Respect for your privacy is coded into our DNA". Wel
 WhatsApp has also been sharing a lot of metadata with Facebook already even before the new policy, which is a bit shady in itself. See [here](https://arstechnica.com/tech-policy/2021/01/whatsapp-users-must-share-their-data-with-facebook-or-stop-using-the-app/) for what exactly. This leads to the following problems from the top of my head:
 
 - Facebook knowing who you interact with and when, leading to magical friend suggestions for people you've been in proximity to.
-- Facebook being able to classify you into "groups" to target you for marketing.
+- Facebook being able to classify you into [groups](https://www.washingtonpost.com/news/the-intersect/wp/2016/08/19/98-personal-data-points-that-facebook-uses-to-target-ads-to-you/) to target you for marketing.
 - Allows them to create [filter bubbles](https://en.wikipedia.org/wiki/Filter_bubble) to influence your opinions.
 
 Also, there are no provisions to opt-out of the new Privacy Policy.
 
 Facebook has a great track record of being a [generally evil company](https://stallman.org/facebook.html), and I would personally not like to enable them further when alternatives are available.
 
-## But WhatsApp cannot read my chats and they're encrypted anyway!
+## But WhatsApp cannot read my chats because they're encrypted!
 
 While it might be true that WhatsApp claims to be using a supposedly secure encryption algorithm (same as Signal), most people back up their chats to Google Drive/iCloud. These backups are unencrypted, and there have been many instances of chats being compromised.
 
 WhatsApp cooperates with major security agencies and has been willing in the past to introduce backdoors. I'm too lazy to find more references.
 
-## But you are in Europe and nothing changes for you because of GDPR
+## But you are in Europe and nothing changes for you because of GDPR!
 
 Yes, but I do not want to encourage their shitty behaviour in other countries that do not have good data privacy laws.
 
@@ -58,7 +58,7 @@ Telegram is a good middle ground because people are more willing to switch to it
 
 They're also both open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
 
-Also, just take a look at [this](https://twitter.com/RKRadhakrishn/status/1347780251963703300/photo/1).
+Also, just take a look at [this](https://9to5mac.com/2021/01/04/app-privacy-labels-messaging-apps/) - the image in the header of this article gives you a quick summary.
 
 ## Other links to follow to be more aware of data privacy
 
