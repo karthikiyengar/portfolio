@@ -54,7 +54,7 @@ Trading your privacy for convenience and "free" services is not a good deal. Rem
 
 Signal is not for profit and the ideal alternative. It runs on donations and cannot be bought by a company.
 
-Telegram is a good middle ground because people are more willing to switch to it, and it has a decent track record. I will allow the guy who funds it to defend himself, [here you go](https://t.me/s/durov).
+Telegram is a good middle ground because people are more willing to switch to it, and it has a decent track record. I will allow the guy who funds it to defend himself, [here you go](https://t.me/durov/145).
 
 They're also both open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
 
