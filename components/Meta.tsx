@@ -49,7 +49,7 @@ const Value = styled.span`
   text-transform: uppercase;
 `;
 
-export default ((props: Props) => <List>
+const Meta = (props: Props) => <List>
     <Item>
       <Title>
         Role
@@ -82,4 +82,6 @@ export default ((props: Props) => <List>
         {props.platforms}
       </Value>
     </Item>
-  </List>);
+  </List>;
+
+export default Meta;

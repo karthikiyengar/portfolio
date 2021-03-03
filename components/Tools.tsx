@@ -154,9 +154,13 @@ const getIcon = (item: Technology) => {
   }
 };
 
-export default (({
-  data
-}: Props) => <Container>
+const Tools = (
+  {
+    data
+  }: Props
+) => <Container>
     <Text>Powered By</Text>
     <IconContainer>{data.map(getIcon)}</IconContainer>
-  </Container>);
+  </Container>;
+
+export default Tools;

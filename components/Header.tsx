@@ -29,14 +29,14 @@ const StyledLink = styled(Link)`
   display: none;
 `;
 
-export default () => (
-  <Header>
-    <Link href="/">
-      <Title>Karthik Iyengar</Title>
-    </Link>
-    <LinksContainer>
-      <StyledLink href="/blog">Blog</StyledLink>
-      <StyledLink href="/">About</StyledLink>
-    </LinksContainer>
-  </Header>
-);
+const Header = () => <Header>
+  <Link href="/">
+    <Title>Karthik Iyengar</Title>
+  </Link>
+  <LinksContainer>
+    <StyledLink href="/blog">Blog</StyledLink>
+    <StyledLink href="/">About</StyledLink>
+  </LinksContainer>
+</Header>;
+
+export default Header;

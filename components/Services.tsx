@@ -58,7 +58,7 @@ const Title = styled.p`
 `;
 
 
-export default (() => <Container>
+const Services = () => <Container>
     <Item>
       <IconCode />
       <Title>Web Development</Title>
@@ -71,4 +71,7 @@ export default (() => <Container>
       <IconTechConsulting />
       <Title>Technical Consulting</Title>
     </Item>
-  </Container>);
+  </Container>;
+
+
+export default Services;

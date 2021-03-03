@@ -36,10 +36,14 @@ const Container = styled.div`
   `};
 `;
 
-export default (({
-  data
-}: Props) => <Container>
+const OtherWork = (
+  {
+    data
+  }: Props
+) => <Container>
     {data.map(item => <Link href={item.link} key={item.title} target="_blank" rel="noopener noreferrer">
         <ZoomableImage src={item.image} />
       </Link>)}
-  </Container>);
+  </Container>;
+
+export default OtherWork;

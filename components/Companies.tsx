@@ -27,10 +27,14 @@ const Container = styled.div`
   `};
 `;
 
-export default (({
-  data
-}: Props) => <Container>
+const Companies = (
+  {
+    data
+  }: Props
+) => <Container>
     {data.map(company => <Link href={company.link} key={company.title}>
         <ZoomableImage src={company.image} />
       </Link>)}
-  </Container>);
+  </Container>;
+
+export default Companies;
