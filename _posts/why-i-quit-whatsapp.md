@@ -52,13 +52,13 @@ Trading your privacy for convenience and "free" services is not a good deal. Rem
 
 ## Why is Telegram/Signal/Matrix better?
 
-Signal is not for profit and the ideal alternative. It runs on donations and cannot be bought by a company.
+Signal is not for profit and end-to-end encrypted, even for [group chats](https://signal.org/blog/private-groups/). It runs on donations and cannot be bought by other companies.
 
 Telegram is a good middle ground because people are more willing to switch to it, and it has a decent track record. I will allow the guy who funds it to defend himself, [here you go](https://t.me/durov/145).
 
-There's some amazing work being done with the [Matrix](https://matrix.org/faq/) protocol and something like [Element](https://element.io/) is a fairly decent E2EE replacement for something like Slack.
+You might want to consider a [Matrix](https://matrix.org/faq/) client if you're looking for a Discord/Slack alternative.
 
-They're all open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
+They're all open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited)
 
 Also, just take a look at [this](https://9to5mac.com/2021/01/04/app-privacy-labels-messaging-apps/).
 
