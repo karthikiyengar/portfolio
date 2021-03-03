@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
+import { Link } from "./styled";
 
 export const LinksContainer = styled.div`
   display: grid;
@@ -8,7 +8,7 @@ export const LinksContainer = styled.div`
   grid-gap: 1fr;
 `;
 
-export const Header = styled.header`
+export const HeaderContainer = styled.header`
   min-height: 100px;
   display: flex;
   justify-content: space-between;
@@ -24,19 +24,16 @@ export const Title = styled.h1`
   }
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  display: none;
-`;
-
-const Header = () => <Header>
-  <Link href="/">
-    <Title>Karthik Iyengar</Title>
-  </Link>
-  <LinksContainer>
-    <StyledLink href="/blog">Blog</StyledLink>
-    <StyledLink href="/">About</StyledLink>
-  </LinksContainer>
-</Header>;
+const Header = () => (
+  <HeaderContainer>
+    <Link href="/">
+      <Title>Karthik Iyengar</Title>
+    </Link>
+    {/* <LinksContainer>
+      <Link href="/blog">Blog</Link>
+      <Link href="/">About</Link>
+    </LinksContainer> */}
+  </HeaderContainer>
+);
 
 export default Header;
