@@ -10,7 +10,8 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+          enhanceApp: (App) => (props) =>
+            sheet.collectStyles(<App {...props} />),
         });
       const initialProps = await Document.getInitialProps(ctx);
       return {
@@ -20,7 +21,7 @@ export default class MyDocument extends Document {
             {initialProps.styles}
             {sheet.getStyleElement()}
           </>
-        )
+        ),
       };
     } finally {
       sheet.seal();
@@ -54,8 +55,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <script src="https://www.google.com/recaptcha/api.js" />
-          <script async src="https://www.google-analytics.com/analytics.js" />
-          <script async src="/static/js/autotrack.js" />
         </Head>
         <body>
           <Main />

@@ -23,7 +23,7 @@ export const getPosts = () => {
         date: meta.data.date,
         title: meta.data.title,
         description: meta.data.description,
-        slug: slug,
+        slug: slug.replace(/\.md$/, ""),
         readingTime: readingTime(meta.content),
       };
     })
