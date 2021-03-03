@@ -127,29 +127,6 @@ const otherWork = [
   },
 ];
 
-const companies = [
-  {
-    title: "Spotcap",
-    image: "/static/spotcap.png",
-    link: "/companies/spotcap",
-  },
-  {
-    title: "Paper Plane",
-    image: "/static/paperplane.png",
-    link: "/companies/paperplane",
-  },
-  {
-    title: "Novanet",
-    image: "/static/novanet.png",
-    link: "/companies/novanet",
-  },
-  {
-    title: "Indus Valley Partners",
-    image: "/static/ivp.png",
-    link: "/companies/ivp",
-  },
-];
-
 const initialState = {
   name: "",
   message: "",
@@ -282,7 +259,7 @@ export default class Home extends React.Component<any, any, State> {
           {/* <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} /> */}
           <Section>I’VE WORKED WITH</Section>
-          <Companies data={companies} />
+          <Companies />
           <Section>OTHER WORK</Section>
           <OtherWork data={otherWork} />
           <Section>GET IN TOUCH</Section>

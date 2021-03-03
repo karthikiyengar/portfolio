@@ -1,0 +1,41 @@
+export const companies = [
+  {
+    title: "Klarna",
+    role: "Senior Software Engineer",
+    location: "Berlin",
+    tenure: "2019 - Present",
+    slug: "klarna",
+  },
+  {
+    title: "Spotcap Global Services",
+    role: "Frontend Engineer",
+    location: "Berlin",
+    tenure: "2017 - 2019",
+    image: "/static/spotcap.png",
+    slug: "spotcap",
+  },
+  {
+    title: "Paper Plane Design Solutions",
+    role: "Process & Architecture Consultant",
+    location: "Mumbai",
+    tenure: "2016 - 2017",
+    image: "/static/paperplane.png",
+    link: "/companies/paperplane",
+  },
+  {
+    title: "Novanet",
+    role: "Lead Frontend Engineer",
+    image: "/static/novanet.png",
+    tenure: "2016",
+    location: "Mumbai",
+    link: "/companies/novanet",
+  },
+  {
+    title: "Indus Valley Partners",
+    role: "Software Engineer",
+    tenure: "2015 - 2016",
+    location: "Mumbai",
+    image: "/static/ivp.png",
+    link: "/companies/ivp",
+  },
+];
