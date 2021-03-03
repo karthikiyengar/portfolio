@@ -27,8 +27,8 @@ export const Subtitle = styled.h2`
 export const Section = styled.p`
   font-family: sans-serif;
   font-size: 1.5em;
-  font-weight: 400;
-  margin: 20px 0;
+  font-weight: bold;
+  margin: 12px 0;
   ${media.handheld`
     margin: 10px 0;
   `};
@@ -54,14 +54,10 @@ export const ImageContainer = styled.div`
 `;
 
 export const Layout = styled.div`
-  max-width: 960px;
+  max-width: 992px;
   margin-left: auto;
   margin-right: auto;
-  ${media.tablet`
-    padding: 10px 20px;
-  `} ${media.handheld`
-    padding: 10px 15px;
-  `};
+  padding: 10px 15px;
 `;
 
 export const Content = styled.main`

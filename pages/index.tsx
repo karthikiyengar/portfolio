@@ -1,5 +1,4 @@
-// @flow
-
+import styled from "styled-components";
 import React from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import superagent from "superagent";
@@ -20,7 +19,7 @@ import {
 } from "../components/styled";
 import {
   OtherWork,
-  Articles,
+  ArticlesList,
   Portfolio,
   Companies,
   Footer,
@@ -51,6 +50,11 @@ export async function getStaticProps(context) {
     }, // will be passed to the page component as props
   };
 }
+
+const H2 = styled.h2`
+  font-weight: normal;
+  margin: 5px 0 10px 0;
+`;
 
 export const portfolio = [
   {
@@ -274,7 +278,7 @@ export default class Home extends React.Component<any, any, State> {
         </Subtitle>
         <Content>
           <Section>ARTICLES</Section>
-          <Articles data={this.props.blogs} />
+          <ArticlesList data={this.props.blogs} />
           <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} />
           <Section>I’VE WORKED WITH</Section>
@@ -282,13 +286,10 @@ export default class Home extends React.Component<any, any, State> {
           <Section>OTHER WORK</Section>
           <OtherWork data={otherWork} />
           <Section>GET IN TOUCH</Section>
-          <Row>
-            <Subtitle>
-              Hello there! Let’s talk to understand how I can help you. You can
-              leave me a short message and I’ll get back to you as soon as I
-              can.
-            </Subtitle>
-          </Row>
+          <H2>
+            Hello there! Let’s talk to understand how I can help you. You can
+            leave me a short message and I’ll get back to you as soon as I can.
+          </H2>
           <form onSubmit={this.handleSubmit}>
             <Row>
               <Input

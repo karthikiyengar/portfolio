@@ -6,5 +6,6 @@ export { default as Meta } from "./Meta";
 export { default as Services } from "./Services";
 export { default as OtherWork } from "./OtherWork";
 export { default as Companies } from "./Companies";
-export { default as Articles } from "./Articles";
+export { default as ArticlesList } from "./ArticlesList";
+export { default as ArticlesGrid } from "./ArticlesGrid";
 export { default as Nav } from "./Nav";

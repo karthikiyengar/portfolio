@@ -24,7 +24,7 @@ const appear = keyframes`
 
 const Container = styled.div`
   display: flex;
-  margin: 40px 0;
+  margin: 15px 0;
   flex-wrap: wrap;
 `;
 
@@ -74,14 +74,16 @@ const Image = styled.img`
   transition: transform 100ms ease-in;
 `;
 
-const Portfolio = ({ data }: Props) => <Container>
-  {data.map((item, index) => (
-    <Link href={item.link} key={item.title}>
-      <Item index={index}>
-        <Image src={item.image} alt={item.title} />
-      </Item>
-    </Link>
-  ))}
-</Container>;
+const Portfolio = ({ data }: Props) => (
+  <Container>
+    {data.map((item, index) => (
+      <Link href={item.link} key={item.title}>
+        <Item index={index}>
+          <Image src={item.image} alt={item.title} />
+        </Item>
+      </Link>
+    ))}
+  </Container>
+);
 
 export default Portfolio;
