@@ -1,6 +1,7 @@
 # build output
 dist
 .next
+.idea
 
 # dependencies
 node_modules

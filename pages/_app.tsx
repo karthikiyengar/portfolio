@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import App from "next/app";
 import { Global } from "../components/styled";
+import { Normalize } from "styled-normalize";
 
 class MyApp extends App {
   render() {
@@ -11,6 +12,7 @@ class MyApp extends App {
         <Head>
           <title>Karthik Iyengar</title>
         </Head>
+        <Normalize />
         <Global />
         <Component {...pageProps} />
       </>

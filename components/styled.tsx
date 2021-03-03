@@ -1,4 +1,5 @@
 import styled, { css, createGlobalStyle } from "styled-components";
+import NextLink from "next/link";
 
 export const media = {
   handheld: (...args) => css`
@@ -8,6 +9,11 @@ export const media = {
   `,
   tablet: (...args) => css`
     @media (max-width: 800px) {
+      ${css(...args)};
+    }
+  `,
+  desktop: (...args) => css`
+    @media (min-width: 992px) {
       ${css(...args)};
     }
   `,
@@ -172,11 +178,19 @@ export const Description = styled.div`
   max-width: 75%;
 `;
 
-export const Link = styled.a`
+export const StyledLink = styled.a`
   color: inherit;
   text-decoration: inherit;
   display: inline-block;
 `;
+
+export const Link: React.FC<{ href: string }> = ({ href, children }) => {
+  return (
+    <NextLink href={href} passHref>
+      <StyledLink>{children}</StyledLink>
+    </NextLink>
+  );
+};
 
 export const ZoomableImage = styled.img`
   margin-right: 40px;
