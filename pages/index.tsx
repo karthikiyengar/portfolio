@@ -258,65 +258,10 @@ export default class Home extends React.Component<any, any, State> {
           <ArticlesList data={this.props.blogs} />
           {/* <Section>PORTFOLIO</Section>
           <Portfolio data={portfolio} /> */}
-          <Section>I’VE WORKED WITH</Section>
+          <Section>EXPERIENCE</Section>
           <Companies />
           <Section>OTHER WORK</Section>
           <OtherWork data={otherWork} />
-          <Section>GET IN TOUCH</Section>
-          <H2>
-            Hello there! Let’s talk to understand how I can help you. You can
-            leave me a short message and I’ll get back to you as soon as I can.
-          </H2>
-          <form onSubmit={this.handleSubmit}>
-            <Row>
-              <Input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                onChange={this.handleNameChange}
-                value={this.state.name}
-                error={typeof this.state.errors.name === "string"}
-              />
-              <Error>{this.state.errors.name}</Error>
-            </Row>
-            <Row>
-              <Input
-                type="text"
-                name="email"
-                placeholder="Your Email Address"
-                onChange={this.handleEmailChange}
-                value={this.state.email}
-                error={typeof this.state.errors.email === "string"}
-              />
-              <Error>{this.state.errors.email}</Error>
-            </Row>
-            <Row>
-              <Textarea
-                type="text"
-                name="message"
-                placeholder="Message"
-                rows={10}
-                onChange={this.handleMessageChange}
-                value={this.state.message}
-                error={typeof this.state.errors.message === "string"}
-              />
-              <Error>{this.state.errors.message}</Error>
-            </Row>
-            <ReCAPTCHA
-              ref={(r) => {
-                this.recaptcha = r;
-              }}
-              sitekey="6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L"
-              onChange={this.handleCaptchaChange}
-            />
-            {this.state.formError && <Error>{this.state.formError}</Error>}
-            {this.state.formMessage && (
-              <Message>{this.state.formMessage}</Message>
-            )}
-            <Button type="submit" disabled={!this.isFormValid()}>
-              Send
-            </Button>
-          </form>
         </Content>
         <Footer />
       </Layout>

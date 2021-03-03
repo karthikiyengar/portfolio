@@ -7,6 +7,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { createGlobalStyle } from "styled-components";
 import { companies } from "../data/companies";
+import { withRouter } from "next/router";
 
 const GlobalTimelineStyle = createGlobalStyle`
   .vertical-timeline.vertical-timeline-custom-line::before {
@@ -18,16 +19,6 @@ type Data = {
   title: string;
   image: string;
   link: string;
-};
-
-const customTheme = {
-  yearColor: "#405b73",
-  lineColor: "#d0cdc4",
-  dotColor: "#262626",
-  borderDotColor: "#d0cdc4",
-  titleColor: "#405b73",
-  subtitleColor: "#bf9765",
-  textColor: "#262626",
 };
 
 const Companies = () => {
@@ -45,12 +36,16 @@ const Companies = () => {
               date={item.tenure}
               contentStyle={{ boxShadow: "none" }}
               iconStyle={{
-                background: "rgb(33, 150, 243)",
-                color: "#fff",
+                background: "white",
+                margin: "-5px",
+                width: "50px",
+                height: "50px",
+                boxShadow: "none",
                 top: "25%",
               }}
+              icon={<img src={item.thumbnail} height="100%" width="auto" />}
             >
-              <h3 className="vertical-timeline-element-title">{item.title}</h3>
+              <h3 style={{ margin: "5px 0" }}>{item.title}</h3>
               <div>{item.role}</div>
             </VerticalTimelineElement>
           );

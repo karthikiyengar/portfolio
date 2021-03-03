@@ -4,6 +4,7 @@ export const companies = [
     role: "Senior Software Engineer",
     location: "Berlin",
     tenure: "2019 - Present",
+    thumbnail: "/static/companies/klarna-thumb.svg",
     slug: "klarna",
   },
   {
@@ -11,7 +12,8 @@ export const companies = [
     role: "Frontend Engineer",
     location: "Berlin",
     tenure: "2017 - 2019",
-    image: "/static/spotcap.png",
+    thumbnail: "/static/companies/spotcap-thumb.png",
+    image: "/static/companies/spotcap.png",
     slug: "spotcap",
   },
   {
@@ -25,7 +27,8 @@ export const companies = [
   {
     title: "Novanet",
     role: "Lead Frontend Engineer",
-    image: "/static/novanet.png",
+    image: "/static/companies/novanet.png",
+    thumbnail: "/static/companies/novanet-thumb.png",
     tenure: "2016",
     location: "Mumbai",
     link: "/companies/novanet",
