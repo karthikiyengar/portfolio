@@ -279,8 +279,8 @@ export default class Home extends React.Component<any, any, State> {
         <Content>
           <Section>ARTICLES</Section>
           <ArticlesList data={this.props.blogs} />
-          <Section>PORTFOLIO</Section>
-          <Portfolio data={portfolio} />
+          {/* <Section>PORTFOLIO</Section>
+          <Portfolio data={portfolio} /> */}
           <Section>I’VE WORKED WITH</Section>
           <Companies data={companies} />
           <Section>OTHER WORK</Section>
