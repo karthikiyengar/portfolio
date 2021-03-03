@@ -1,5 +1,5 @@
 ---
-title: FAQ around why I quit WhatsApp
+title: FAQ - Why I quit WhatsApp
 description: Many of my friends have been asking me these questions, I decided to quickly write them down in one place
 date: "2021-01-09T15:05:39.988Z"
 categories: []
@@ -36,13 +36,13 @@ WhatsApp cooperates with major security agencies and has been willing in the pas
 
 ## But you are in Europe and nothing changes for you because of GDPR!
 
-Yes, but I do not want to encourage their shitty behaviour in other countries that do not have good data privacy laws.
+Yes, but I do not want to encourage their behaviour in other countries that do not have good data privacy laws.
 
 ## You just want to be a hipster
 
 While there might be a certain amount of truth to this, I also want to cut down my screen time. Social Media apps are built in a way that tricks your brain into being on them all the time. See "The Social Dilemma" on Netflix if you're into learning more about this.
 
-Also, I'm pretty sure that I'm not going to lose the people I care about just because I'm not on some stupid app.
+Also, I'm pretty sure that I'm not going to lose the people I care about just because I'm not on some app.
 
 ## Hah! Then why are you on Facebook?
 
@@ -50,13 +50,15 @@ Privacy is not binary. It's hard for all of us to quit platforms because they're
 
 Trading your privacy for convenience and "free" services is not a good deal. Remember the cliché "If it's free you are the product". I'm working on quitting Facebook as well, because at this point, it's basically full of random people that I haven't spoken to in years, and have no connection with.
 
-## Why is Telegram/Signal better?
+## Why is Telegram/Signal/Matrix better?
 
 Signal is not for profit and the ideal alternative. It runs on donations and cannot be bought by a company.
 
 Telegram is a good middle ground because people are more willing to switch to it, and it has a decent track record. I will allow the guy who funds it to defend himself, [here you go](https://t.me/durov/145).
 
-They're also both open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
+There's some amazing work being done with the [Matrix](https://matrix.org/faq/) protocol and something like [Element](https://element.io/) is a fairly decent E2EE replacement for something like Slack.
+
+They're all open-source, meaning the their code is public and verifable. (Note: Telegram's servers are not open-source, but have been independently audited many times)
 
 Also, just take a look at [this](https://9to5mac.com/2021/01/04/app-privacy-labels-messaging-apps/).
 
