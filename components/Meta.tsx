@@ -1,16 +1,13 @@
-
-
 import React from "react";
 import styled from "styled-components";
 import { media } from "./styled";
 
-
-type Props = {
-  role: String;
-  context: String;
-  date: String;
-  platforms: String;
-};
+interface Props {
+  role: string;
+  context: string;
+  date: string;
+  platforms: string[];
+}
 
 const List = styled.ul`
   text-align: center;
@@ -45,43 +42,29 @@ const Title = styled.span`
 `;
 
 const Value = styled.span`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
 `;
 
-const Meta = (props: Props) => <List>
+const Meta = (props: Props) => (
+  <List>
     <Item>
-      <Title>
-        Role
-      </Title>
-      <Value>
-        {props.role}
-      </Value>
+      <Title>Role</Title>
+      <Value>{props.role}</Value>
     </Item>
     <Item>
-      <Title>
-        Context
-      </Title>
-      <Value>
-        {props.context}
-      </Value>
+      <Title>Context</Title>
+      <Value>{props.context}</Value>
     </Item>
     <Item>
-      <Title>
-        Date
-      </Title>
-      <Value>
-        {props.date}
-      </Value>
+      <Title>Date</Title>
+      <Value>{props.date}</Value>
     </Item>
     <Item>
-      <Title>
-        Platforms
-      </Title>
-      <Value>
-        {props.platforms}
-      </Value>
+      <Title>Platforms</Title>
+      <Value>{props.platforms.join(", ")}</Value>
     </Item>
-  </List>;
+  </List>
+);
 
 export default Meta;

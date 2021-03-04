@@ -54,9 +54,10 @@ export const ImageContainer = styled.div`
 `;
 
 export const Layout = styled.div`
-  max-width: 992px;
+  max-width: 820px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 30px;
   padding: 10px 15px;
 `;
 
@@ -170,6 +171,7 @@ export const Image = styled.img`
 
 export const Description = styled.div`
   margin-left: auto;
+  white-space: pre-wrap;
   margin-right: auto;
   max-width: 75%;
 `;

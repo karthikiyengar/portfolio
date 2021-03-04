@@ -1,9 +1,34 @@
-
-
 import React from "react";
 import styled from "styled-components";
 
-type Technology = "react" | "nodejs" | "redux" | "redis" | "kubernetes" | "trello" | "laravel" | "ionic" | "mysql" | "angularjs" | "backbone" | "jira" | "mongodb" | "android" | "php" | "graphql" | "python" | "arduino" | "c" | "c#" | "mssql" | "jenkins" | "jquery" | "sketch" | "scrum" | "docker" | "typescript";
+export type Technology =
+  | "react"
+  | "nodejs"
+  | "redux"
+  | "redis"
+  | "kubernetes"
+  | "trello"
+  | "laravel"
+  | "ionic"
+  | "mysql"
+  | "angularjs"
+  | "backbone"
+  | "jira"
+  | "mongodb"
+  | "android"
+  | "php"
+  | "graphql"
+  | "python"
+  | "arduino"
+  | "c"
+  | "c#"
+  | "mssql"
+  | "jenkins"
+  | "jquery"
+  | "sketch"
+  | "scrum"
+  | "docker"
+  | "typescript";
 
 type Props = {
   data: Array<Technology>;
@@ -40,127 +65,313 @@ const Link = styled.a`
 const getIcon = (item: Technology) => {
   switch (item) {
     case "react":
-      return <Link href="https://facebook.github.io/react/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://facebook.github.io/react/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/react.svg" />
-        </Link>;
+        </Link>
+      );
     case "redux":
-      return <Link href="http://redux.js.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://redux.js.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/redux.png" />
-        </Link>;
+        </Link>
+      );
     case "nodejs":
-      return <Link href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://nodejs.org/en/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/nodejs.svg" />
-        </Link>;
+        </Link>
+      );
     case "backbone":
-      return <Link href="http://backbonejs.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://backbonejs.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/backbone.svg" />
-        </Link>;
+        </Link>
+      );
     case "trello":
-      return <Link href="https://trello.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://trello.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/trello.svg" />
-        </Link>;
+        </Link>
+      );
     case "laravel":
-      return <Link href="https://laravel.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://laravel.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/laravel.svg" />
-        </Link>;
+        </Link>
+      );
     case "ionic":
-      return <Link href="https://ionicframework.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://ionicframework.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/ionic.png" />
-        </Link>;
+        </Link>
+      );
     case "angularjs":
-      return <Link href="https://angularjs.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://angularjs.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/angularjs.svg" />
-        </Link>;
+        </Link>
+      );
     case "mysql":
-      return <Link href="https://www.mysql.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.mysql.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/mysql.svg" />
-        </Link>;
+        </Link>
+      );
     case "jira":
-      return <Link href="https://www.atlassian.com/software/jira" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.atlassian.com/software/jira"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/jira.svg" />
-        </Link>;
+        </Link>
+      );
     case "mongodb":
-      return <Link href="https://www.mongodb.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.mongodb.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/mongodb.png" />
-        </Link>;
+        </Link>
+      );
     case "android":
-      return <Link href="https://developer.android.com/index.html" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://developer.android.com/index.html"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/android.svg" />
-        </Link>;
+        </Link>
+      );
     case "sketch":
-      return <Link href="https://www.sketchapp.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.sketchapp.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/sketch.svg" />
-        </Link>;
+        </Link>
+      );
     case "php":
-      return <Link href="http://php.net/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://php.net/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/php.svg" />
-        </Link>;
+        </Link>
+      );
     case "python":
-      return <Link href="https://www.python.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.python.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/python.svg" />
-        </Link>;
+        </Link>
+      );
     case "arduino":
-      return <Link href="https://www.arduino.cc/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.arduino.cc/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/arduino.svg" />
-        </Link>;
+        </Link>
+      );
     case "c":
-      return <Link href="http://www.open-std.org/jtc1/sc22/wg14/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://www.open-std.org/jtc1/sc22/wg14/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/c.svg" />
-        </Link>;
+        </Link>
+      );
     case "mssql":
-      return <Link href="https://www.microsoft.com/en-us/sql-server/sql-server-2016" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.microsoft.com/en-us/sql-server/sql-server-2016"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/mssql.png" />
-        </Link>;
+        </Link>
+      );
     case "c#":
-      return <Link href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://docs.microsoft.com/en-us/dotnet/articles/csharp/csharp"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/csharp.svg" />
-        </Link>;
+        </Link>
+      );
     case "jenkins":
-      return <Link href="https://jenkins.io/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://jenkins.io/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/jenkins.svg" />
-        </Link>;
+        </Link>
+      );
     case "jquery":
-      return <Link href="https://jquery.com/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://jquery.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/jquery.svg" />
-        </Link>;
+        </Link>
+      );
     case "graphql":
-      return <Link href="http://graphql.org/learn/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://graphql.org/learn/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/graphql.svg" />
-        </Link>;
+        </Link>
+      );
     case "scrum":
-      return <Link href="http://scrum.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="http://scrum.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/scrum.png" />
-        </Link>;
+        </Link>
+      );
     case "typescript":
-      return <Link href="https://www.typescriptlang.org/" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.typescriptlang.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/typescript.svg" />
-        </Link>;
+        </Link>
+      );
     case "docker":
-      return <Link href="https://www.docker.com" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://www.docker.com"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/docker.svg" />
-        </Link>;
+        </Link>
+      );
     case "kubernetes":
-      return <Link href="https://kubernetes.io" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://kubernetes.io"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/kubernetes.svg" />
-        </Link>;
+        </Link>
+      );
     case "redis":
-      return <Link href="https://redis.io" rel="noopener noreferrer" target="_blank" key={item}>
+      return (
+        <Link
+          href="https://redis.io"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
           <Image src="/static/tools/redis.svg" />
-        </Link>;
+        </Link>
+      );
     default:
-      (item as never);
+      item as never;
       throw new Error("Impossible Case");
-
   }
 };
 
-const Tools = (
-  {
-    data
-  }: Props
-) => <Container>
+const Tools = ({ data }: Props) => (
+  <Container>
     <Text>Powered By</Text>
     <IconContainer>{data.map(getIcon)}</IconContainer>
-  </Container>;
+  </Container>
+);
 
 export default Tools;
