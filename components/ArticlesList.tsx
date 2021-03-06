@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Blog } from "../pages/api/blog";
 import Link from "next/link";
 import format from "date-fns/format";
-import { media } from "./styled";
 
 const Container = styled.div`
   display: grid;
@@ -45,8 +44,7 @@ const DescriptionContainer = styled.div`
   flex: 1;
 `;
 
-const H2 = styled.h2`
-  font-weight: normal;
+const H3 = styled.h3`
   margin: 5px 0 10px 0;
 `;
 
@@ -60,7 +58,7 @@ const Component: React.FC<Props> = (props) => {
         return (
           <Link key={blog.slug} href={`blog/${blog.slug}`}>
             <Card>
-              <H2>{blog.title}</H2>
+              <H3>{blog.title}</H3>
               <DescriptionContainer>{blog.description}</DescriptionContainer>
               <MetaContainer>
                 <Meta>{format(new Date(blog.date), "dd MMM yyyy")}</Meta>

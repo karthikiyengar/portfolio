@@ -9,7 +9,7 @@ export const LinksContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
-  min-height: 100px;
+  min-height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,7 @@ export const Title = styled.h1`
 const Header = () => (
   <HeaderContainer>
     <Link href="/">
-      <Title>Karthik Iyengar</Title>
+      <p style={{ fontSize: "20px" }}>Karthik Iyengar</p>
     </Link>
     {/* <LinksContainer>
       <Link href="/blog">Blog</Link>

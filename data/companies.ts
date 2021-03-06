@@ -7,23 +7,25 @@ type Context =
   | "consultant"
   | "process & architecture";
 
-export interface Company {
+interface BasicDetails {
   title: string;
   role: string;
-  context: string;
-  platforms: Platform[];
-  location: string;
-  companyUrl: string;
-  tenure: string;
-  image: string;
-  thumbnail: string;
   slug: string;
-  tools: Array<Technology>;
-  companyDescription: string;
-  roleDescription: string;
+  thumbnail: string;
+  tenure: string;
+}
+export interface Company extends BasicDetails {
+  context?: Context;
+  platforms?: Platform[];
+  location?: string;
+  companyUrl?: string;
+  image?: string;
+  tools?: Array<Technology>;
+  companyDescription?: string;
+  roleDescription?: string;
 }
 
-export const companies: Company[] = [
+export const companies: (Company)[] = [
   {
     title: "Klarna",
     role: "Senior Software Engineer",
@@ -34,11 +36,22 @@ export const companies: Company[] = [
       "Klarna is one of the world's leading payment providers and a licensed bank that is fundamentally changing the payment experience for buyers and merchants",
     location: "Berlin",
     tenure: "2019 - Present",
-    image: "tbd",
+
+    image: "/static/companies/klarna.jpg",
     thumbnail: "/static/companies/klarna-thumb.svg",
     slug: "klarna",
     platforms: ["web", "native", "cloud"],
-    tools: [],
+    tools: [
+      "typescript",
+      "react",
+      "jira",
+      "jenkins",
+      "aws",
+      "redis",
+      "chrome-web-store",
+      "postgres",
+      "dynamodb",
+    ],
   },
   {
     title: "Spotcap Global Services",

@@ -22,6 +22,10 @@ export type Technology =
   | "arduino"
   | "c"
   | "c#"
+  | "aws"
+  | "chrome-web-store"
+  | "postgres"
+  | "dynamodb"
   | "mssql"
   | "jenkins"
   | "jquery"
@@ -73,6 +77,50 @@ const getIcon = (item: Technology) => {
           key={item}
         >
           <Image src="/static/tools/react.svg" />
+        </Link>
+      );
+    case "aws":
+      return (
+        <Link
+          href="https://aws.amazon.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/aws.png" />
+        </Link>
+      );
+    case "dynamodb":
+      return (
+        <Link
+          href="https://aws.amazon.com/dynamodb"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/dynamodb.png" />
+        </Link>
+      );
+    case "postgres":
+      return (
+        <Link
+          href="https://www.postgresql.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/postgres.png" />
+        </Link>
+      );
+    case "chrome-web-store":
+      return (
+        <Link
+          href="https://developer.chrome.com/docs/extensions/"
+          rel="noopener noreferrer"
+          target="_blank"
+          key={item}
+        >
+          <Image src="/static/tools/chrome-web-store.ico" />
         </Link>
       );
     case "redux":
@@ -171,7 +219,7 @@ const getIcon = (item: Technology) => {
           target="_blank"
           key={item}
         >
-          <Image src="/static/tools/jira.svg" />
+          <Image src="/static/tools/jira.png" />
         </Link>
       );
     case "mongodb":
@@ -369,8 +417,12 @@ const getIcon = (item: Technology) => {
 
 const Tools = ({ data }: Props) => (
   <Container>
-    <Text>Powered By</Text>
-    <IconContainer>{data.map(getIcon)}</IconContainer>
+    {data.length > 0 && (
+      <>
+        <Text>Powered By</Text>
+        <IconContainer>{data.map(getIcon)}</IconContainer>
+      </>
+    )}
   </Container>
 );
 

@@ -21,6 +21,7 @@ export const media = {
 
 export const Subtitle = styled.h2`
   font-weight: normal;
+  font-size: 20px;
   margin: 0 0 25px 0;
 `;
 
@@ -68,7 +69,7 @@ export const Content = styled.main`
 `;
 
 export const P = styled.p`
-  font-size: 1.5em;
+  font-size: 20px;
   font-weight: normal;
   margin: 0;
 `;

@@ -1,3 +1,4 @@
+import { portfolio } from "../data/portfolio";
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import { media } from "./styled";
@@ -74,9 +75,9 @@ const Image = styled.img`
   transition: transform 100ms ease-in;
 `;
 
-const Portfolio = ({ data }: Props) => (
+const Portfolio = () => (
   <Container>
-    {data.map((item, index) => (
+    {portfolio.map((item, index) => (
       <Link href={item.link} key={item.title}>
         <Item index={index}>
           <Image src={item.image} alt={item.title} />

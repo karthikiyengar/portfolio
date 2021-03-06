@@ -39,7 +39,7 @@ const Companies = () => {
       >
         {companies.map((item) => {
           return (
-            <Link href={`/companies/${item.slug}`} passHref>
+            <Link href={`/companies/${item.slug}`} passHref key={item.slug}>
               <StyledLink>
                 <VerticalTimelineElement
                   style={{ margin: "0", cursor: "pointer" }}

@@ -1,11 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import IconMenu from "react-icons/lib/md/apps";
-import Back from "react-icons/lib/md/arrow-back";
-import Forward from "react-icons/lib/md/arrow-forward";
+import { MdMenu } from "react-icons/md";
+import { MdArrowBack } from "react-icons/md";
+import { MdArrowForward } from "react-icons/md";
+import { portfolio } from "../data/portfolio";
 import { withRouter } from "next/router";
-import { portfolio } from "./../pages/index";
 
 const Container = styled.nav`
   text-align: center;
@@ -34,17 +34,17 @@ const IconContainer = styled.div`
   padding: 10px 0;
 `;
 
-const IconBack = styled(Back)`
+const IconBack = styled(MdArrowBack)`
   cursor: pointer;
   visibility: ${(props) => (props.visible ? "initial" : "hidden")};
 `;
 
-const IconForward = styled(Forward)`
+const IconForward = styled(MdArrowForward)`
   cursor: pointer;
   visibility: ${(props) => (props.visible ? "initial" : "hidden")};
 `;
 
-const IconMenuWithCursor = styled(IconMenu)`
+const IconMenuWithCursor = styled(MdMenu)`
   cursor: pointer;
 `;
 
@@ -82,7 +82,7 @@ class Nav extends React.Component {
           <Link href={this.previous || "/"}>
             <IconBack visible={this.previous} />
           </Link>
-          <Link href="/">
+          <Link href="/companies/portfolio">
             <IconMenuWithCursor />
           </Link>
           <Link href={this.next || "/"}>

@@ -6,7 +6,7 @@ interface Props {
   role: string;
   context: string;
   date: string;
-  platforms: string[];
+  platforms: string | string[];
 }
 
 const List = styled.ul`
@@ -62,7 +62,11 @@ const Meta = (props: Props) => (
     </Item>
     <Item>
       <Title>Platforms</Title>
-      <Value>{props.platforms.join(", ")}</Value>
+      <Value>
+        {Array.isArray(props.platforms)
+          ? props.platforms.join(", ")
+          : props.platforms}
+      </Value>
     </Item>
   </List>
 );
