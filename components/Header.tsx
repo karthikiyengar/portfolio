@@ -27,7 +27,7 @@ export const Title = styled.h1`
 const Header = () => (
   <HeaderContainer>
     <Link href="/">
-      <p style={{ fontSize: "20px" }}>Karthik Iyengar</p>
+      <p style={{ fontSize: "20px", fontFamily: "serif" }}>Karthik Iyengar</p>
     </Link>
     {/* <LinksContainer>
       <Link href="/blog">Blog</Link>

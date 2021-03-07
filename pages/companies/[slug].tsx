@@ -6,7 +6,6 @@ import {
   Content,
   Description,
   VisitButton,
-  P,
 } from "../../components/styled";
 import { Header, Tools, Meta } from "../../components";
 import { useRouter } from "next/router";
@@ -15,6 +14,11 @@ import { companies, Company } from "../../data/companies";
 const Image = styled.img`
   width: auto;
   max-height: 150px;
+`;
+
+const P = styled.p`
+  font-size: 17px;
+  text-align: center;
 `;
 
 const Wrapper = styled.div`
@@ -49,17 +53,19 @@ const CompanyTemplate: NextPage<Props> = (props) => {
       <Header />
       {company && (
         <Content>
+          <Wrapper>
+            <Image src={company.image} />
+          </Wrapper>
           <P>{company.companyDescription}</P>
+
           <Meta
             role={company.role}
             context={company.context || "Unknown"}
             date={company.tenure}
             platforms={company.platforms ?? []}
           />
-          <Wrapper>
-            <Image src={company.image} />
-          </Wrapper>
           <Description>{company.roleDescription}</Description>
+          <Tools data={company.tools ?? []} />
           <VisitButton
             href={company.companyUrl}
             target="_blank"
@@ -67,7 +73,6 @@ const CompanyTemplate: NextPage<Props> = (props) => {
           >
             Visit Site
           </VisitButton>
-          <Tools data={company.tools ?? []} />
         </Content>
       )}
     </Layout>

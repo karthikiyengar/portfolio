@@ -1,11 +1,7 @@
 import { Technology } from "../components/Tools";
 
 type Platform = "web" | "native" | "cloud";
-type Context =
-  | "fulltime"
-  | "freelance"
-  | "consultant"
-  | "process & architecture";
+type Context = "fulltime" | "freelance" | "consultant";
 
 interface BasicDetails {
   title: string;
@@ -25,7 +21,7 @@ export interface Company extends BasicDetails {
   roleDescription?: string;
 }
 
-export const companies: (Company)[] = [
+export const companies: Company[] = [
   {
     title: "Klarna",
     role: "Senior Software Engineer",
@@ -71,8 +67,9 @@ export const companies: (Company)[] = [
   },
   {
     title: "Self-Employed",
-    role: "Freelance Engineer and Consultant",
+    role: "Product/Process Engineer",
     slug: "freelance",
+    context: "consultant",
     thumbnail: "/static/companies/freelance-thumb.png",
     tenure: "2016 - 2017, 2013 - 2015",
   },
@@ -81,9 +78,9 @@ export const companies: (Company)[] = [
     companyDescription:
       "Paper Plane is a full-service Digital Agency with more than 10 years of Strategy, Design & User experience",
     roleDescription: `I worked with PaperPlane as a technical consulting, helping them architect an E-Commerce platform for one of their reputed Swiss clients with a worldwide presence, implemented using a well-established ERP system. Additionally, my responsibilities included modernizing development and project management processes, guiding and mentoring developers, establishing processes to build an internal knowledge repository, revamping the recruitment process and improving quality control mechanisms.\r\n\r\nWith the new processes and culture in place, we were able to achieve a measurable increase in efficiency and a marked reduction in quality issues. I served as the primary technical point of contact in conversations with the clients/ERP vendor. I was quickly able to validate assumptions and approaches in a complicated ecosystem in order to provide best practices and approaches`,
-    role: "Process & Architecture Consultant",
+    role: "Process & Tech Architect",
     companyUrl: "http://paperplane.net/",
-    context: "process & architecture",
+    context: "consultant",
     location: "Mumbai",
     tenure: "2016 - 2017",
     image: "/static/companies/paperplane.png",

@@ -10,13 +10,18 @@ interface Props {
 }
 
 const List = styled.ul`
-  text-align: center;
   padding: 0;
+
+  text-align: center;
+  ${media.handheld`
+    text-align: left; 
+  `}
   &:before {
     content: "";
     background: url(/static/utils/separator.png);
     background-size: contain;
     width: 100%;
+    margin-bottom: 5px;
     height: 1px;
     display: block;
   }
@@ -24,9 +29,13 @@ const List = styled.ul`
     content: "";
     background: url(/static/utils/separator.png);
     background-size: contain;
+    margin-top: 5px;
     width: 100%;
     height: 1px;
     display: block;
+  }
+  li {
+    padding: 8px;
   }
 `;
 
@@ -34,15 +43,23 @@ const Item = styled.li`
   display: inline-block;
   padding: 20px 0;
   margin-right: 15px;
+  :last-child {
+    margin-right: 0px;
+  }
 `;
 
 const Title = styled.span`
+  font-size: 15px;
+  font-weight: bold;
   text-transform: uppercase;
   margin-right: 5px;
+  &:after {
+    content: ":";
+  }
 `;
 
 const Value = styled.span`
-  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
   text-transform: uppercase;
 `;
 
@@ -57,16 +74,8 @@ const Meta = (props: Props) => (
       <Value>{props.context}</Value>
     </Item>
     <Item>
-      <Title>Date</Title>
+      <Title>Tenure</Title>
       <Value>{props.date}</Value>
-    </Item>
-    <Item>
-      <Title>Platforms</Title>
-      <Value>
-        {Array.isArray(props.platforms)
-          ? props.platforms.join(", ")
-          : props.platforms}
-      </Value>
     </Item>
   </List>
 );

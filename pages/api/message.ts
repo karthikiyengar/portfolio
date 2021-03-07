@@ -1,12 +1,12 @@
 const validator = require("validator");
 const mailgun = require("mailgun-js")({
   apiKey: "key-1b1cefdf780514ca200edd4335c92e9f",
-  domain: "mg.karthikiyengar.in"
+  domain: "mg.karthikiyengar.in",
 });
 const Recaptcha = require("recaptcha2");
 const recaptcha = new Recaptcha({
   siteKey: "6LfSgSEUAAAAAEWLKRlaKBg-jC6WIDfFRqaso05L",
-  secretKey: "6LfSgSEUAAAAAC-eJ0Qv5ZJ6ajSXgokCyxyAOJC_"
+  secretKey: "6LfSgSEUAAAAAC-eJ0Qv5ZJ6ajSXgokCyxyAOJC_",
 });
 
 export default (req, res) => {
@@ -42,9 +42,9 @@ export default (req, res) => {
             <b>Sender Name: ${req.body.name}</b>
             <br /> 
             <p>${req.body.message}</p>
-          `
+          `,
         },
-        err => {
+        (err) => {
           if (err) {
             return res.status(400).send("Could not send email");
           }

@@ -24,18 +24,26 @@ const appear = keyframes`
 `;
 
 const Container = styled.div`
-  display: flex;
-  margin: 15px 0;
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
   flex-wrap: wrap;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  ${media.tablet`
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+  `}
+  ${media.handheld`
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+  `}
 `;
 
 const Item = styled.div`
   height: auto;
-  width: 17.3%;
   border: 1px solid lightgray;
   border-radius: 5px;
-  margin-bottom: 15px;
-  margin-right: 25px;
   opacity: 0;
   display: flex;
   align-items: center;
@@ -45,22 +53,6 @@ const Item = styled.div`
   animation-timing-function: ease-out;
   animation-fill-mode: forwards;
   justify-content: center;
-
-  ${media.tablet`
-    width: 28%;
-    margin-right: 5%;
-  `};
-
-  ${media.handheld`
-    width: 45%;
-    margin-right: 5%;
-  `};
-
-  &:before {
-    content: "";
-    display: block;
-    padding-top: 100%;
-  }
   &:hover {
     cursor: pointer;
     img {

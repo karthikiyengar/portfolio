@@ -43,22 +43,22 @@ const Home: NextPage<Props> = (props) => {
       </Subtitle>
       <IconsContainer>
         <Link href="https://github.com/karthikiyengar/" target="_blank">
-          <FiGithub size={30} />
+          <FiGithub size={25} />
         </Link>
         <Link href="mailto:hello@kiyengar.net">
-          <FiMail size={30} />
+          <FiMail size={25} />
         </Link>
         <Link href="https://twitter.com/karthik_i" target="_blank">
-          <FiTwitter size={30} />
+          <FiTwitter size={25} />
         </Link>
         <Link
           href="https://www.linkedin.com/in/karthik-iyengar-22446176/"
           target="_blank"
         >
-          <FiLinkedin size={30} />
+          <FiLinkedin size={25} />
         </Link>
         <Link href="https://medium.com/@karthikiyengar" target="_blank">
-          <img src="/static/icons/medium.svg" height="30" />
+          <img src="/static/icons/medium.svg" height="25" />
         </Link>
       </IconsContainer>
       <Content>

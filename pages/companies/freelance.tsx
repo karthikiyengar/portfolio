@@ -8,6 +8,7 @@ import {
   Description,
   VisitButton,
   P,
+  Section,
 } from "../../components/styled";
 import { Header, Tools, Meta } from "../../components";
 import { companies, Company } from "../../data/companies";
@@ -17,13 +18,9 @@ const Image = styled.img`
   max-height: 150px;
 `;
 
-const Wrapper = styled.div`
-  min-width: 0;
-  display: flex;
-  justify-content: center;
-  margin: 15px auto;
+const Spacer = styled.div`
+  margin: 15px 0;
 `;
-
 interface Props {
   slug: string | string[];
 }
@@ -51,8 +48,10 @@ const Freelance: NextPage<Props> = (props) => {
             and technology consulting to help companies modernise and scale
             their products.
           </Description>
+          <Spacer>
+            <Section>Project Showcase</Section>
+          </Spacer>
           <Portfolio />
-          <Tools data={company.tools ?? []} />
         </Content>
       )}
     </Layout>

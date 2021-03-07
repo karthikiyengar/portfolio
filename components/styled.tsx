@@ -28,6 +28,7 @@ export const Subtitle = styled.h2`
 export const Section = styled.p`
   font-family: sans-serif;
   font-size: 1.5em;
+  text-transform: uppercase;
   font-weight: bold;
   margin: 12px 0;
   ${media.handheld`
@@ -171,10 +172,7 @@ export const Image = styled.img`
 `;
 
 export const Description = styled.div`
-  margin-left: auto;
   white-space: pre-wrap;
-  margin-right: auto;
-  max-width: 75%;
 `;
 
 export const StyledLink = styled.a`
