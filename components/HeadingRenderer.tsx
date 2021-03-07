@@ -21,7 +21,7 @@ const HeadingContainer = styled.div`
   display: flex;
 `;
 
-const flatten = (text: string, child) => {
+const flatten = (text: string, child: any): string => {
   return typeof child === "string"
     ? text + child
     : React.Children.toArray(child.props.children).reduce(flatten, text);
@@ -31,7 +31,7 @@ const flatten = (text: string, child) => {
  * HeadingRenderer is a custom renderer
  * It parses the heading and attaches an id to it to be used as an anchor
  */
-const HeadingRenderer = (props) => {
+const HeadingRenderer: React.FC<{ level: string }> = (props) => {
   const [showAnchor, setShowAnchor] = React.useState<boolean>(false);
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, "");

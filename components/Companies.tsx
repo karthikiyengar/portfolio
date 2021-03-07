@@ -34,7 +34,7 @@ const Companies = () => {
     <>
       <GlobalTimelineStyle />
       <VerticalTimeline
-        layout={"1-column-right"}
+        layout={"1-column-right" as any}
         className="vertical-timeline-custom-line vertical-timeline"
       >
         {companies.map((item) => {

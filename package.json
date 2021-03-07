@@ -9,6 +9,7 @@
   "dependencies": {
     "@icons-pack/react-simple-icons": "^4.1.0",
     "@types/react-dom": "^16.9.9",
+    "@types/react-vertical-timeline-component": "^3.0.0",
     "autotrack": "^2.3.2",
     "axios": "^0.21.0",
     "body-parser": "^1.17.1",
