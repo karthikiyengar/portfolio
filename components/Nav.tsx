@@ -82,7 +82,7 @@ class Nav extends React.Component {
           <Link href={this.previous || "/"}>
             <IconBack visible={this.previous} />
           </Link>
-          <Link href="/companies/portfolio">
+          <Link href="/companies/freelance">
             <IconMenuWithCursor />
           </Link>
           <Link href={this.next || "/"}>

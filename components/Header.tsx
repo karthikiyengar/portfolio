@@ -12,7 +12,11 @@ export const HeaderContainer = styled.header`
   min-height: 60px;
   display: flex;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: white;
   align-items: center;
+  z-index: 999999;
 `;
 
 export const Title = styled.h1`

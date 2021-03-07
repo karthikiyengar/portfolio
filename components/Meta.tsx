@@ -74,7 +74,7 @@ const Meta = (props: Props) => (
       <Value>{props.context}</Value>
     </Item>
     <Item>
-      <Title>Tenure</Title>
+      <Title>Date</Title>
       <Value>{props.date}</Value>
     </Item>
   </List>
