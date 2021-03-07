@@ -48,7 +48,7 @@ const ProjectTemplate: NextPage<Props> = (props) => {
         router.replace("/404");
       }
     }
-  }, []);
+  }, [slug]);
 
   return (
     <Layout>
@@ -85,7 +85,7 @@ const ProjectTemplate: NextPage<Props> = (props) => {
           <Tools data={project.tools} />
         </Content>
       )}
-      <Nav />
+      <Nav slug={slug} />
     </Layout>
   );
 };

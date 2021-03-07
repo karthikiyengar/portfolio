@@ -121,7 +121,7 @@ const getIcon = (item: Technology) => {
           target="_blank"
           key={item}
         >
-          <Image src="/static/tools/chrome-web-store.ico" />
+          <Image src="/static/tools/chrome-web-store.png" />
         </Link>
       );
     case "redux":

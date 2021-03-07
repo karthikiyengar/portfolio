@@ -2,19 +2,19 @@ import styled, { css, createGlobalStyle } from "styled-components";
 import NextLink from "next/link";
 
 export const media = {
-  handheld: (...args) => css`
+  handheld: (literals: TemplateStringsArray, ...placeholders: any[]) => css`
     @media (max-width: 420px) {
-      ${css(...args)};
+      ${css(literals, ...placeholders)};
     }
   `,
-  tablet: (...args) => css`
+  tablet: (literals: TemplateStringsArray, ...placeholders: any[]) => css`
     @media (max-width: 800px) {
-      ${css(...args)};
+      ${css(literals, ...placeholders)};
     }
   `,
-  desktop: (...args) => css`
+  desktop: (literals: TemplateStringsArray, ...placeholders: any[]) => css`
     @media (min-width: 992px) {
-      ${css(...args)};
+      ${css(literals, ...placeholders)};
     }
   `,
 };
@@ -75,38 +75,6 @@ export const P = styled.p`
   margin: 0;
 `;
 
-export const Input = styled.input`
-  padding: 15px;
-  border-style: solid;
-  border-width: 1px;
-  font-size: 1em;
-  outline: none;
-  border-color: ${(props) => (props.error ? "red" : "lightgray")};
-  &:hover {
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  &:focus {
-    border-color: ${(props) => (props.error ? "red" : "darkgray")};
-  }
-  width: 100%;
-`;
-
-export const Textarea = styled.textarea`
-  padding: 15px;
-  border-style: solid;
-  font-size: 1em;
-  outline: none;
-  border-width: 1px;
-  border-color: ${(props) => (props.error ? "red" : "lightgray")};
-  &:hover {
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  &:focus {
-    border-color: ${(props) => (props.error ? "red" : "darkgray")};
-  }
-  width: 100%;
-`;
-
 export const Row = styled.div`
   margin: 20px 0;
   width: 100%;
@@ -154,21 +122,6 @@ export const VisitButton = styled.a`
       rgba(0, 0, 0, 0.1)
     );
   }
-`;
-
-export const Error = styled.p`
-  margin: 5px 0;
-  color: red;
-`;
-
-export const Message = styled.p`
-  margin: 5px 0;
-`;
-
-export const Image = styled.img`
-  max-width: 480px;
-  height: auto;
-  margin-bottom: 25px;
 `;
 
 export const Description = styled.div`

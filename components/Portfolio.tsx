@@ -40,7 +40,7 @@ const Container = styled.div`
   `}
 `;
 
-const Item = styled.div`
+const Item = styled.div<{ index: number }>`
   height: auto;
   border: 1px solid lightgray;
   border-radius: 5px;

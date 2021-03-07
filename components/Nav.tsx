@@ -5,7 +5,7 @@ import { MdMenu } from "react-icons/md";
 import { MdArrowBack } from "react-icons/md";
 import { MdArrowForward } from "react-icons/md";
 import { portfolio } from "../data/portfolio";
-import { withRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Container = styled.nav`
   text-align: center;
@@ -34,12 +34,12 @@ const IconContainer = styled.div`
   padding: 10px 0;
 `;
 
-const IconBack = styled(MdArrowBack)`
+const IconBack = styled(MdArrowBack)<{ visible: boolean }>`
   cursor: pointer;
   visibility: ${(props) => (props.visible ? "initial" : "hidden")};
 `;
 
-const IconForward = styled(MdArrowForward)`
+const IconForward = styled(MdArrowForward)<{ visible: boolean }>`
   cursor: pointer;
   visibility: ${(props) => (props.visible ? "initial" : "hidden")};
 `;
@@ -48,50 +48,30 @@ const IconMenuWithCursor = styled(MdMenu)`
   cursor: pointer;
 `;
 
-type Props = {
-  router: {
-    pathname: string;
-  };
+const Nav: React.FC<{ slug: string | string[] }> = ({ slug }) => {
+  const currentIndex = portfolio.findIndex((item) => item.slug === slug);
+  if (currentIndex === -1) {
+    return <></>;
+  }
+
+  const previousSlug = portfolio[currentIndex - 1]?.slug;
+  const nextSlug = portfolio[currentIndex + 1]?.slug;
+
+  return (
+    <Container>
+      <IconContainer>
+        <Link href={`/portfolio/[slug]`} as={`/portfolio/${previousSlug}`}>
+          <IconBack visible={!!previousSlug} />
+        </Link>
+        <Link href={`/companies/freelance`}>
+          <IconMenuWithCursor />
+        </Link>
+        <Link href={`/portfolio/[slug]`} as={`/portfolio/${nextSlug}`}>
+          <IconForward visible={!!nextSlug} />
+        </Link>
+      </IconContainer>
+    </Container>
+  );
 };
 
-class Nav extends React.Component {
-  previous: string;
-  current: string;
-  next: string;
-
-  constructor(props: Props) {
-    super(props);
-    const currentIndex = portfolio.findIndex(
-      (item) => item.link === props.router.pathname
-    );
-    this.previous = portfolio[currentIndex - 1]
-      ? portfolio[currentIndex - 1].link
-      : null;
-    this.current = portfolio[currentIndex]
-      ? portfolio[currentIndex].link
-      : null;
-    this.next = portfolio[currentIndex + 1]
-      ? portfolio[currentIndex + 1].link
-      : null;
-  }
-
-  render() {
-    return (
-      <Container>
-        <IconContainer>
-          <Link href={this.previous || "/"}>
-            <IconBack visible={this.previous} />
-          </Link>
-          <Link href="/companies/freelance">
-            <IconMenuWithCursor />
-          </Link>
-          <Link href={this.next || "/"}>
-            <IconForward visible={this.next} />
-          </Link>
-        </IconContainer>
-      </Container>
-    );
-  }
-}
-
-export default withRouter(Nav as any);
+export default Nav;

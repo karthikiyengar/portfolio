@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { Layout } from "../../components/styled";
 import { HeadingRenderer } from "../../components/HeadingRenderer";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Header from "../../components/Header";
 
 interface Success extends GrayMatterFile<any> {

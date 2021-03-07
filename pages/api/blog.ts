@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import readingTime from "reading-time";
 import compareDesc from "date-fns/compareDesc";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export interface Blog {
   date: string;
@@ -31,7 +32,7 @@ export const getPosts = () => {
   return meta;
 };
 
-export default (_req, res) => {
+export default (_req: NextApiRequest, res: NextApiResponse) => {
   const meta = getPosts();
   res.send(meta);
 };
