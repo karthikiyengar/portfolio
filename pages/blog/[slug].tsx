@@ -12,13 +12,19 @@ import { vscDarkPlus as codeTheme } from "react-syntax-highlighter/dist/cjs/styl
 
 interface Success extends GrayMatterFile<any> {
   isError: false;
+  slug: string | string[] | undefined;
 }
 
 interface Error {
   isError: true;
+  slug: string | string[] | undefined;
 }
 
 type Props = Success | Error;
+
+const EditContainer = styled.div`
+  margin: 18px 0;
+`;
 
 const BlogContainer = styled.div`
   line-height: 1.7;
@@ -76,6 +82,18 @@ const PostTemplate: NextPage<Props> = (props) => {
               allowDangerousHtml
             />
           </BlogContainer>
+
+          {props.slug && (
+            <EditContainer>
+              <a
+                href={`https://github.com/karthikiyengar/portfolio/tree/main/_posts/${props.slug}.md`}
+                target="_blank"
+              >
+                Edit on Github
+              </a>
+            </EditContainer>
+          )}
+
           <div ref={commentBoxRef} />
         </Layout>
       </>
@@ -90,10 +108,10 @@ PostTemplate.getInitialProps = async (context) => {
 
   try {
     const content = await import(`../../_posts/${slug}.md`);
-    const data = matter(content.default);
+    const data = { ...matter(content.default), slug };
     return { isError: false, ...data };
   } catch {
-    return { isError: true };
+    return { isError: true, slug };
   }
 };
 
