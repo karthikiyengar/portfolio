@@ -1,6 +1,7 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { description } from "../data/home";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: any) {
@@ -40,10 +41,7 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI"
           />
-          <meta
-            name="description"
-            content="I’m a full stack developer and technical consultant and I help you convert your ideas into products"
-          />
+          <meta name="description" content={description} />
           <link
             rel="shortcut icon"
             type="image/x-icon"

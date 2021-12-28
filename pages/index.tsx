@@ -7,6 +7,7 @@ import { Subtitle, Section, Layout, Content } from "../components/styled";
 import { ArticlesList, Companies, Header } from "../components";
 import { Blog, getPosts } from "./api/blog";
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
+import { description } from "../data/home";
 
 const Link = styled.a`
   all: unset;
@@ -42,10 +43,7 @@ const Home: NextPage<Props> = (props) => {
       <Header />
       <Layout>
         <h1>Hi, I'm Karthik! 👋</h1>
-        <Subtitle>
-          I’m a full-stack developer who likes open source and functional
-          programming
-        </Subtitle>
+        <Subtitle>{description}</Subtitle>
         <IconsContainer>
           <Link href="https://github.com/karthikiyengar/" target="_blank">
             <FiGithub />
