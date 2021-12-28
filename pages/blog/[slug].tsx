@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import matter, { GrayMatterFile } from "gray-matter";
 import ReactMarkdown from "react-markdown/with-html";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -40,9 +40,25 @@ const renderers = {
 const PostTemplate: NextPage<Props> = (props) => {
   const router = useRouter();
 
+  const commentBoxRef = useRef() as React.MutableRefObject<HTMLDivElement>;
   useEffect(() => {
     if (props.isError) {
       router.push("/404");
+    }
+  }, []);
+
+  useEffect(() => {
+    const scriptEl = document.createElement("script");
+    scriptEl.setAttribute("src", "https://utteranc.es/client.js");
+    scriptEl.setAttribute("crossorigin", "anonymous");
+    scriptEl.async = true;
+    scriptEl.setAttribute("repo", "karthikiyengar/portfolio");
+    scriptEl.setAttribute("issue-term", "pathname");
+    scriptEl.setAttribute("theme", "github-light");
+    scriptEl.setAttribute("label", "utterances");
+
+    if (commentBoxRef.current) {
+      commentBoxRef.current.appendChild(scriptEl);
     }
   }, []);
 
@@ -60,6 +76,7 @@ const PostTemplate: NextPage<Props> = (props) => {
               allowDangerousHtml
             />
           </BlogContainer>
+          <div ref={commentBoxRef} />
         </Layout>
       </>
     );

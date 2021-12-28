@@ -49,7 +49,7 @@ export default class MyDocument extends Document {
             type="image/x-icon"
             href="/static/favicon.ico"
           />
-          <link rel="canonical" href="http://karthikiyengar.in" />
+          <link rel="canonical" href="http://kiyengar.net" />
 
           {process.env.NODE_ENV === "production" ? (
             <>
