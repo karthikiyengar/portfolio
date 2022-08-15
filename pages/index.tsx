@@ -73,8 +73,8 @@ const Home: NextPage<Props> = (props) => {
         <Content>
           <Section>ARTICLES</Section>
           <ArticlesList data={props.blogs} />
-          <Section>I'VE WORKED WITH</Section>
-          <Companies />
+          {/* <Section>I'VE WORKED WITH</Section> */}
+          {/* <Companies /> */}
         </Content>
       </Layout>
     </>
