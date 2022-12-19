@@ -3,9 +3,6 @@ import styled from "styled-components";
 import { Link } from "./styled";
 
 export const LinksContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
   grid-gap: 1fr;
 `;
 
@@ -29,6 +26,7 @@ export const Content = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  padding: 0 10px;
   align-items: center;
   justify-content: space-between;
   margin-left: auto;
