@@ -31,7 +31,7 @@ const flatten = (text: string, child: any): string => {
  * HeadingRenderer is a custom renderer
  * It parses the heading and attaches an id to it to be used as an anchor
  */
-const HeadingRenderer: React.FC<{ level: string }> = (props) => {
+const HeadingRenderer: React.FC<{ level: string, children: React.ReactElement }> = (props) => {
   const [showAnchor, setShowAnchor] = React.useState<boolean>(false);
   const children = React.Children.toArray(props.children);
   const text = children.reduce(flatten, "");

@@ -59,13 +59,16 @@ const Nav: React.FC<{ slug: string | string[] }> = ({ slug }) => {
   return (
     <Container>
       <IconContainer>
-        <Link href={`/portfolio/[slug]`} as={`/portfolio/${previousSlug}`}>
+        <Link
+          href={`/portfolio/[slug]`}
+          as={`/portfolio/${previousSlug}`}
+          legacyBehavior>
           <IconBack visible={!!previousSlug} />
         </Link>
-        <Link href={`/companies/freelance`}>
+        <Link href={`/companies/freelance`} legacyBehavior>
           <IconMenuWithCursor />
         </Link>
-        <Link href={`/portfolio/[slug]`} as={`/portfolio/${nextSlug}`}>
+        <Link href={`/portfolio/[slug]`} as={`/portfolio/${nextSlug}`} legacyBehavior>
           <IconForward visible={!!nextSlug} />
         </Link>
       </IconContainer>

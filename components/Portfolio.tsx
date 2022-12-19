@@ -70,7 +70,7 @@ const Image = styled.img`
 const Portfolio = () => (
   <Container>
     {portfolio.map((item, index) => (
-      <Link href={`/portfolio/${item.slug}`} key={item.title}>
+      <Link href={`/portfolio/${item.slug}`} key={item.title} legacyBehavior>
         <Item index={index}>
           <Image src={item.image} alt={item.title} />
         </Item>

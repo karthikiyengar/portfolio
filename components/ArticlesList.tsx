@@ -56,7 +56,7 @@ const Component: React.FC<Props> = (props) => {
     <Container>
       {props.data.map((blog) => {
         return (
-          <Link key={blog.slug} href={`blog/${blog.slug}`}>
+          <Link key={blog.slug} href={`blog/${blog.slug}`} legacyBehavior>
             <Card>
               <H3>{blog.title}</H3>
               <DescriptionContainer>{blog.description}</DescriptionContainer>

@@ -2,6 +2,7 @@
 dist
 .next
 .idea
+tsconfig.tsbuildinfo
 
 # dependencies
 node_modules

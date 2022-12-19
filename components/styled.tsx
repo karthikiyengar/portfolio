@@ -128,19 +128,12 @@ export const Description = styled.div`
   white-space: pre-wrap;
 `;
 
-export const StyledLink = styled.a`
+export const Link = styled(NextLink)`
   color: inherit;
   text-decoration: inherit;
   display: inline-block;
 `;
 
-export const Link: React.FC<{ href: string }> = ({ href, children }) => {
-  return (
-    <NextLink href={href} passHref>
-      <StyledLink>{children}</StyledLink>
-    </NextLink>
-  );
-};
 
 export const ZoomableImage = styled.img`
   margin-right: 40px;

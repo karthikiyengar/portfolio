@@ -34,10 +34,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta
-            name="viewport"
-            content="initial-scale=1.0, width=device-width"
-          />
-          <meta
             name="google-site-verification"
             content="UGhNZ8t59toBwhI1pUgJDeJK82IJqDz5SUAyLEoa_cI"
           />

@@ -11,6 +11,10 @@ class MyApp extends App {
       <>
         <Head>
           <title>Karthik Iyengar</title>
+          <meta
+            name="viewport"
+            content="initial-scale=1.0, width=device-width"
+          />
         </Head>
         <Normalize />
         <Global />

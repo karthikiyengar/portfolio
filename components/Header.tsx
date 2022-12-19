@@ -10,7 +10,7 @@ export const LinksContainer = styled.div`
 `;
 
 export const HeaderContainer = styled.header`
-  min-height: 60px;
+  height: 60px;
   display: block;
   justify-content: space-between;
   position: sticky;
@@ -27,12 +27,16 @@ export const HeaderContainer = styled.header`
 export const Content = styled.div`
   max-width: 820px;
   width: 100%;
+  height: 100%;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 15px;
+  font-size: 20px;
+  a {
+    font-family: serif !important;
+  }
 `;
 
 export const Title = styled.h1`
@@ -47,7 +51,7 @@ const Header = () => (
   <HeaderContainer>
     <Content>
       <Link href="/">
-        <p style={{ fontSize: "20px", fontFamily: "serif" }}>Karthik Iyengar</p>
+        Karthik Iyengar
       </Link>
       <LinksContainer>
         <Link href="/about">About</Link>
