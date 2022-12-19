@@ -7,6 +7,7 @@ import { Subtitle, Section, Layout, Content } from "../components/styled";
 import { ArticlesList, Companies, Header } from "../components";
 import { Blog, getPosts } from "./api/blog";
 import { FiGithub, FiLinkedin, FiMail, FiTwitter } from "react-icons/fi";
+import { RiMastodonLine } from "react-icons/ri"
 import { description } from "../data/home";
 
 const Link = styled.a`
@@ -50,6 +51,9 @@ const Home: NextPage<Props> = (props) => {
           </Link>
           <Link href="mailto:hello@kiyengar.net">
             <FiMail />
+          </Link>
+          <Link href="https://fosstodon.org/@kiyengar" target="_blank">
+            <RiMastodonLine />
           </Link>
           <Link href="https://twitter.com/karthik_i" target="_blank">
             <FiTwitter />
