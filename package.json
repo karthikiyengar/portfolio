@@ -14,7 +14,7 @@
     "body-parser": "^1.17.1",
     "compression": "^1.6.2",
     "date-fns": "^2.16.1",
-    "express": "^4.15.2",
+    "express": "^4.17.3",
     "gray-matter": "^4.0.2",
     "helmet": "^3.6.0",
     "mailgun-js": "^0.20.0",
