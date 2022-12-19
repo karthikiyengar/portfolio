@@ -47,6 +47,7 @@ export default class MyDocument extends Document {
             type="image/x-icon"
             href="/static/favicon.ico"
           />
+          <link href="https://fosstodon.org/@kiyengar" rel="me"></link>
 
           {process.env.NODE_ENV === "production" ? (
             <>
