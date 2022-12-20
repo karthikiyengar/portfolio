@@ -1,4 +1,4 @@
-import { NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import React, { useEffect, useRef } from "react";
 import matter, { GrayMatterFile } from "gray-matter";
 import ReactMarkdown from "react-markdown/with-html";
@@ -9,6 +9,8 @@ import { useRouter } from "next/router";
 import Header from "../../components/Header";
 import styled from "styled-components";
 import { vscDarkPlus as codeTheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { getPosts } from "../api/blog";
+import markdownToHtml from "../../lib/markdownToHtml";
 
 interface Success extends GrayMatterFile<any> {
   isError: false;
@@ -41,6 +43,44 @@ const renderers = {
       />
     );
   },
+};
+
+export async function getStaticPaths() {
+  const blogs = getPosts();
+  return {
+    paths: blogs.map((blog) => {
+      return {
+        params: {
+          slug: blog.slug,
+        },
+      };
+    }),
+    fallback: false,
+  };
+}
+
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params?.slug ?? null;
+  try {
+    const raw = await import(`../../_posts/${slug}.md`);
+    const { data, content } = matter(raw.default)
+    return {
+      props: {
+        isError: false,
+        content: await markdownToHtml(content || ''),
+        data,
+        slug
+      }
+    };
+  } catch {
+    return {
+      props: {
+        isError: true,
+        slug
+      }
+    };
+  }
 };
 
 const PostTemplate: NextPage<Props> = (props) => {
@@ -103,16 +143,5 @@ const PostTemplate: NextPage<Props> = (props) => {
   return <></>;
 };
 
-PostTemplate.getInitialProps = async (context) => {
-  const { slug } = context.query;
-
-  try {
-    const content = await import(`../../_posts/${slug}.md`);
-    const data = { ...matter(content.default), slug };
-    return { isError: false, ...data };
-  } catch {
-    return { isError: true, slug };
-  }
-};
 
 export default PostTemplate;

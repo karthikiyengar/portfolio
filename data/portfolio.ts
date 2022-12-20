@@ -189,19 +189,23 @@ export const portfolio: Projects[] = [
     slug: "prolite",
     tools: ["android", "ionic", "mysql", "nodejs", "mongodb", "laravel"],
   },
-  // {
-  //   title: "Yuva Parivartan",
-  //   image: "/static/yuva-parivartan.png",
-  //   link: "/portfolio/yuva-parivartan",
-  // },
-  // {
-  //   title: "Qrypt",
-  //   image: "/static/qrypt.png",
-  //   link: "/portfolio/qrypt",
-  // },
-  // {
-  //   title: "Automator",
-  //   image: "/static/automator.png",
-  //   link: "/portfolio/automator",
-  // },
 ];
+
+
+const archived = [
+  {
+    title: "Yuva Parivartan",
+    image: "/static/yuva-parivartan.png",
+    link: "/portfolio/yuva-parivartan",
+  },
+  {
+    title: "Qrypt",
+    image: "/static/qrypt.png",
+    link: "/portfolio/qrypt",
+  },
+  {
+    title: "Automator",
+    image: "/static/automator.png",
+    link: "/portfolio/automator",
+  },
+]

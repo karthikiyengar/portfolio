@@ -3,6 +3,7 @@ import Head from "next/head";
 import App from "next/app";
 import { Global } from "../components/styled";
 import { Normalize } from "styled-normalize";
+import "prismjs/themes/prism-tomorrow.css";
 
 class MyApp extends App {
   render() {

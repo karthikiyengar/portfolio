@@ -82,6 +82,7 @@ const CompanyTemplate: NextPage<Props> = (props) => {
   );
 };
 
+// Refactor this into getStaticProps and getStaticPaths if you want to expose it
 CompanyTemplate.getInitialProps = async (context) => {
   const { slug } = context.query;
   return { slug } as Props;
