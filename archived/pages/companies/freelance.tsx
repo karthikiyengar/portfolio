@@ -1,10 +1,10 @@
 import React from "react";
 import { NextPage } from "next";
-import Portfolio from "../../components/Portfolio";
+import Portfolio from "../../../components/Portfolio";
 import styled from "styled-components";
-import { Layout, Content, Description, Section } from "../../components/styled";
-import { Header, Meta } from "../../components";
-import { companies } from "../../data/companies";
+import { Layout, Content, Description, Section } from "../../../components/styled";
+import { Header, Meta } from "../../../components";
+import { companies } from "../../../data/companies";
 
 const Spacer = styled.div`
   margin: 15px 0;

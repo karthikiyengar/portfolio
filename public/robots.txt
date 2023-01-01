@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://kiyengar.net
+
+# Sitemaps
+Sitemap: https://kiyengar.net/sitemap.xml

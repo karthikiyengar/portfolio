@@ -8,10 +8,10 @@ import {
   Content,
   Description,
   ImageContainer,
-} from "../../components/styled";
+} from "../../../components/styled";
 import ReactMarkdown from "react-markdown";
-import { Header, Tools, Meta, Nav } from "../../components";
-import { portfolio } from "../../data/portfolio";
+import { Header, Tools, Meta, Nav } from "../../../components";
+import { portfolio } from "../../../data/portfolio";
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 

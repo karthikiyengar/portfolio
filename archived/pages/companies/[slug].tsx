@@ -6,10 +6,10 @@ import {
   Content,
   Description,
   VisitButton,
-} from "../../components/styled";
-import { Header, Tools, Meta } from "../../components";
+} from "../../../components/styled";
+import { Header, Tools, Meta } from "../../../components";
 import { useRouter } from "next/router";
-import { companies, Company } from "../../data/companies";
+import { companies, Company } from "../../../data/companies";
 
 const Image = styled.img`
   width: auto;
