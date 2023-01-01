@@ -12,7 +12,6 @@ const Container = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  cursor: pointer;
   padding: 15px 0px;
   border-bottom: 1px solid lightgray;
   :last-child {
@@ -44,8 +43,15 @@ const DescriptionContainer = styled.div`
   flex: 1;
 `;
 
-const H3 = styled.h3`
+const H4 = styled.h4`
   margin: 5px 0 10px 0;
+
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: hotpink;
+  }
 `;
 
 interface Props {
@@ -56,17 +62,15 @@ const Component: React.FC<Props> = (props) => {
     <Container>
       {props.data.map((blog) => {
         return (
-          <Link key={blog.slug} href={`blog/${blog.slug}`} legacyBehavior>
-            <Card>
-              <H3>{blog.title}</H3>
-              <DescriptionContainer>{blog.description}</DescriptionContainer>
-              <MetaContainer>
-                <Meta>{format(new Date(blog.date), "dd MMM yyyy")}</Meta>
-                <Middot />
-                <Meta>{blog.readingTime.text}</Meta>
-              </MetaContainer>
-            </Card>
-          </Link>
+          <Card>
+            <H4><Link key={blog.slug} href={`blog/${blog.slug}`} legacyBehavior>{blog.title}</Link></H4>
+            <DescriptionContainer>{blog.description}</DescriptionContainer>
+            <MetaContainer>
+              <Meta>{format(new Date(blog.date), "dd MMM yyyy")}</Meta>
+              <Middot />
+              <Meta>{blog.readingTime.text}</Meta>
+            </MetaContainer>
+          </Card>
         );
       })}
     </Container>
